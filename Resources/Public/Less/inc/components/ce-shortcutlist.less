@@ -1,0 +1,33 @@
+.ce-shortcutlist {
+    h4 {
+        color: @1stcolor;
+        margin-bottom: 0.25rem;
+        .fz-bigtext;
+    }
+ 
+
+    dl {
+        display: flex;
+        gap: 0;
+        .fz-headline;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        dt {
+            font-weight: 900;
+        }
+
+        dd {
+            margin-left: 0.5rem;
+            a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                &:hover {
+                    text-decoration: none;
+                    color: @1stcolor;
+                }
+            }
+        }
+    }
+}

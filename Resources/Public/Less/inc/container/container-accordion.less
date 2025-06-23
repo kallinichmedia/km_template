@@ -1,0 +1,131 @@
+
+
+
+
+.ce-accordion {
+    
+    // --keycolor: @2ndcolor;
+    --keycolor: @page-textcolor;
+
+    .panel {
+        border: 2px solid var(--keycolor);
+        transition: border-color 0.25s ease-in-out;
+        border-radius: 1.1rem;        
+        margin-bottom:  1rem;
+        .panel-header {
+            cursor: pointer;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;    
+            gap: 0.5rem;
+            padding: 0.25rem 0.25rem 0.25rem 1rem;       
+            .title {
+                margin: 0;                
+                font-weight: 300;
+                color: var(--keycolor);
+                transition: color 0.25s ease-in-out;
+            }
+
+            .icon {
+                display: flex;
+                width: 0.75rem;
+                height: 0.75rem;
+                margin-right: 0.25rem;
+
+                svg {
+                    width: auto;
+                    height: 100%;                    
+                    transition: transform 0.25s ease-in-out;
+                    * { 
+                        transition: fill 0.25s ease-in-out;
+                        fill: @1stcolor; 
+                    }
+
+                }
+            }
+        }
+        .panel-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.25s ease-in-out;            
+            
+            .inner {
+                box-sizing: content-box;
+                overflow: hidden;
+                height: 100%;
+
+                .content-padding {
+                    padding: 0.5rem 1rem 1rem 1rem;
+
+                    @media screen and (min-width: 768px) {
+                        padding-right: 3rem;
+                    }
+                }
+                
+
+                > * {
+                    /* margin-top: 2rem; */
+                }
+             
+            }
+        }
+
+        &:hover {
+            border-color: @1stcolor;
+            .panel-header {
+                .title {
+                    color: @1stcolor;
+                }
+                .icon svg * {
+                    fill: @1stcolor;
+                }
+            }
+        }
+
+        &.active {
+            border-color: @1stcolor;
+            .panel-header {
+                .title {
+                    color: @1stcolor;
+                }
+                .icon svg {
+                    transform: rotate(90deg);
+                    * {
+                        fill: @1stcolor;
+                        &:first-child { 
+                            fill: transparent;
+                            opacity: 0;
+                        }
+                    }   
+
+                }
+            }
+            .panel-content {
+                grid-template-rows: 1fr;
+            }
+        }
+
+    }
+
+}
+
+body.bgcolor_blue .ce-accordion {
+    --keycolor: #ffffff;
+}
+
+body.bgcolor_purple .ce-accordion {
+    --keycolor: #ffffff;
+}
+
+body.bgcolor_orange .ce-accordion {
+    --keycolor: #ffffff;
+}
+
+body.bgcolor_berry .ce-accordion {
+    --keycolor: #ffffff;
+}
+
+body.bgcolor_rot .ce-accordion {
+    --keycolor: rgb(255, 234, 131);
+}
+

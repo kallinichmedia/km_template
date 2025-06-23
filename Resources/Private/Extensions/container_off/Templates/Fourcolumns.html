@@ -1,0 +1,35 @@
+<f:layout/>
+
+<f:section name="Header"/>
+
+
+<f:section name="Main">
+    
+    <div class="ce-fourcolumns {data.classes_top}">
+        <div class="inner row" data-columns="3">
+            <div class="column {f:if(condition: '{data.classes_col1}', then: '{data.classes_col1}', else: 'col-md-3')}">
+                <f:for each="{children_201}" as="record">
+                    {record.renderedContent->f:format.raw()}    
+                </f:for>  
+            </div>
+            <div class="column {f:if(condition: '{data.classes_col2}', then: '{data.classes_col2}', else: 'col-md-3')}">
+                <f:for each="{children_202}" as="record">
+                    {record.renderedContent->f:format.raw()}    
+                </f:for>  
+            </div>
+            <div class="column {f:if(condition: '{data.classes_col3}', then: '{data.classes_col3}', else: 'col-md-3')}">
+                <f:for each="{children_203}" as="record">
+                    {record.renderedContent->f:format.raw()}    
+                </f:for>  
+            </div>
+            <div class="column {f:if(condition: '{data.classes_col4}', then: '{data.classes_col4}', else: 'col-md-3')}">
+                <f:for each="{children_204}" as="record">
+                    {record.renderedContent->f:format.raw()}    
+                </f:for>  
+            </div>
+        </div>
+    </div>
+
+
+</f:section>
+

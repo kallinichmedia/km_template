@@ -1,0 +1,75 @@
+.ce-shortcutlist {
+
+    --kmscl-textcolor: @page-textcolor;
+    --kmscl-linkcolor: @page-textcolor;
+    --kmscl-linkhovercolor: @1stcolor;
+
+    h4 {
+        color: @1stcolor;
+        margin-bottom: 0.25rem;
+        font-weight: 900;
+        .big-font-size;
+    }
+ 
+
+    dl {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+
+        font-size: 1rem !important;
+
+        @media screen and (min-width: 1200px) {
+            .big-font-size;            
+        }
+        
+        dt {
+            font-weight: 900;
+            flex: 0 0 100%;            
+            @media screen and (min-width: 1200px) {
+                flex: 0 0 auto;
+            }
+        }
+
+        dd {
+            margin-bottom: 1rem;
+            margin-left: 0;
+            @media screen and (min-width: 1200px) {
+                margin-left: 0.5rem;
+                margin-bottom: 0;
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5em;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                li {
+                    display: inline;
+                    padding-left: 0;
+                    margin-bottom: 0;
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+
+            a {
+                color: var(--kmscl-linkcolor);
+                /* text-decoration: none; */
+                transition: all 0.3s ease;
+                &:hover {
+                    /* text-decoration: none; */
+                    color: var(--kmscl-linkhovercolor);
+                }
+
+
+            }
+        }
+    }
+}

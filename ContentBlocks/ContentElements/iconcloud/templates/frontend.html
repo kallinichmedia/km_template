@@ -1,0 +1,40 @@
+
+<f:layout/>
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+    
+<f:section name="Main">
+    <f:comment>
+        <f:asset.css identifier="km-iconcloud-fe-css" href="{cb:assetPath()}/frontend.css"/>
+    </f:comment>
+    
+    <f:asset.script identifier="km-iconcloud-fe-js" src="{cb:assetPath()}/frontend.js"/>
+    <!-- Your content -->    
+       
+    <div class="ce-iconcloud"> 
+
+        <f:if condition="{data.image}">
+            <f:image class="bgimage" image="{data.image.0}" treatIdAsReference="1" />
+        </f:if>   
+
+        <div class="inner">
+
+            <h3 class="huge-font-size">{data.header->f:format.raw()}</h3>
+
+            <div class="itemcloud">
+                <f:for each="{data.items}" as="item" iteration="i">
+                    
+                    <div class="iconitem">
+                        <span class="icon">{item.Icon->f:format.raw()}</span>
+                        <span>{item.title->f:format.raw()}</span>
+                    </div>
+                    
+                </f:for>
+            </div>
+            
+            <f:link.typolink class="btn" parameter="{data.header_link}">{subheader}</f:link.typolink>
+        </div>
+    </div>
+
+</f:section>

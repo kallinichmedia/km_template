@@ -1,0 +1,116 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "wichtige_fragen": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "tx_mask_items"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "wichtige_fragen",
+                    "label": "Wichtige Fragen",
+                    "labels": [
+                        "",
+                        "Elemente"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "sql": {
+                "tx_mask_items": {
+                    "tt_content": {
+                        "tx_mask_items": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_items": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_items",
+                    "key": "items",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_items": {
+            "sql": {
+                "tx_mask_answer": {
+                    "tx_mask_items": {
+                        "tx_mask_answer": "mediumtext"
+                    }
+                },
+                "tx_mask_question": {
+                    "tx_mask_items": {
+                        "tx_mask_question": "mediumtext"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_answer": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_answer",
+                    "inlineParent": "tx_mask_items",
+                    "key": "answer",
+                    "label": "Antwort",
+                    "order": 2,
+                    "type": "richtext"
+                },
+                "tx_mask_question": {
+                    "config": {
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_question",
+                    "inlineParent": "tx_mask_items",
+                    "key": "question",
+                    "label": "Frage",
+                    "order": 1,
+                    "type": "text"
+                }
+            }
+        }
+    }
+}

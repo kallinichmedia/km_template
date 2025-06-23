@@ -1,0 +1,9 @@
+name: km/introblock
+typeName: km_introblock
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true

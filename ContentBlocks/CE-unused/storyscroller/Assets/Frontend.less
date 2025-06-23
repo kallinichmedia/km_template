@@ -1,0 +1,65 @@
+.ce-storyscroller {
+
+    --swiper-pagination-color: @1stcolor;
+    --swiper-pagination-color-active: @2ndcolor;
+    --swiper-pagination-bullet-horizontal-gap: 0.25rem;
+
+    --darkblue: @dunkelblau;
+    --violett: @violet;
+    --berry: @magenta;
+
+
+
+
+
+    .ce-storyscroller-item {
+        width: 100%;
+        min-height: 100svh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+
+        .punchline {
+            .huge-font-size;
+            line-height: 1;
+            margin-bottom: 0;
+            font-weight: 900;
+        }
+
+        .subline {
+           margin-bottom: 4rem;
+           text-align: right;
+            .bigger-font-size;
+        }
+
+        .buttonrow {
+            text-align: center;
+            margin-bottom: 0;
+
+            .btn {
+                cursor: pointer;
+            }
+        }
+
+
+
+
+        &.style-darkblue {
+            //background-color: var(--darkblue);
+            background: transparent
+        }
+
+        &.style-violett {
+            background-color: var(--violett);
+        }
+
+        &.style-berry {
+            background-color: var(--berry);
+        }
+    }
+}
+
+
+

@@ -1,0 +1,54 @@
+name: km/hoverboxes-small
+typeName: km_hoverboxessmall
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic  
+
+  -
+    identifier: items
+    label: 'Blöcke'
+    type: Collection
+    fields:
+
+      -
+        identifier: logo
+        type: File
+        label: 'Logo'        
+        extendedPalette: true
+        max-items: 1
+        allowed: common-image-types
+        cropVariants:
+          common:
+            title: allgemein
+            allowedAspectRatios:
+              square:
+                title: Square
+                value: 1/ 1
+              free:
+                title: Frei
+                value: 0
+          phone:
+            disabled: true
+          tablet:
+            disabled: true
+          desktop:
+            disabled: true
+      -
+        identifier: title
+        label: "Titel"
+        type: Text
+
+      -
+        identifier: textblock
+        lable: "Details"
+        type: Textarea
+        enableRichtext: true
+
+     
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

@@ -1,0 +1,28 @@
+name: km/shortcutlist
+typeName: km_shortcutlist
+title: Shortcut-Liste
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic 
+  -
+    identifier: row
+    label: Zeile
+    type: Collection
+    labelfield: title
+    fields:
+      - 
+        identifier: title
+        type: Text
+      -
+        identifier: bodytext        
+        description: Am besten eine ul-Liste aus Links
+        type: Textarea
+        enableRichtext: true
+
+basics:
+    - TYPO3/Appearance
+    - TYPO3/Links

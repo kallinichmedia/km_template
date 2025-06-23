@@ -1,0 +1,19 @@
+name: km/singlecontact
+typeName: km_singlecontact
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true
+
+  - identifier: person
+    type: Relation
+    allowed: 'tx_km_kmcontact'
+    maxitems: 1
+
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

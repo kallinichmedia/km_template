@@ -1,0 +1,23 @@
+/* Created by Content Blocks */
+
+
+.ce-metrics .inner {
+    padding: 2rem;
+    background-color: #292929; 
+    color: #ffffff;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ce-metrics .inner .metric-value {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 4.25rem;
+    line-height: 1.5em;
+    line-height: 1;
+  }
+  .ce-metrics .inner .metric-label {
+    font-weight: 300;
+  }

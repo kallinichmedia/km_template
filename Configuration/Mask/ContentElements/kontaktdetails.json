@@ -1,0 +1,91 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "kontaktdetails": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "tx_mask_phone",
+                        "tx_mask_email",
+                        "header_link",
+                        "image"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-address-card-o",
+                    "iconOverlay": "fa-address-card-o",
+                    "key": "kontaktdetails",
+                    "label": "Kontaktdetails",
+                    "labels": [
+                        "Titel",
+                        "Telefon",
+                        "E-Mail",
+                        "Whatsapp-Link",
+                        "Whatsapp-QR-Code"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 4
+                }
+            },
+            "sql": {
+                "tx_mask_email": {
+                    "tt_content": {
+                        "tx_mask_email": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_phone": {
+                    "tt_content": {
+                        "tx_mask_phone": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "header_link": {
+                    "coreField": 1,
+                    "fullKey": "header_link",
+                    "key": "header_link",
+                    "type": "link"
+                },
+                "image": {
+                    "coreField": 1,
+                    "fullKey": "image",
+                    "imageoverlayPalette": 1,
+                    "key": "image",
+                    "type": "file"
+                },
+                "tx_mask_email": {
+                    "config": {
+                        "type": "email"
+                    },
+                    "fullKey": "tx_mask_email",
+                    "key": "email",
+                    "type": "email"
+                },
+                "tx_mask_phone": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_phone",
+                    "key": "phone",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+<!-- Equivalent zu name="Default" -->
+<f:layout/>  
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+
+<f:section name="Main">
+    <!-- needs to be inside here -->
+    <cb:asset.css identifier="content-block-css-km-km/textslider" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/textslider" file="Frontend.js"/>
+
+    <section class="ce-textslider container-small">
+        <header>
+            <f:if condition="{data.header}">
+                <h2>{data.header->f:format.raw()}</h2>
+            </f:if>
+            <f:if condition="{data.subheader}">
+                <span class="subheadline">{data.subheader->f:format.raw()}</span>
+            </f:if>
+        </header>
+
+
+        <!-- swiper Text-slider with numbered pagination -->
+
+        
+        <!-- Swiper -->
+        <div class="swiper SwiperTextslider">
+            <div class="swiper-wrapper">
+                <f:for each="{data.items}" as="item" iteration="i">
+                    <div class="swiper-slide">
+
+                        <f:if condition="{item.smallaccenttext}">
+                            <span class="accent-text" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1000" data-swiper-parallax-y="-300">{item.smallaccenttext->f:format.raw()}</span>
+                        </f:if>
+
+                        <f:if condition="{item.title}">
+                            <h3 data-swiper-parallax-y="-300">{item.title->f:format.raw()}</h3>
+                        </f:if>
+                        
+                        <f:if condition="{item.paragraphtext}">
+                            <div data-swiper-parallax-y="-500">{item.paragraphtext->f:format.raw()}</div>
+                        </f:if>
+                    </div>
+                </f:for>                
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        
+
+
+    </section>
+    
+    <!-- Main Content -->
+</f:section>

@@ -1,0 +1,60 @@
+
+<div class="mask_wichtigefragen">
+    <div class="container-fluid">
+        <div class="inner">
+            <f:image class="thinkingdude-mobile" src="/typo3conf/ext/km_template/Resources/Public/Images/thinking-dude.png" treatIdAsReference="1" />
+            <div class="questionmenu">
+                <f:if condition="{data.header}">
+                    <span class="title-xl">{data.header}</span>
+                </f:if>
+                <ul class="tabs">
+                    <f:for each="{data.tx_mask_items}" as="data_item" iteration="itquest">                        
+                        <li data-answer="tab-{data.uid}-{itquest.cycle}" data-index="{itquest.index}" class="tab {f:if(condition: '{itquest.isFirst}', then: 'active', else: '')}">
+                            <f:if condition="{data_item.tx_mask_question}">
+                                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 0 7 13" style="enable-background:new 0 0 7 13;" xml:space="preserve">
+                                    <path class="st0" d="M0.1,0.1C0.3,0,0.7,0,0.9,0.1c0,0,0,0,0,0l6,6c0.2,0.2,0.2,0.5,0,0.7c0,0,0,0,0,0l-6,6c-0.2,0.2-0.5,0.2-0.7,0
+                                        s-0.2-0.5,0-0.7l5.6-5.6L0.1,0.9C0,0.7,0,0.3,0.1,0.1C0.1,0.1,0.1,0.1,0.1,0.1z"/>
+                                    </svg>
+
+                                <span class="tabtext">{data_item.tx_mask_question -> f:format.raw()}</span>
+
+                                <div class="answer-mobile">
+                                    <div class="inner">
+                                        {data_item.tx_mask_answer -> f:format.html()}
+                                    </div>
+                                </div>
+                            </f:if>
+                        </li>
+                    </f:for>
+                  </ul>
+            </div>
+
+            <div class="answerarea">
+                <f:image class="thinkingdude" src="/typo3conf/ext/km_template/Resources/Public/Images/thinking-dude.png" treatIdAsReference="1" />
+                
+                <div class="answerbox">
+
+                    <div class="question-swiper">
+                        <div class="swiper-wrapper">
+                            <f:if condition="{data.tx_mask_items}">
+                                <f:for each="{data.tx_mask_items}" as="data_item" iteration="itans">
+                                    <div class="answer swiper-slide" id="tab-{data.uid}-{itans.cycle}">    
+                                        <f:if condition="{data_item.tx_mask_answer}">
+                                            {data_item.tx_mask_answer -> f:format.html()}
+                                        </f:if>
+                                    </div>
+                                </f:for>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

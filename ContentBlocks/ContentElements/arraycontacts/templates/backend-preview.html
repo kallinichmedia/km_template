@@ -1,0 +1,112 @@
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    
+    <f:asset.css identifier="my-backend-arraycontacts-styles" href="{cb:assetPath()}/preview.css"/>
+
+
+    <f:switch expression="{data.displaymode}">
+        <f:case value="pictext">
+                <div class="ce-arraycontacts">
+
+    
+                    <div class="inner">            
+                
+                        <f:for each="{data.person}" as="person" iteration="i">
+                            <div class="the-person">
+
+                                <div class="descriptionwrap">
+                                    {person.description->f:transform.html()}
+                                </div>
+
+
+                                <div class="imagewrap">
+                                    <f:if condition="{person.pic}">
+                                        <f:image image="{person.pic.0}" treatIdAsReference="1" width="500"  cropVariant="tablet"/>
+                                    </f:if>
+                                </div>
+
+                                <div class="datawrap">      
+                                    <div class="nameblock">
+                                        <f:if condition="{person.name}">
+                                            <span class="name">{person.name}</span>
+                                        </f:if>
+                                        <f:if condition="{person.position}">
+                                            <span class="position">{person.position}</span>                            
+                                        </f:if>
+                                    </div>     
+                                    
+                                    <span class="toggleIcon">
+                                        <svg id="plus" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 67.914 68.108">                               
+                                            <rect id="bar2" x=".097" y="22.67" width="67.719" height="22.768"></rect>
+                                            <rect id="bar1" x=".097" y="22.67" width="67.719" height="22.768" transform="translate(68.011 .097) rotate(90)"></rect>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>                
+                        </f:for>
+
+                        <div class="detailscontainer">
+                            <div class="inner"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+    
+        </f:case>
+
+
+         <f:case value="pic">
+            <div class="ce-arraycontacts-pic">    
+                    <div class="inner">            
+                        <f:for each="{data.person}" as="person" iteration="i">
+                            <div class="the-person-pic">                             
+
+
+                                <div class="imagewrap">
+                                    <f:if condition="{person.pic}">
+                                        <f:image image="{person.pic.0}" treatIdAsReference="1" width="500"  cropVariant="tablet"/>
+                                    </f:if>
+                                </div>
+
+                                <div class="datawrap">      
+                                    <div class="nameblock">
+                                        <f:if condition="{person.name}">
+                                            <span class="name">{person.name}</span>
+                                        </f:if>
+                                        <f:if condition="{person.position}">
+                                            <span class="position">{person.position}</span>                            
+                                        </f:if>
+                                        <div class="desc">
+                                            {person.shortdescription->f:format.raw()}
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>                
+                        </f:for>
+
+                       <f:image src="EXT:km_template/Resources/Public/Images/gradientOverlay.png" class="gradientOverlay"/>
+                        
+                    </div>
+                </div>
+         </f:case>
+        <f:defaultCase></f:defaultCase>
+    </f:switch>
+
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>

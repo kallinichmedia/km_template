@@ -1,0 +1,103 @@
+
+<div class="custom-form-box">
+    
+    <form action="" class="custom-form" id="budgetcheck">
+        
+        <header>
+            <h2 class=" default-headline">
+                <b>Topzins-Rechner:</b> Schnell zum besten Zins
+            </h2>
+        </header>
+
+        <div class="fieldsrow">
+        
+            <div class="fieldwrap" id="zc-monthlyincome">
+        
+                <label for="monthlyincome">PLZ der Immobilie</label>
+                <input type="text" readonly="" name="plz" id="bc-plz-value">
+        
+            </div>
+        
+            <div class="fieldwrap" id="zc-grundstueck">
+                <label for="grundstueck">Grundstück vorhanden</label>
+        
+                <select name="grundstueck" id="zc-grundstueck-value">
+                    <option value="0">Ja</option>
+                    <option value="1">Nein</option>
+                </select>
+            </div>
+        
+            <div class="fieldwrap" id="zc-buildingcosts">
+        
+                <label for="buildingcosts">Baukosten</label>
+                <input type="text" readonly="" name="buildingcosts" id="bc-buildingcosts-value">
+        
+            </div>
+        </div>
+
+        <div class="fieldsrow">
+
+            <div class="fieldwrap" id="zc-grundstueck">
+                <label for="grundstueck">Immobilienart</label>
+        
+                <select name="grundstueck" id="zc-grundstueck-value">
+                    <option value="0">Gewerberäume</option>
+                    <option value="1">Haus</option>
+                    <option value="1">Maus</option>
+                    <option value="1">Laus</option>
+                    <option value="1">Raus</option>
+                    <option value="1">Baus</option>
+                </select>
+            </div>
+
+            <div class="fieldwrap" id="zc-landvalue">
+        
+                <label for="landvalue">Grundstückswert</label>
+                <input type="text" readonly="" name="landvalue" id="bc-landvalue-value">
+        
+            </div>
+        
+      
+          <div class="fieldwrap" id="zc-equity">
+              <label for="equity">Eigenkapital</label>
+              <input type="text" readonly="" name="equity" id="bc-equity-value">
+              <div class="rangerwrap">
+                  <span class="min">0</span>
+                  <input class="hsranger" name="equity" id="bc-equity-slider" value="0" type="range" step="10000" min="0"
+                      max="500000">
+                  <span class="max">500T</span>
+              </div>
+          </div>
+
+          <div class="fieldwrap" id="zc-monthlyrate">
+              <label for="monthlyrate">monatliche Wunschrate</label>
+              <input type="text" readonly="" name="monthlyrate" id="bc-monthlyrate-value">
+              <div class="rangerwrap">
+                  <span class="min">200</span>
+                  <input class="hsranger" name="monthlyrate" id="bc-monthlyrate-slider" value="0" type="range" step="50"
+                      min="200" max="900">
+                  <span class="max">900</span>
+              </div>
+          </div>
+      </div>
+        <div class="fieldsrow">
+            <div class="fieldwrap">
+                <label for="ergebnis-lineofcredit">Max. Kreditrahmen</label>
+                <input type="text" class="specialinput" readonly="" name="ergebnis-lineofcredit"
+                    id="bc-result-lineofcredit">
+            </div>
+
+            <div class="fieldwrap">
+                <label for="ergebnis-propertyprice">Max. Immobilienpreis</label>
+                <input type="text" class="specialinput" readonly="" name="ergebnis-propertyprice"
+                    id="bc-result-propertyprice">
+            </div>
+
+        </div>
+
+    </form>
+
+
+
+
+</div>

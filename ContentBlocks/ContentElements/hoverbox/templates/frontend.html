@@ -1,0 +1,42 @@
+<f:layout/>
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+    
+<f:section name="Main">
+    <f:comment>
+        <f:asset.css identifier="km-hoverbox-fe-css" href="{cb:assetPath()}/frontend.css"/>
+        <f:asset.script identifier="km-hoverbox-fe-js" href="{cb:assetPath()}/frontend.js"/>
+    </f:comment>
+    
+    <div class="ce-hoverbox">
+   
+        <div class="inner" data-color="{data.color}">
+            <div class="front">
+                <f:if condition="{data.usesvg} == 1">
+                    <f:then>
+                        {data.svgsource->f:format.raw()}
+                    </f:then>
+                    <f:else>
+                        <div class="position">
+                            <span class="boldtext">{data.boldtext->f:format.raw()}</span>
+                            <span class="thintext">{data.thintext->f:format.raw()}</span>
+                        </div>
+                    </f:else>
+                </f:if>
+            </div>
+            <div class="back">
+                <div class="position">
+                    {data.bodytext->f:format.html()}
+                </div>
+            </div>
+
+            <svg class="plus" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 67.914 68.108">                               
+                <rect id="bar2" x=".097" y="22.67" width="67.719" height="22.768"></rect>
+                <rect id="bar1" x=".097" y="22.67" width="67.719" height="22.768" transform="translate(68.011 .097) rotate(90)"></rect>
+            </svg>
+        </div>     
+       
+    </div>
+
+</f:section>

@@ -1,0 +1,20 @@
+
+
+
+
+<f:layout/>
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+    
+<f:section name="Main">
+    <f:asset.css identifier="km-pageheader-fe-css" href="{cb:assetPath()}/frontend.css"/>
+    <f:asset.script identifier="km-pageheader-fe-js" href="{cb:assetPath()}/frontend.js"/>
+    <!-- Your content -->    
+   
+    <div class="ce-pageheadline">
+        <h1 class="ce_paheheadline_title">{data.header}</h1>        
+        <span class="ce-pageheadline__subtitle">{data.subheader}</span>
+    </div>
+
+</f:section>

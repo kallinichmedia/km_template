@@ -1,0 +1,97 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "box_nummeriert": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "subheader",
+                        "assets",
+                        "header",
+                        "bodytext",
+                        "tx_mask_toptext",
+                        "header_link"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "box_nummeriert",
+                    "label": "Box nummeriert",
+                    "labels": [
+                        "Nummer",
+                        "Bild",
+                        "\u00dcberschrift",
+                        "Text",
+                        "Link-Text",
+                        "Link-Ziel"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "sql": {
+                "tx_mask_toptext": {
+                    "tt_content": {
+                        "tx_mask_toptext": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "assets": {
+                    "coreField": 1,
+                    "fullKey": "assets",
+                    "key": "assets",
+                    "type": "media"
+                },
+                "bodytext": {
+                    "bodytextTypeByElement": {
+                        "box_nummeriert": "richtext",
+                        "grosses_intro": "text",
+                        "kontaktperson": "text",
+                        "lexikoneintrag": "richtext"
+                    },
+                    "coreField": 1,
+                    "fullKey": "bodytext",
+                    "key": "bodytext"
+                },
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "header_link": {
+                    "coreField": 1,
+                    "fullKey": "header_link",
+                    "key": "header_link",
+                    "type": "link"
+                },
+                "subheader": {
+                    "coreField": 1,
+                    "fullKey": "subheader",
+                    "key": "subheader",
+                    "type": "string"
+                },
+                "tx_mask_toptext": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_toptext",
+                    "key": "toptext",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

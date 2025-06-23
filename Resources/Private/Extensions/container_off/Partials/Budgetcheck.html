@@ -1,0 +1,96 @@
+<div id="budgetcheck-box" class="custom-form-box">
+
+    <form action="" class="custom-form" id="budgetcheck">
+
+        <input type="hidden" value="Herr Thomas Mustermann" name="cert-name">
+        <input type="hidden" value="11.01.1988" name="cert-birthday">
+        
+
+        <header>
+            <h2 class="ce-headline-center default-headline">
+                Dein Budgetcheck
+            </h2>
+        </header> 
+        <p class="lead text-center">Wir zeigen dir auf, welchen Preis deine Immobilie inklusive aller Nebenkosten haben darf und mit welcher monatlichen Rate du den daraus notwendigen Kredit zurückzahlen würdest.</p>
+
+        
+		
+          <div class="fieldsrow">
+      
+            <div class="fieldwrap" id="bc-monthlyincome">
+
+                <label for="monthlyincome">Nettoeinkommen</label>
+                <input type="text" readonly="" name="monthlyincome" id="bc-monthlyincome-value">
+                <div class="rangerwrap">
+                    <span class="min">1.500</span>
+                    <input class="hsranger" name="monthlyincome" id="bc-monthlyincome-slider" value="2500" type="range"
+                        step="100" min="1500" max="10000">
+                    <span class="max">10.000</span>
+                </div>
+            </div>
+
+            <div class="fieldwrap" id="bc-equity">
+                <label for="equity">Eigenkapital</label>
+                <input type="text" readonly="" name="equity" id="bc-equity-value">
+                <div class="rangerwrap">
+                    <span class="min">0</span>
+                    <input class="hsranger" name="equity" id="bc-equity-slider" value="0" type="range" step="10000" min="0"
+                        max="500000">
+                    <span class="max">500T</span>
+                </div>
+            </div>
+
+            <div class="fieldwrap" id="bc-monthlyrate">
+                <label for="monthlyrate">monatliche Wunschrate</label>
+                <input type="text" readonly="" name="monthlyrate" id="bc-monthlyrate-value">
+                <div class="rangerwrap">
+                    <span class="min">200</span>
+                    <input class="hsranger" name="monthlyrate" id="bc-monthlyrate-slider" value="0" type="range" step="50"
+                        min="200" max="900">
+                    <span class="max">900</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fieldsrow">
+            <div class="fieldwrap">
+                <label for="ergebnis-lineofcredit">Max. Kreditrahmen</label>
+                <input type="text" class="specialinput" readonly="" name="ergebnis-lineofcredit"
+                    id="bc-result-lineofcredit">
+            </div>
+
+            <div class="fieldwrap">
+                <label for="ergebnis-propertyprice">Max. Immobilienpreis</label>
+                <input type="text" class="specialinput" readonly="" name="ergebnis-propertyprice"
+                    id="bc-result-propertyprice">
+            </div>
+
+            <div class="fieldwrap">
+                <input class="btn" type="button" id="btn-getcert" disabled value="Deine Angaben fehlen">
+            </div>
+        </div>
+        
+        <p>Du hast nun einen finanziellen Rahmen, in dem du dich auf Objektsuche begeben kannst. Natürlich ist das Ergebnis nicht in Stein gemeißelt, weil wir mit überschlägigen Werten rechnen. Wenn du die Wahrscheinlichkeit einer Finanzierungszusage erhöhen willst, nutze gern unseren kompletten Beratungsprozess, den du <f:link.typolink parameter="">hier</f:link.typolink> findest. Hier kannst du dir dann auch echte Konditionen anschauen, die für dein Vorhaben zutreffen.</p>
+        
+        <p>Sollten deine Vorstellungen außerhalb der von uns eingestellten Empfehlungsgrenzen liegen, nimm gern mit uns <f:link.typolink parameter="t3://page?uid=4#130">Kontakt</f:link.typolink> auf. Wir können dir sagen, ob eine Finanzierung unter bestimmten Bedingungen trotzdem tragfähig sein kann.</p>        
+        
+        <p>Hinweis: Beim maximalen Preis haben wir die bei einer Immobilienanschaffung anfallenden Nebenkosten bereits berücksichtigt. Diese bilden bei der Ermittlung der Gesamtkosten eine nicht unerhebliche Rolle, wie du <a href="/gewusst-wie/lexikon#c75" target="_blank">hier</a> nachlesen kannst.</p>
+    </form>
+
+    
+        
+    <!-- fluid: output content element id 254-->
+
+    <div id="budgetcheck-followup" class="hidden">
+        <header>
+            <h2 class="ce-headline-center default-headline">
+                Dein persönliches Zertifikat
+            </h2>
+        </header> 
+
+        <v:content.render contentUids="{0: 254}"/>
+
+    </div>
+</div>
+
+

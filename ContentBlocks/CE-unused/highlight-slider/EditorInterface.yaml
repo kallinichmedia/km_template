@@ -1,0 +1,29 @@
+name: km/highlight-slider
+typeName: km_highlightslider
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic  
+
+  -
+    identifier: items
+    label: 'Slides'
+    type: Collection
+    fields:
+      - 
+        identifier: image
+        label: 'Bild, webp wäre klasse'
+        type: File
+        extendedPalette: false
+        minitems: 0
+        maxitems: 1
+        allowed: common-image-types
+
+
+     
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

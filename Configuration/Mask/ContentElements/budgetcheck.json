@@ -1,0 +1,38 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "budgetcheck": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "budgetcheck",
+                    "label": "Form: Budgetcheck",
+                    "labels": [
+                        "Titel"
+                    ],
+                    "shortLabel": "Budgetcheck",
+                    "sorting": 1
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

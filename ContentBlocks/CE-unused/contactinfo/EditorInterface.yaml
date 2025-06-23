@@ -1,0 +1,49 @@
+name: km/contactinfo
+typeName: km_contactinfo
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic  
+
+
+  -
+    identifier: items
+    label: 'Items'
+    type: Collection
+    fields:
+      -
+        identifier: name
+        label: 'Voller Name'
+        type: Text
+        config:
+          max: 255
+      -
+        identifier: email
+        label: 'E-Mail-Adresse'
+        type: Email
+        config:
+          max: 255
+
+  -
+    identifier: subheader
+    useExistingField: true
+    label: Telefonnummer
+    type: Text
+    description: bitte nur Ziffer, Leerzeichen und +
+
+
+  - identifier: image
+    useExistingField: true
+    type: File
+    extendedPalette: false
+    minitems: 0
+    maxitems: 1
+    allowed: common-image-types
+
+     
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

@@ -1,0 +1,185 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "testimonialsslider": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "header_link",
+                        "tx_mask_testimonials"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "testimonialsslider",
+                    "label": "Testimonials-Slider",
+                    "labels": [
+                        "Titel",
+                        "Link",
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 3
+                }
+            },
+            "sql": {
+                "tx_mask_testimonials": {
+                    "tt_content": {
+                        "tx_mask_testimonials": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "header_link": {
+                    "coreField": 1,
+                    "fullKey": "header_link",
+                    "key": "header_link",
+                    "type": "link"
+                },
+                "tx_mask_testimonials": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_testimonials",
+                    "key": "testimonials",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_testimonials": {
+            "sql": {
+                "tx_mask_source": {
+                    "tx_mask_testimonials": {
+                        "tx_mask_source": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_testitext": {
+                    "tx_mask_testimonials": {
+                        "tx_mask_testitext": "mediumtext"
+                    }
+                },
+                "tx_mask_user": {
+                    "tx_mask_testimonials": {
+                        "tx_mask_user": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_value": {
+                    "tx_mask_testimonials": {
+                        "tx_mask_value": "float DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_source": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Google",
+                                "value": "1"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Trustpilot",
+                                "value": "2"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_source",
+                    "inlineParent": "tx_mask_testimonials",
+                    "key": "source",
+                    "label": "Bewertungsquelle",
+                    "order": 1,
+                    "type": "select"
+                },
+                "tx_mask_testitext": {
+                    "config": {
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_testitext",
+                    "inlineParent": "tx_mask_testimonials",
+                    "key": "testitext",
+                    "label": "Bewertungstext",
+                    "order": 3,
+                    "type": "text"
+                },
+                "tx_mask_user": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_user",
+                    "inlineParent": "tx_mask_testimonials",
+                    "key": "user",
+                    "label": "Name des Bewerters",
+                    "order": 4,
+                    "type": "string"
+                },
+                "tx_mask_value": {
+                    "config": {
+                        "range": {
+                            "lower": "0",
+                            "upper": "5"
+                        },
+                        "slider": {
+                            "step": "0.5"
+                        },
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_value",
+                    "inlineParent": "tx_mask_testimonials",
+                    "key": "value",
+                    "label": "Bewertung",
+                    "order": 2,
+                    "type": "float"
+                }
+            }
+        }
+    }
+}

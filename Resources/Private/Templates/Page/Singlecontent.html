@@ -1,0 +1,20 @@
+<f:layout name="Default" />
+<f:section name="Main">
+    <div class="maincontent" id="maincontent">
+        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />        
+        
+      
+    </div>
+</f:section>
+
+
+<f:section name="Header">
+    <f:render partial="Header" arguments="{_all}"/>
+</f:section>
+
+
+
+
+<f:section name="Footer">
+    <f:render partial="Footer" arguments="{_all}" />
+</f:section>

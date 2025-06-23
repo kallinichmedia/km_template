@@ -1,0 +1,39 @@
+<div class="mask_klappelement_wissen">
+    <div class="inner" style="{f:if(condition: '{data.tx_mask_bgcolor}', then: 'background-color: {data.tx_mask_bgcolor};', else: 'background-color: #00000000;')}">            
+        <f:if condition="{data.tx_mask_wissen_item}">
+            <f:for each="{data.tx_mask_wissen_item}" as="data_item" iteration="itty">
+
+                <div class="display-box" id="el-{itty.cycle}">
+                    <div class="content-box">
+                        <div class="headline-row">
+                            <div class="number"><span>{itty.cycle}</span></div>
+                            <div class="headline"><f:if condition="{data_item.tx_mask_frage}">{data_item.tx_mask_frage}</f:if></div>
+                            <div class="arrow">
+                                <svg width="100%" height="100%" viewBox="0 0 62 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;">
+                                    <g transform="matrix(-0.707107,0.707107,-0.707107,-0.707107,58.992,1.69735)">
+                                        <path d="M0,0L40.213,0L40.213,40.213" style="fill:none;fill-rule:nonzero;stroke:rgb(252,170,32);stroke-width:3px;"/>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-row">
+                            <div class="text-inner">
+                                <f:if condition="{data_item.tx_mask_antwort}">
+                                    {data_item.tx_mask_antwort -> f:format.html()}
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </f:for>
+        </f:if>
+    </div>
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+name: km/storyscroller
+typeName: km_storyscroller
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true
+
+
+  -
+    identifier: items
+    label: 'Slides'
+    type: Collection
+    fields:
+      -
+        identifier: punchline
+        label: 'Punchline'
+        type: Text
+        config:
+          max: 255
+      -
+        identifier: Subline
+        label: 'Subzeile'
+        type: Text
+        config:
+          max: 255
+
+      -
+        identifier: link
+        label: "Link"
+        type: Link
+
+      -
+        identifier: linktext
+        label: "Linktext"
+        type: Text
+
+      -
+        identifier: color
+        type: Select
+        renderType: selectSingle
+        items:
+          - 
+            label: 'dunkelblau'
+            value: darkblue
+          - 
+            label: 'violett'
+            value: violett
+          - 
+            label: 'beerig'
+            value: berry
+
+
+
+
+
+
+
+     
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

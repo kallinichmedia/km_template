@@ -1,0 +1,94 @@
+.hoverboxsm-set {
+  --keycolor: var(--themecolor, #0073d2);
+  --padding: 5cqw;
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.25s var(--easing);
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.hoverboxsm-set > .hoverboxsm {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  border: 5px solid var(--keycolor);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  aspect-ratio: 0.66666667;
+  container-type: inline-size;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .hoverboxsm-set > .hoverboxsm {
+    flex: 0 0 calc(33.333% - 1rem);
+  }
+}
+.hoverboxsm-set > .hoverboxsm .front {
+  padding: calc(var(--padding) * 2);
+  transition: var(--transition);
+}
+.hoverboxsm-set > .hoverboxsm .front .title {
+  font-size: 13cqw;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--keycolor);
+}
+.hoverboxsm-set > .hoverboxsm .front .textblock {
+  font-size: 7cqw;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.hoverboxsm-set > .hoverboxsm .front .textblock .inner {
+  min-height: 0;
+  transition: visibility 1s;
+  visibility: hidden;
+}
+.hoverboxsm-set > .hoverboxsm .front .textblock p:last-child {
+  margin-bottom: 0;
+}
+.hoverboxsm-set > .hoverboxsm .plus {
+  width: 0.7rem;
+  height: 0.7rem;
+  position: absolute;
+  top: var(--padding);
+  right: var(--padding);
+}
+.hoverboxsm-set > .hoverboxsm .plus * {
+  fill: var(--keycolor);
+  transition: var(--transition);
+}
+.hoverboxsm-set > .hoverboxsm:hover {
+  background: var(--keycolor);
+}
+.hoverboxsm-set > .hoverboxsm:hover .front {
+  padding: calc(var(--padding) * 1);
+}
+.hoverboxsm-set > .hoverboxsm:hover .front .title {
+  color: white;
+  opacity: 0;
+}
+.hoverboxsm-set > .hoverboxsm:hover .front .textblock {
+  grid-template-rows: 1fr;
+}
+.hoverboxsm-set > .hoverboxsm:hover .front .textblock .inner {
+  visibility: visible;
+}
+.hoverboxsm-set > .hoverboxsm:hover .front .textblock .inner .title {
+  color: white;
+}
+.hoverboxsm-set > .hoverboxsm:hover .front .textblock .inner p,
+.hoverboxsm-set > .hoverboxsm:hover .front .textblock .inner ul {
+  color: white;
+}
+.hoverboxsm-set > .hoverboxsm:hover .front .textblock .inner ul li:before {
+  background: #fff;
+}
+.hoverboxsm-set > .hoverboxsm:hover .plus * {
+  fill: white;
+}

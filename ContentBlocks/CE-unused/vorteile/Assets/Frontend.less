@@ -1,0 +1,109 @@
+/* 
+<div class="ce-vorteile">
+        
+            <div class="icon">
+                <img src="/fileadmin/user_upload/karriere/flexible-arbeitszeit.svg" width="914" height="914" alt="Icon - Uhr">
+                <span class="label"></span>
+            </div>
+            
+        
+            <div class="icon">
+                <img src="/fileadmin/user_upload/karriere/arbeitsklima.svg" width="936" height="903" alt="Icon - zwei Menschen am Tisch mit Sprechblasen" title="Familäres Arbeitsumfeld">
+                <span class="label">Familäres Arbeitsumfeld</span>
+            </div>
+            
+        
+            <div class="icon">
+                <img src="/fileadmin/user_upload/karriere/home-office.svg" width="1002" height="902" alt="Icon - Monitor mit Haus im Bild" title="Home Office">
+                <span class="label">Home Office</span>
+            </div>
+            
+        
+            <div class="icon">
+                <img src="/fileadmin/user_upload/karriere/betriebsveranstaltungen.svg" width="966" height="966" alt="Icon - Disco-Kugel mit Sternen" title="Betriebs­veranstaltungen ">
+                <span class="label">Betriebs­veranstaltungen </span>
+            </div>
+            
+        
+            <div class="icon">
+                <img src="/fileadmin/user_upload/karriere/betriebliche-zusatzversicherung.svg" width="1003" height="903" alt="Icon - Herz mit EKG-Linie" title="Betriebliche Zusatzversicherung">
+                <span class="label">Betriebliche Zusatzversicherung</span>
+            </div>
+            
+        
+            <div class="icon">
+                <img src="/fileadmin/user_upload/karriere/weiterbildung.svg" width="1114" height="780" alt="Icon - Akademiker Hut mit Kordel" title="Weiterbildungs­&amp;hsy;möglichkeiten">
+                <span class="label">Weiterbildungs­&amp;hsy;möglichkeiten</span>
+            </div>
+            
+        
+            <div class="icon">
+                <img src="/fileadmin/user_upload/karriere/verguetung.svg" width="1015" height="958" alt="Icon - Torte mit drei Kerzen" title="Attraktive Vergütung">
+                <span class="label">Attraktive Vergütung</span>
+            </div>
+            
+        
+            <div class="icon">
+                <img src="/fileadmin/user_upload/karriere/zentrale-lage.svg" width="967" height="967" alt="Icon - Maps Location Pin" title="Zentrale Lage">
+                <span class="label">Zentrale Lage</span>
+            </div>
+            
+        
+    </div>
+*/
+
+.ce-vorteile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    gap: 2rem;
+
+    .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        
+        width: 100%;
+        flex: 0 0 calc(50% - 2.25rem);
+
+        // force break after 5th
+        &:nth-child(5):after {
+            content: "";
+            flex-basis: 100%;
+            width: 100%;
+            height: 0;
+            display: block;
+        }
+
+        .iconwrap {
+            display: block;            
+            width: 50%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            max-width: 5rem;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+        
+        .label {
+            margin-top: 15px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1;
+        }
+        @media screen and (min-width: 1024px) {
+            flex: 0 0 calc(33.333% - 2.6rem);
+
+            label {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

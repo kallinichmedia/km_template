@@ -1,0 +1,58 @@
+pageSubpagesJson = PAGE
+pageSubpagesJson {
+    typeNum = 999
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-Type: application/json
+    }
+    
+    10 = COA
+    10 {
+        10 = TEXT
+        10.value = [
+        
+        20 = HMENU
+        20 {
+            special = directory
+            special.value = 28 
+            
+            1 = TMENU
+            1 {
+                NO = TEXT
+                NO {
+                    doNotLinkIt = 1
+                    stdWrap.cObject = COA
+                    stdWrap.cObject {
+                        10 = TEXT
+                        10 {
+                            field = uid
+                            wrap = "uid": "|"
+                        }
+
+                        20 = TEXT
+                        20 {
+                            field = title
+                            wrap = , "title": "|"
+                        }
+                    }
+                    allWrap = {|}, |*| {|}, |*| {|}
+                }
+            }
+        }
+        
+        30 = TEXT
+        30.value = ]
+    }
+    
+    # Clean up HTML entities
+    stdWrap.replacement {
+        10 {
+            search = &amp;
+            replace = &
+        }
+        20 {
+            search = &shy;
+            replace = 
+        }
+    }
+}

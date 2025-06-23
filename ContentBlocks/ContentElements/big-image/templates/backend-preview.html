@@ -1,0 +1,49 @@
+
+
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    <f:asset.css identifier="my-backend-bigimage-styles" href="{cb:assetPath()}/preview.css"/>
+    <div class="ce-big-image">
+
+        <f:if condition="{data.image}">
+            <div class="imgwrap">
+                       
+                    <f:image image="{data.image.0}" treatIdAsReference="1" />
+      
+            </div>
+        </f:if>
+    
+        <div class="overlay-container position-{data.overlay_position}">
+            
+            <f:if condition="{data.showlogo}">
+                <div class="overlay-logo">
+                    LOGO-SVG
+                </div>
+            </f:if>
+    
+            <f:if condition="{data.bodytext}">
+                <div class="overlay-position">
+                    {data.bodytext->f:transform.html()}
+                </div>
+            </f:if>
+        </div>
+    </div>
+    
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>

@@ -1,0 +1,102 @@
+.mask_kontaktdetails {
+    > .inner {
+        margin-top: 3rem;
+        @media screen and (min-width: 1024px) {
+            margin-top: 0;
+        }
+
+        margin-left: @gap-unit;
+        margin-right: @gap-unit;
+        span.title {
+
+            font-weight: 700;
+            font-weight: 700;
+            line-height: 1.1em;
+            color: #022c58;
+            margin-bottom: 2rem;
+            margin-top: 0;
+        }
+
+        
+        dl {
+            width: 100%;
+            display: block;     
+
+
+            dt {
+                .bdrs(15px 15px 0 0 );
+                background: @1stcolor;
+                font-weight: 700;
+                color: white;
+                flex: 0 0 9rem;
+                padding: 0.5rem 1rem;
+            }
+
+            dd {
+                // border 2px solid inset
+                border: 2px solid @1stcolor;
+                margin: 0;
+                padding: 0.5rem 1rem;
+                position: relative;
+                .bdrs( 0 0 15px 15px);
+                flex: 0 1 calc(~"100% - 9rem");
+                font-weight: 700;
+                display: block;
+
+                .qrcodebox {                   
+                    padding: 1rem 0;
+                    > .inner {
+                        display: flex;
+                    }
+
+                    .qrcode {
+                        width: 50%;
+                        flex: 0 1 50%;
+
+                        max-width: 140px;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .qrcodetext {
+                        flex: 0 0 50%;
+                        padding-left: 2rem; 
+                    }
+                }
+            }
+
+            @media screen and (min-width: 580px) {
+                display: flex;
+
+                dt {
+                    .bdrs(100px 0 0 100px);
+                }
+
+                dd {
+                    .bdrs( 0 100px 100px 0);
+
+                    .qrcodebox {                        
+                        position: absolute;
+                        top: 50%; left: -2px;
+                        width: calc(~"100% + 4px");
+                        border: 2px solid @1stcolor;
+                        border-top: none;
+                        padding: 2rem 1rem 1rem 1rem;
+                        .bdrs( 0 0 23px 23px);
+                        box-sizing: border-box;
+                    }
+                }
+
+                &.contact-whatsapp {
+                    padding-bottom: 25%;
+                }
+            }
+        }
+    }
+}

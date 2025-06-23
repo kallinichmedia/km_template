@@ -1,0 +1,70 @@
+
+
+
+
+<!-- Equivalent zu name="Default" -->
+<f:layout/>  
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<!-- needs to be inside here -->
+    <cb:asset.css identifier="content-block-css-km-km/fotoheader" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/fotoheader" file="Frontend.js"/>
+        
+	<!-- Main Content -->
+
+    <div class="ce-fotoheader">
+        
+        <div class="textwrap">
+            <span class="title">{data.header->f:format.raw()}</span>
+            <span class="subtitle">{data.subheader->f:format.raw()}</span>
+        </div>
+        
+
+        <f:if condition="{data.image}">
+            <div class="imgpos">
+                <span class="accent1 accent"></span>
+                <span class="accent2 accent"></span>
+                <div class="imgmask">
+                    <f:if condition="{data.image.0.extension} == 'mp4'">
+                        <f:then>
+                            <div class="videowrap">
+                                <f:media file="{data.image.0}" width="400" height="375" additionalConfig="{loop: '1', autoplay: '1', controls: '0'}" />
+                            </div>
+                        </f:then>
+            
+                        <f:else>
+                            <div class="imgwrap">  
+                                <picture>
+                                    <!-- Desktop Image (min-width: 1200px) -->
+                                    <source 
+                                        media="(min-width: 1200px)" 
+                                        srcset="{f:uri.image(image: data.image.0, cropVariant: 'desktop', width: 1600)}">
+                                    
+                                    <!-- Tablet Image (768px to 1199px) -->
+                                    <source 
+                                        media="(min-width: 768px)" 
+                                        srcset="{f:uri.image(image: data.image.0, cropVariant: 'tablet', width: 1200)}">
+                                    
+                                    <!-- Phone Image (below 768px) -->
+                                    <source 
+                                        media="(max-width: 767px)" 
+                                        srcset="{f:uri.image(image: data.image.0, cropVariant: 'phone', width: 768)}">
+                                    
+                                    <!-- Fallback Image -->
+                                    <img 
+                                        src="{f:uri.image(image: data.image.0, cropVariant: 'phone', width: 768)}" 
+                                        alt="Descriptive Alt Text">
+                                </picture>
+                            </div>
+                        </f:else>
+                    </f:if>
+               
+                </div>
+            </div>
+        </f:if>
+    </div>
+
+</f:section>

@@ -1,0 +1,178 @@
+.mask_klappelement_wissen {
+    background: @2ndcolor;
+    padding-left: @gap-unit;
+    padding-right: @gap-unit;
+       
+    .inner {
+        position: relative;
+        z-index: 2;
+        padding-top: 10rem;
+        border-radius: 0 0 100px 100px;
+        position: relative;
+        overflow: hidden;
+        padding:  0 0 @gap-unit*2 0;
+        color: white;
+        overflow: hidden;
+        background: @2ndcolor;
+
+        .display-box {
+            display: flex;
+            width: 100%;
+            max-width: 950px;
+            // padding-top: 40px;
+            padding-top: 35px;
+            // padding-right: 40px;
+            padding-right: 0;
+            // padding-left: @gap-unit*3;
+            padding-left: @gap-unit*2;
+            position: relative;
+            box-sizing: border-box;
+        }
+        
+        .number {
+            position: absolute;
+            left: 0; top: 30px;
+            
+            // width: 66px;
+            // height: 66px;        
+            width: 40px;
+            height: 40px;
+            
+            background-color: #043670;
+            border-radius: 33px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            font-weight: 700;
+            // font-size: 55px;
+            font-size: 36px;
+            font-weight: 700;
+            color: #022c58;
+            margin-right: 15px;
+        }
+
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            flex-basis: fit-content;
+            max-width: 845px;
+            border-bottom: 1px solid #fcaa20;
+
+            .headline-row {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 20px;
+                cursor: pointer;
+
+                .headline {
+                    display: flex;
+                    font-weight: 700;
+                    // font-size: 2rem;
+                    font-size: 1.2rem;
+                    color: #fff;   
+                    padding-right: 1rem;                     
+                }
+
+                .arrow {
+                    background-image: url('/typo3temp'); 
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    flex: 0 0 30px;
+                    // height: 60px;
+                    height: 15px;
+                    width: auto;
+                    margin-top: 0;
+                    margin-left: auto;
+                }
+            }
+
+            .text-row {
+
+                font-weight: 300;
+                font-size: 20px;
+                color: #fff;
+                font-weight: light;
+                margin-bottom: 15px;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 2rem;
+                }
+            }
+        }            
+    }
+
+    @media screen and (min-width: 768px) {
+        .inner {
+            .display-box {
+                padding-top: 40px;
+                padding-right: 40px;
+                padding-left: @gap-unit*3;
+            }
+
+            .number {
+                width: 66px;
+                height: 66px;        
+                font-size: 55px;
+            }
+
+            .content-box {
+                .headline-row {
+                    .headline {
+                        font-size: 2rem;
+                    }
+                    .arrow {
+                        flex: 0 0 60px;
+                        height: 60px;
+                    }
+                }
+
+                
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+/* Klapp-Mechanism */
+
+
+.mask_klappelement_wissen {      
+    .inner {
+        .display-box  {
+
+            .headline-row .arrow {
+                .transition(all 250ms ease-in-out);
+                transform-origin: center center;
+            }
+
+            .text-row {
+                display: grid;
+                grid-template-rows: 0fr;
+                transition: grid-template-rows 0.5s ease-in-out;
+
+                .text-inner {
+                    overflow: hidden;
+                }
+            }
+
+            &.show {
+
+                .headline-row .arrow {
+                    .transform(scaleY(-1));
+                }
+
+                .text-row {
+                    grid-template-rows: 1fr;
+                }
+            }
+        }
+    }
+}

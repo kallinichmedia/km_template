@@ -1,0 +1,33 @@
+name: km/team-member
+typeName: km_teammember
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    label: 'Voller Name'
+    useExistingField: true
+  -
+    identifier: image
+    useExistingField: true
+    label: 'Posterbild / Video'
+    description: 'Bild wird bei Klick durch Video ersetzt'
+    type: File
+    maxitems: 10
+    extendedPalette: false
+    allowed: common-media-types
+  -
+    identifier: subheader
+    useExistingField: true
+    label: 'Position'
+  - 
+    identifier: email
+    label: Mitarbeiter-E-Mail
+    type: Email
+    autocomplete: true
+    default: 'info@kallinich-media.de'
+    placeholder: 'info@kallinich-media.de'
+    required: false
+
+

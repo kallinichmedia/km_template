@@ -1,0 +1,35 @@
+<f:layout />
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header" />
+
+<f:section name="Main">
+    <f:asset.css identifier="km-stationsline-fe-css" href="{cb:assetPath()}/frontend.css" />
+    <f:asset.script identifier="km-stationsline-fe-js" href="{cb:assetPath()}/frontend.js" />
+    <!-- Your content -->
+
+    <div class="ce-stationsline">
+        <div class="inner">
+            <f:for each="{data.station}" as="station" iteration="i">
+                <div class="station">
+                    <div class="stuff">
+                        <span class="count">
+                            {i.cycle}.
+                        </span>
+                        <div class="connector"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="description">
+                        {station.description->f:format.raw()}
+                    </div>
+                </div>
+            </f:for>
+            <div class="theLine">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+                <div class="line four"></div>
+            </div>
+        </div>
+    </div>
+</f:section>

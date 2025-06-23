@@ -1,0 +1,334 @@
+// Powermail Allgemein
+.tx-powermail {	
+	/* margin-bottom: @gap-unit * 3; */
+	.powermail_form {	
+		font-size: 1.2rem;	
+
+
+		
+		[type="checkbox"] {
+			font-size: 2rem;
+			-webkit-transform: scale(1.3,1.3);
+		}
+
+		.powermail_fieldwrap_type_submit {
+			input, button {
+				width: 100%;
+				display: block;
+				background-color: @1stcolor;
+				color: white;
+				.bdrs(100px);
+				border: none;
+				font-size: 1rem;  
+				font-weight: 700;
+				padding: 0.75rem 1rem;
+				cursor: pointer;
+
+			}
+
+			&.calcbutton {
+				input, button {
+					.bdrs(1rem);
+					font-size: 0.8rem;
+					padding: 0.5rem 1rem;
+				}
+			}
+		}
+
+		.powermail_fieldwrap_type_check {
+			margin-bottom: 1em;	
+			
+			> label { 
+				display: block;
+				margin-bottom: 1rem;;
+			}
+
+			.checkbox label {
+				display: flex;
+				align-items: center;
+				font-size: 0.7rem;
+				line-height: 1.2em;
+				font-weight: 400;
+				gap: 0.5rem;
+
+				a {
+					font-weight: 700;
+					color: @1stcolor;
+				}
+
+				.checkboxindicator {
+					background: #cccccc;
+					box-sizing: border-box;
+					width: 1.5em;
+					height: 1.5em;
+					border-radius: 0.3em;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 1em;
+					color: #ffffff;
+					transition: all 0.2s ease-in-out;
+					position: relative;
+					flex: 0 0 1.5em;
+					margin-right: 0;
+					margin-top: 0;
+					transition: all 0.2s ease-in-out;
+					
+					svg {
+						position: relative;
+						display: block;
+						height: 80%;
+						width: 80%;												
+						transition: all 0.2s ease-in-out;
+						* {
+							fill: transparent;
+						}			
+						               
+					}
+				}
+
+		
+
+				input[type="checkbox"] {
+					display: none;     
+					
+					&:checked + .checkboxindicator {
+						background-color: @1stcolor;
+						svg {
+							* {
+								fill: #ffffff;
+							}
+						}
+					}
+				}
+			}
+
+			.checkbox.powermail_field_error .checkboxindicator {
+				border: 4px solid #cc3939;					
+			}
+
+			&.powermail_fieldwrap_ichinteressieremichfuer {
+				.powermail_field {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 1rem;
+				}
+			}
+
+		}
+
+		.powermail_fieldwrap_type_input,
+		.powermail_fieldwrap_type_select,
+		.powermail_fieldwrap_type_textarea,
+		.powermail_fieldwrap_type_date   {
+			position: relative;
+			margin: 0 0 2rem 0;
+
+			.powermail_field {
+				position: relative;
+			}
+			
+
+			option {				
+				font-family: 'Anek Latin', sans-serif;
+				font-size: 1rem;				
+			}
+
+			
+			input, textarea, select {
+				font-family: 'neulis-neue', sans-serif;
+				border: 2px solid @1stcolor;		
+				background-color: transparent;
+				padding-inline: 25px;
+				padding-block: 0.7em 0.2em;
+
+				color: #ffffff;
+				font-size: 0.8em;
+				font-weight: 400;
+				z-index: 5;
+				.bdrs(1.2em);		
+				width: 100%;
+				box-sizing: border-box;	
+				display: block;
+
+				/* Ouline Style */
+				&:focus {
+					outline: none;
+					border-color: @1stcolor;
+					/* box-shadow: 0 0 0 0.2rem fade(@1stcolor, 50%); */
+				}
+
+				/* Placeholder color */
+				&::-webkit-input-placeholder {
+					color: fade(white, 25% );
+				}
+				&:-moz-placeholder {
+					color: fade(white, 25% );
+				}
+				&::-moz-placeholder {
+					color: fade(white, 25% );
+				}
+				&:-ms-input-placeholder {
+					color: fade(white, 25% );
+				}
+			}
+			
+			input.specialinput {
+				border-color: #ffffff;
+				color: #ffffff;
+			}
+
+			select{				
+				-moz-appearance: none; 
+				-webkit-appearance: none; 
+				appearance: none;							
+			}
+
+			select+svg {
+				position: absolute;
+				right: 0.5rem;
+				left: unset;
+				height: 60%;
+				width: auto;
+				top: 50%;
+				transform: translateY(-50%);
+				pointer-events: none;
+			}
+
+			label {
+				margin-bottom: 1rem;
+				position: absolute;
+				left: 25px;
+				top: 5px;
+				z-index: 10;
+				font-size: 0.6em;
+				background-color: transparent;
+				padding-left: 0.25em;
+				padding-right: 0.25em;				
+				color: @orange;
+				transition: all 0.2s ease-in-out;
+			}
+
+			&.focus label {
+				font-size: 0.4em;
+			}
+			
+			.rangerwrap {
+				display: flex;
+				align-items: center;
+				margin: 0.8rem 0;
+			}
+			
+			.rangerwrap span {
+				font-size: 0.8rem;
+				display: block;
+				font-weight: 700;
+				color: #fcaa20;
+			}
+			
+			.rangerwrap span.min {
+				padding-right: 0.5rem;
+			}
+			
+			.rangerwrap span.max {
+				padding-left: 0.5rem;
+			}
+			
+			
+			.specialinput {
+				border: 2px solid #fcaa20;
+			}			
+		}
+
+		[type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]  {	
+			-webkit-appearance: none;
+			min-height: 2em;
+		}
+
+		.powermail_fieldwrap_type_textarea textarea {
+			font-size: 1em;
+			font-weight: 400;
+			resize: none;
+		}
+
+		.powermail_fieldset {
+			padding: 0;
+			border: none;
+			legend {
+				display: none;	
+			}
+
+			&.zweispaltig {
+				--thispad: 0.5rem;
+				--thismarg: -0.5rem;
+				display: flex;
+				margin-left: var(--thismarg);
+				margin-right: var(--thismarg);
+				flex-wrap: wrap;
+				
+				legend {
+					padding-left: var(--thispad);
+					padding-right: var(--thispad);
+					display: block;
+					margin-bottom: 1em;	
+					flex: 0 0 100%;
+				}	
+
+				>.powermail_legend {
+					flex: 0 0 100%;
+					
+				}
+				> .powermail_fieldwrap {
+					flex: 0 0 100%;
+					width: 100%;
+					padding-left: var(--thispad);
+					padding-right: var(--thispad);
+					box-sizing: border-box;						
+				}
+
+				@media screen and (min-width: 480px) {
+					> .powermail_fieldwrap {
+						flex: 0 0 50%;
+						width: 50%;
+					}
+				}
+			}
+		}		
+	}
+	
+	.powermail-errors-list {
+		font-size: 0.6rem;
+		margin: 0.25rem 0 0 0;
+		position: absolute;
+		left: 0;
+		top: 100%;
+	}
+}
+
+
+
+
+
+body.bgcolor_blue,
+body.bgcolor_purple,
+body.bgcolor_orange,
+body.bgcolor_berry,
+body.bgcolor_yellow,
+body.bgcolor_rot {
+	.tx-powermail {	
+		
+		.powermail_form {
+			.powermail_fieldwrap_type_input,
+			.powermail_fieldwrap_type_select,
+			.powermail_fieldwrap_type_textarea,
+			.powermail_fieldwrap_type_date   {		
+				input, textarea, select {
+					border-color: white;
+				}
+			}
+		}
+		.powermail_label {
+			color: white;
+		}
+	}
+}

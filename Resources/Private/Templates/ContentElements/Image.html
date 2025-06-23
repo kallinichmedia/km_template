@@ -1,0 +1,71 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+
+    <f:switch expression="{data.layout}">
+        <f:case value="1">
+            <div class="tx-images-logowall">
+                <f:for each="{gallery.rows}" as="row" iteration="i">
+                    
+                    <f:for each="{row.columns}" as="column">
+                        <f:if condition="{column.media}">
+                            
+                            <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+                            
+                        </f:if>
+                    </f:for>
+                </f:for>
+            </div>
+                
+        </f:case>
+
+        <f:case value="2">
+            <div class="tx-images-process">
+                <f:for each="{gallery.rows}" as="row" iteration="i">
+                    
+                    <f:for each="{row.columns}" as="column">
+                        <f:if condition="{column.media}">
+                            
+                            <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+                            
+                            <f:if condition="!{i.isLast}">
+                                <div class="arrow">
+                                    <span class="polygon"></span>
+                                </div>
+                            </f:if>
+                        </f:if>
+                    </f:for>
+                </f:for>
+            </div>
+                
+        </f:case>
+
+        <f:case value="3">
+            <div class="tx-images-benefits" data-cols="{data.imagecols}">
+                <f:for each="{gallery.rows}" as="row" iteration="i">
+                    
+                    <f:for each="{row.columns}" as="column">
+                        <f:if condition="{column.media}">
+                            
+                            <f:render partial="Media/Type" arguments="{file: column.media, data: data, settings: settings}" />
+                            
+                            
+                        </f:if>
+                    </f:for>
+                </f:for>
+            </div>
+                
+        </f:case>
+
+
+        <f:defaultCase>
+            <div class="ce-image ce-{gallery.position.horizontal} ce-{gallery.position.vertical}">
+                <f:render partial="Media/Gallery" arguments="{_all}" />
+            </div>
+        </f:defaultCase>
+    </f:switch>
+    
+
+</f:section>
+</html>

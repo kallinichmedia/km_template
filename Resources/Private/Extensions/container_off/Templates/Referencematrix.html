@@ -1,0 +1,53 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:km="http://typo3.org/ns/KallinichMediaGmbhKg/KmTemplate/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<div class="{data.frame_class} frame-space-before-{data.space_before_class} frame-space-after-{data.space_after_class} container-full">
+
+  <div class="extcontainer-referenzmatrix" id="refmatrix-{data.uid}">  
+
+    <f:comment>
+
+      <div class="refintro">
+        <div class="inner">
+          <p class="title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="118.019" height="148.704" viewBox="0 0 118.019 148.704">
+              <path id="Pfad_214" data-name="Pfad 214" d="M53.418,22.494,11.765,63.469,67.3,118.1h34.71L46.475,63.469,88.129,22.494Z" transform="translate(16.005 30.599)" fill="#df281e"/>
+              <path id="Pfad_215" data-name="Pfad 215" d="M27.769,0,0,27.317v94.069L27.769,94.069Z" transform="translate(0 0)" fill="#df281e"/>
+              <path id="Pfad_216" data-name="Pfad 216" d="M0,78.744H27.769V51.427Z" transform="translate(0 69.959)" fill="#df281e"/>
+              
+            </svg>
+            uck an!
+          </p>
+          <p class="subtitle">
+            Unsere Referenzen
+          </p>
+        </div>
+    </div>
+    </f:comment>
+
+    <div class="filterbox">
+      <div class="inner">
+        
+        <km:catlist pageId="10" />
+        
+      </div>
+    </div>
+
+
+
+    <div class="km-reference-box" data-columns="3">   
+      <div class="column">
+        <f:for each="{children_201}" as="record">
+          {record.renderedContent->f:format.raw()}    
+        </f:for>  
+      </div>
+    </div> 
+
+  </div>
+
+</div>
+
+</html>

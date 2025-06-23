@@ -1,0 +1,62 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "kontaktperson": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "image",
+                        "header",
+                        "bodytext"
+                    ],
+                    "description": "Portrait mittig \u00fcber Teaser-Text. Overlay-Blase kommt aus Bild-Titel.",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-id-badge",
+                    "iconOverlay": "fa-id-badge",
+                    "key": "kontaktperson",
+                    "label": "Kontaktperson",
+                    "labels": [
+                        "Portrait",
+                        "Titel",
+                        "Text"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "tca": {
+                "bodytext": {
+                    "bodytextTypeByElement": {
+                        "box_nummeriert": "richtext",
+                        "grosses_intro": "text",
+                        "kontaktperson": "text",
+                        "lexikoneintrag": "richtext"
+                    },
+                    "coreField": 1,
+                    "fullKey": "bodytext",
+                    "key": "bodytext"
+                },
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "image": {
+                    "coreField": 1,
+                    "fullKey": "image",
+                    "imageoverlayPalette": 1,
+                    "key": "image",
+                    "type": "file"
+                }
+            }
+        }
+    }
+}

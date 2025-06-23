@@ -1,0 +1,26 @@
+name: km/job-teaser
+typeName: km_jobteaser
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic 
+
+  -
+    identifier: subheader
+    useExistingField: true    
+    label: 'Untertitel'
+    type: Text
+    config:
+      max: 255 
+
+  -
+    identifier: header_link
+    useExistingField: true
+    type: Link
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

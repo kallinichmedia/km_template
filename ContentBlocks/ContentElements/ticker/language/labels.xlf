@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="labels.xlf" source-language="en" date="2025-04-01T13:08:48+00:00" product-name="km/ticker">
+		<header/>
+		<body>
+			<trans-unit id="title">
+				<source>Ticker</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>Description for Content Element km/ticker</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

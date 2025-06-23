@@ -1,0 +1,49 @@
+<f:layout/>  
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+
+	<cb:asset.css identifier="content-block-css-km-km/highlight-slider" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/highlight-slider" file="Frontend.js"/>
+
+	<!-- Main Content -->
+    
+    <div class="ce-highlight-slider">
+        <div class="inner">
+            <div class="swiper-position">
+                <svg class="slide-raute" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1708.2 1074.7">
+                    <path class="st0" d="M1207,1074.7H0L501.2,0h1207l-2.7,5.7-498.5,1069ZM12.6,1066.7h1189.3L1695.6,8H506.3L12.6,1066.7Z"/>
+                </svg>  
+                <div class="swiper">
+                  
+                    <div class="swiper-wrapper">
+                        <f:for each="{data.items}" as="item" iteration="i">
+                            <div class="swiper-slide">                                          
+                                <f:if condition="{item.image}">                            
+                                    <f:image image="{item.image.0}" treatIdAsReference="1" />
+                                </f:if>
+                            </div>                    
+                        </f:for>
+                      
+                    </div>
+              
+                    <div class="swiper-pagination"></div>    
+
+                    <div class="swiper-button-next"></div>            
+        
+    
+                </div>
+            </div>
+
+            <div class="title">
+                <h3>{data.header->f:format.raw()}</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</f:section>
+
+  

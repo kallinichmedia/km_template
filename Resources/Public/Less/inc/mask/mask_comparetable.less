@@ -1,0 +1,113 @@
+.tx-comparetable {
+
+    @media screen and (max-width: 767px) {
+        
+        margin-top: 1.9rem;
+        margin-bottom: 1.9rem;
+        padding: 0.1rem 0;
+        
+        .listitem {
+            position: relative;
+            margin-top: 2rem;
+            padding-bottom:  2rem;
+            
+            &.headerrow {
+                display: none;
+            }
+            
+            display: flex;
+            
+            > div {
+                flex: 0 0 calc( ~"50% - 1rem" );
+                text-align: center;
+                padding-top: 2rem;
+                
+                
+                .label {
+                    font-weight: 900;
+                    margin-bottom: 1rem;
+                    display: block;
+                }
+            }
+            
+            .keyaspect {
+                display: block;
+                background: @1stcolor;
+                padding: 0.5rem 1rem;
+                .bdrs(2rem);
+                position: absolute;
+                bottom: 100%;
+                width: 80%;
+                max-width: 15rem;
+                left: 50%;
+                text-align: center;
+                transform: translateX(-50%);
+                font-weight: 900;
+                color: #ffffff;
+                
+            }
+            
+            .propertyfact {
+                border-right: 2px solid @1stcolor;
+                padding-right: 1rem;;
+            }
+            
+            .rentfact {
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+
+        margin-top: 1.9rem;
+        margin-bottom: 1.9rem;
+        padding: 0.1rem 0;
+
+        .listitem {
+            display: flex;
+            align-items: stretch;
+            gap: 2rem;
+
+            > * {
+                border-bottom: 1px solid @1stcolor;
+            }
+
+            .propertyfact, .rentfact { 
+                flex: 0 0 calc(~"50% - 8rem");
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+
+                p {
+                    margin-bottom: 0;
+                }
+
+                .label {
+                    display: none;
+                }
+            }
+
+            .propertyfact {
+                text-align: right;
+            }
+
+            .keyaspect {
+                flex: 0 0 10rem;
+                padding: 1rem;
+                background-color: fade(@2ndcolor, 10%);
+                text-align: center;
+
+            }    
+            
+            &.headerrow {
+                font-weight: 900;
+                .label {
+                    display: block;
+                }
+
+            }
+
+        }
+    }
+
+}

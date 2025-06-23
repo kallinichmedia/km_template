@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-09-18T04:30:13+00:00" product-name="km/staffprofiles">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+				<source>Kontaktblöcke</source>
+			</trans-unit>
+			<trans-unit id="description" resname="description">
+				<source>Description for Content Element km/staffprofiles</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

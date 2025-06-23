@@ -1,0 +1,47 @@
+name: km/accordion
+typeName: km_accordion
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic  
+
+  -
+    identifier: hideicon
+    label: Icon ausblenden
+    type: Checkbox
+
+  -
+    identifier: items
+    label: 'Element'
+    type: Collection
+    fields:
+      -
+        identifier: boldtext
+        label: "Text fett"
+        type: Text
+      -
+        identifier: thintext
+        label: "Text dünn"
+        type: Text
+      
+      -
+        identifier: textblock
+        lable: "Volltext"
+        type: Textarea
+        enableRichtext: true
+
+
+      -
+        identifier: Icon
+        description: "Bitte SVG-Quellcode, weiß auf transparent"
+        lable: "Volltext"
+        type: Textarea
+
+
+     
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

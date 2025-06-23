@@ -1,0 +1,5 @@
+vendor: km
+extension: km_template
+content-type: content-element
+skeleton-path: EXT:km_template/content-blocks-skeleton
+

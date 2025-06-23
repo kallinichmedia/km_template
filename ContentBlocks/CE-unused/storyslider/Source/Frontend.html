@@ -1,0 +1,53 @@
+
+<!-- Equivalent zu name="Default" -->
+<f:layout/>  
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<!-- needs to be inside here -->
+	<cb:asset.css identifier="content-block-css-km-km/storyslider" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/storyslider" file="Frontend.js"/>
+
+	<!-- Main Content -->
+
+
+    <div class="ce-storyslide">
+
+        <div class="ce-storyslide-modal" id="storyslideModal">
+            <div class="swiper">
+                <div class="swiper-wrapper">   
+                    <f:for each="{data.items}" as="item" iteration="i">
+                        <div class="swiper-slide">
+                            <div class="ce-storyslide-modal-item style-{item.color}" data-index="{i.index}">
+                                <div class="ce-storyslide-modal-item-content">
+                                    <div class="ce-storyslide-modal-item-content-inner">
+                                        <div class="ce-storyslide-modal-item-content-inner-text">
+                                            <h2 class="punchline">{item.punchline}</h2>
+                                            <p class="subline">{item.Subline}</p> 
+                                            <p class="buttonrow"><a class="btn"> Starte deine Story ></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>            
+                    </f:for>
+                </div>
+
+                <span class="ce-storyslide-close" data-target="storyslideModal">
+                    <span>schließen</span>
+                    <svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 7 7"><path d="M.1.1c.2-.2.5-.2.7,0,0,0,0,0,0,0l2.6,2.6L6.1.1c.2-.2.5-.2.7,0s.2.5,0,.7l-2.6,2.6,2.6,2.6c.2.2.2.5,0,.7s-.5.2-.7,0l-2.6-2.6L.9,6.9c-.2.2-.5.2-.7,0s-.2-.5,0-.7l2.6-2.6L.1.9c-.2-.2-.2-.5,0-.7,0,0,0,0,0,0"/></svg>
+                </span>
+    
+                <div class="navigation">
+                    <button class="storyslider-button-prev"><</button>
+                    <button class="storyslider-button-next">></button>                
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</f:section>

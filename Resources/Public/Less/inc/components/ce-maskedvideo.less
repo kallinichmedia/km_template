@@ -1,0 +1,36 @@
+.ce-maskedvideo {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    .text-mask {
+        mix-blend-mode: lighten;
+        background: #ffffff;
+        position: relative;
+        inset: 0;
+        width: 100%;
+        height: auto;
+        z-index: 100;
+        pointer-events: none;
+        line-height: 0;
+
+
+        // set as mask
+        
+
+    }
+
+    video {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 50;
+        object-fit: cover;
+    }
+}

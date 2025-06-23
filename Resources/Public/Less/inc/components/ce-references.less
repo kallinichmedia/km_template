@@ -1,0 +1,102 @@
+.tx-references, .tx-filteredreferences {
+    
+    .reffilter {
+        margin-bottom: 3rem;
+        
+    }
+    
+    > .reflist {
+        flex: 1;
+        display: flex;
+        gap:  2rem;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        // Reference items, 33.33% width above 768px, 2px border lightgrey
+        a {
+            flex: 0 0 calc(~"33.33% - 1.5rem");
+            border: 3px solid #f4f3f9;
+            box-sizing: border-box;
+            padding: 3rem 1rem 1.5rem 1rem;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            box-sizing: border-box;
+            position: relative;
+
+            @media screen and (min-width: 1024px) {
+                // first and third child only: margin top: 4rem;
+                &:nth-child(1), &:nth-child(3) {
+                    margin-top: 5rem;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 1rem;
+            }
+
+             .title {
+                font-weight: 300;
+                color: @page-textcolor;   
+                .big-font-size;
+                display: block;
+                margin-bottom: 1rem;     
+            }
+
+            .subtitle {
+                font-weight: 300;
+                color: @page-textcolor;   
+                .small-font-size;
+                display: block;
+                margin-bottom: 1rem;     
+            }
+
+            .btnaccent {
+                display: inline-block;
+                background: @1stcolor;
+                color: white;
+                border-radius: 100px;
+                padding: 0 1rem;
+                align-self: flex-start;
+               
+            }
+            
+
+            svg.plus {
+                width: 1rem;
+                height: 1rem;
+                fill: #000;                
+                position: absolute;
+                top: 1rem;
+                right: 1rem;                
+                
+                * {
+                    transition: all 0.3s ease;
+                    pointer-events: none; // Prevents hover effects on the SVG
+                    fill: #f4f3f9;
+                }
+            }
+
+            &:hover {
+                background-color: #f4f3f9;
+                svg.plus * {
+                    opacity: 1;
+                    fill: @1stcolor;                    
+                }
+            }
+
+            @media (max-width: 768px) {
+                flex: 1 0 calc(50% - 2px); // Adjust for smaller screens
+            }
+
+            @media (max-width: 480px) {
+                flex: 1 0 calc(100% - 2px); // Full width on very small screens
+            }
+
+
+        }
+       
+    }
+}

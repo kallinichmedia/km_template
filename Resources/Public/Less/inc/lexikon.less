@@ -1,0 +1,118 @@
+
+.layout-lexikon {    
+    background-color: @2ndcolor;
+    color: #ffffff;
+    h1 {
+        color: #ffffff;
+        display: none;
+    }
+
+    
+    .filter-section {
+        margin-bottom:  5rem ;
+        
+        > .inner {
+            padding-top: 0;
+
+            .filterbox {
+                .lexikon-filter {
+                    display: flex;
+                    max-width: 60rem;
+                    width: 100%;
+                    box-sizing: border-box;
+                    // padding-left: 3rem;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom:  3rem;
+                    gap: 2rem;
+            
+                    h1 {
+                        margin-bottom: 0;
+                    }
+            
+                    .form {
+                        display: flex;
+                        flex: 0 1 500px;
+                        align-items: center;
+                        gap: 1rem;
+                        width: 100%;
+                        .fieldwrap {
+                            position: relative;
+                            width: 100%;
+                            
+                            input {
+                                padding-right: 2.5rem;
+                                width: 100%;
+                                box-sizing: border-box;
+                            }
+                            
+                            svg {
+                                position: absolute;
+                                top: 50%;
+                                right: 6px;
+                                transform: translateY(-50%);
+                                width: auto;
+                                height: calc( ~"100% - 10px");
+                                fill: @1stcolor;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .filter-container {
+                max-width: 60rem;
+                //padding-left: 3rem;
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+                opacity: 0;
+                .transition( opacity 0.5s ease-in-out 0.5s );
+            
+                &.list-view {
+                    .filter-item {
+                        .definition {
+                            display: none;
+                        }
+                    }
+                }
+            
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        padding-top: 7rem;
+
+        h1 {
+            display: block;
+        }
+    }
+
+
+
+   
+    .wiki-content {
+        > .inner {
+            background-color: @2ndcolor;
+            border-radius: 0 0 100px 100px;
+        }
+
+    }
+}
+
+
+
+
+
+.isotope-message {
+    display: none;
+    font-weight: 700;
+    color: #ffffff88;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom:  2rem;
+    h3 { display: none;}
+
+}

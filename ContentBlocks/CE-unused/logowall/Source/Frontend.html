@@ -1,0 +1,30 @@
+
+
+
+<!-- Equivalent zu name="Default" -->
+<f:layout/>  
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<!-- needs to be inside here -->
+    <cb:asset.css identifier="content-block-css-km-km/logowall" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/logowall" file="Frontend.js"/>
+    
+    <div class="ce-logowall">
+
+        <f:if condition="{data.image}">
+            <f:for each="{data.image}" as="image" iteration="i">
+                <div class="logowrap">
+                    <f:link.typolink parameter="{data.image.link}">
+                        <f:image image="{image}" treatIdAsReference="1" alt="{image.alternative}" width="600"/>
+                    </f:link.typolink>
+                </div>
+            </f:for>
+        </f:if>
+    </div>
+
+
+	<!-- Main Content -->
+</f:section>

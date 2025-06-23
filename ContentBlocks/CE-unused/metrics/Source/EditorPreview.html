@@ -1,0 +1,16 @@
+<cb:asset.css identifier="content-block-km-km/metrics-be" file="EditorPreview.css"/>
+
+<!-- needs to be inside here -->
+<cb:asset.css identifier="content-block-css-km-km/metrics" file="Frontend.css"/>
+<cb:asset.script identifier="content-block-js-km-km/metrics" file="Frontend.js"/>
+
+<!-- Main Content -->
+
+
+<div class="ce-metrics">
+    <div class="inner">
+        <span class="metric-icon">{data.svgicon->f:format.raw()}</span>
+        <span class="metric-value" data-value="{data.value->f:format.raw()}" data-delay="{data.delay}" data-time="{data.duration}">0</span>
+        <span class="metric-label">{data.header->f:format.raw()}</span>
+    </div>
+</div>

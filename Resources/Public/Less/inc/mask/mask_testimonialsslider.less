@@ -1,0 +1,163 @@
+.mask_testimonialsslider {
+    background-color: @1stcolor;
+    padding-top: @gap-unit * 2;
+    padding-bottom: @gap-unit * 2;
+
+    > .inner {
+        max-width: 55rem;
+        margin: 0 auto;
+        text-align: center;
+
+        .swiper-pagination {
+
+            bottom: 0.5rem;
+
+
+            .swiper-pagination-bullet {
+                border: 2px solid white;
+                background: transparent;
+                width: 1rem;
+                opacity: 1;
+                height: 1rem;
+            }
+            
+            .swiper-pagination-bullet-active {
+                background: #ffffff;
+            }
+        }
+
+
+        h2 {
+            color: white;
+            text-align: center;
+        }
+
+        .swiper-button-next {
+            right: 1rem;
+        } 
+        .swiper-button-prev {
+            left: 1rem;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: white;
+            display: none;
+        }
+
+
+        .swiper-slide {
+            font-size: 1rem;
+            color: white;
+            position: relative;
+            padding-top: 2rem;
+            
+            .swiper-slide-inner {
+                .bdrs(@gap-unit*1);
+                background: #dc931a;
+                position: relative;
+                // padding: 4rem 7rem 3rem 7rem;
+                padding: 4rem 1.5rem;
+                margin-left: 0.75rem;
+                margin-right: 0.75rem;
+            }
+
+            .rating-box {
+                background-color: white;
+                .bdrs(100px);
+                display: flex;
+                padding-right: 1rem;
+                padding-left: 0.1rem;
+                gap: 1rem;
+                justify-content: space-between;
+                align-items: center;
+                position: absolute;
+                top: 0; left: 50%;
+                height: 2.7rem;
+                width: auto;
+                .transform(translate(-50%,-50%));
+
+                .rating-icon {
+
+                    .iconwrap {
+                        display: block;
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        background: white;
+                        .bdrs(100px);
+                        box-shadow: inset 0px 3px 6px #00000029; 
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        svg,img {
+                            height: 80%;
+                            width: auto;
+                        }
+                    }
+                }
+                                         
+                .rating-stars {
+                    height: 1.5rem; 
+                    position: relative; 
+
+                    svg {       
+                        height: 100%;
+                        width: auto;      
+                    }
+
+                    .cover {
+                        background: white;
+                        height: 100%;
+                        overflow: hidden;
+                        mix-blend-mode: color;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+
+                    &[data-value="0"]    .cover { width: 100%;}
+                    &[data-value="50"]   .cover { width: 92.3%;}
+                    &[data-value="100"]  .cover { width: 82%;}
+                    &[data-value="150"]  .cover { width: 70.9%;}
+                    &[data-value="200"]  .cover { width: 59.8%;}
+                    &[data-value="250"]  .cover { width: 50%;}
+                    &[data-value="300"]  .cover { width: 38.8%;}
+                    &[data-value="350"]  .cover { width: 28.8%;}
+                    &[data-value="400"]  .cover { width: 18%;}
+                    &[data-value="450"]  .cover { width: 7.7%;}
+                    &[data-value="500"]  .cover { width: 0%;}
+                }
+            }
+
+            .testitext {
+                font-weight: 700;
+                line-height: 1.2rem;
+                
+                a.btn {
+                    border: 2px solid white;
+                }
+            }
+
+            .testiuser {
+                margin: 2rem;
+            }
+
+
+            p:last-child {
+                margin-bottom: 0;   
+            }
+        }
+    
+        @media screen and (min-width: 768px) {
+            .swiper-button-next, .swiper-button-prev {
+                display: block;
+            } 
+
+            .swiper-slide {
+                .swiper-slide-inner {
+                    padding: 4rem 7rem 5rem 7rem;
+                }
+            }
+        }
+        
+        
+    }
+}

@@ -1,0 +1,41 @@
+.ce-covered-image {
+  position: relative;
+  line-height: 0;
+}
+.ce-covered-image .gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  object-fit: cover;
+  z-index: 10;
+  opacity: 0.8;
+}
+.ce-covered-image .btn {
+  position: absolute;
+  z-index: 12;
+  bottom: 3rem;
+  left: 50%;
+  color: white;
+  transform: translateX(-50%);
+  background-color: var(--themecolor, #16cbaf);
+}
+.ce-covered-image .overlay {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.ce-covered-image .overlay svg {
+  width: clamp(100px,50vw, 500px);
+  height: auto;
+}
+.ce-covered-image .overlay svg * {
+  fill: #ffffff;
+}

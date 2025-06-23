@@ -1,0 +1,68 @@
+.ce-singlecontact {
+    .the-person {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    
+        .imagewrap {
+            width: 8rem;
+            height: 8rem;
+            margin-right: 20px;
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 50%;
+            }
+        }
+        .datawrap {
+            h2 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: #000;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                svg {
+                    width: auto;
+                    height: 1.25em;
+                    * { fill: @1stcolor; }
+                }
+            }
+
+            .nameblock {
+                margin-bottom:  1rem;
+                .name {
+                    font-weight: 900;
+                }
+                span {  
+                    display: block;
+                }
+            }
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .the-person {
+            flex-direction: column;
+            text-align: center;
+            
+            .imagewrap {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .datawrap {
+                a {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

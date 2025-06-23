@@ -1,0 +1,88 @@
+.mask_box_nummeriert {
+
+    margin-bottom: 3rem;
+    container-type: inline-size;
+    container-name: mask_box_nummeriert;
+
+
+    @box-number-border-width: 15px;
+    .number {
+        font-size: 4rem;
+        font-weight: bold;
+        color: white;
+        background-color: @1stcolor;
+        border: @box-number-border-width solid white;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:~"calc(6rem - @{box-number-border-width} )";
+        height: ~"calc(6rem - @{box-number-border-width} )";
+        position: absolute;
+        left: 0; top: 0;
+        z-index: 20;
+    }  
+
+    .inner {
+        position: relative;
+        .number { display: none; }
+    }
+
+    .contentbox {
+        background: fade(#C7E1FF, 50%);
+        opacity: 1;
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+        border-radius: 30px;
+        z-index: 10;
+        position: relative;
+        padding: 1.5rem;
+        box-sizing: border-box;
+
+
+        p:last-child {
+            /* margin-bottom: 0; */
+        }
+
+        a {
+            .btn;
+            background-color: @1stcolor;
+            color: white;
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .imgbox {
+        border-radius: 20px;
+        overflow: hidden;
+        width: 100%;
+        height: 10rem;
+        margin-bottom: 1rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (min-width: 767px) {      
+        .inner {
+            padding-top: 3rem;
+            padding-left: 3rem;
+            .number { display: flex; }
+            .contentbox {
+                padding: 3.5rem 2rem 2rem 3.5rem;
+            }
+        }
+    }
+
+    &.layout-50 {
+        .contentbox {
+            .title {
+                color: @1stcolor;
+            }
+        }
+    }
+}

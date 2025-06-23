@@ -1,0 +1,27 @@
+<cb:asset.css identifier="content-block-km-km/imglinkmatrix-be" file="EditorPreview.css"/>
+
+
+
+
+<div class="items" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+<f:for each="{data.items}" as="item" iteration="i">
+
+            <div style="flex: 0 0 calc(50% - 1rem); display: flex; gap: 1rem; padding: 1rem; background-color: #efefef;">
+                
+                
+                <f:if condition="{item.image}">
+                    <f:image image="{item.image.0}" treatIdAsReference="1" width="100" />
+                </f:if>
+                <div>
+                    <h3 class="title" style="top:{item.position}%">{item.title->f:format.raw()}</h3>
+                    <p class="position"><b>Position: </b>{item.position->f:format.raw()} %</p>
+                    <f:if condition="{item.url}">
+                        <p><b>Link: </b><a href="{item.url}" class="link">{item.url}</a></p>
+                    </f:if>
+                    
+                </div>
+            </div>
+            
+            
+        </f:for>
+    </div>

@@ -1,0 +1,47 @@
+
+
+<!-- Equivalent zu name="Default" -->
+<f:layout/>  
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<!-- needs to be inside here -->
+	<cb:asset.css identifier="content-block-css-km-km/contactinfo" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/contactinfo" file="Frontend.js"/>
+
+
+    <!-- Main Content -->
+
+    <div class="ce-contactinfo">
+        
+        <div class="ce-contactinfo-row {f:if(condition: '{data.image}', then: '', else: 'no-img')}">
+            <div class="pers-container">
+                <h4 class="bigger-font-size">Ihre Ansprech<wbr/>partner</h4>
+                <f:for each="{data.items}" as="pers" iteration="i">
+                    <div class="pers">
+                        <f:link.email email="{pers.email}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="340px" height="600px" viewBox="0 0 340 600" enable-background="new 0 0 340 600" xml:space="preserve"><defs></defs><path d="M295.949,0H44.05C19.77,0,0,19.771,0,44.05V555.94C0,580.23,19.77,600,44.05,600h251.89c24.29,0,44.061-19.77,44.061-44.05 V44.05C340,19.771,320.229,0,295.949,0z M20,80h300v380H20V80z M44.05,20h251.89C309.21,20,320,30.79,320,44.05V60H20V44.05 C20,30.79,30.79,20,44.05,20z M295.949,580H44.05C30.79,580,20,569.211,20,555.95V480h300v75.95C320,569.211,309.21,580,295.949,580 z"></path><path d="M170,490c-22.061,0-40,17.94-40,40c0,22.061,17.939,40,40,40c22.06,0,40-17.939,40-40C210,507.94,192.06,490,170,490z M170,550c-11.03,0-20-8.97-20-20c0-11.029,8.97-20,20-20c11.029,0,20,8.971,20,20C190,541.03,181.029,550,170,550z"></path><path d="M130,50h40c5.529,0,10-4.47,10-10c0-5.529-4.471-10-10-10h-40c-5.53,0-10,4.471-10,10C120,45.53,124.47,50,130,50z"></path><path d="M200,50h10c5.529,0,10-4.47,10-10c0-5.529-4.471-10-10-10h-10c-5.53,0-10,4.471-10,10C190,45.53,194.47,50,200,50z"></path></svg>
+                        </f:link.email>
+                        <p>
+                            <b>{pers.name}</b><br>
+                            <f:link.email email="{pers.email}">{pers.email}</f:link.email>
+                        </p>
+                    </div>            
+                </f:for>
+                <a href="tel:{data.subheader}"><b>T.</b> {data.subheader}</a>
+            </div>
+    
+            <f:if condition="{data.image}">            
+                    <div class="imgpos">
+                    <f:image image="{data.image.0}" treatIdAsReference="1" />
+                </div>
+            </f:if>
+
+            
+        </div>
+
+    </div>
+
+</f:section>

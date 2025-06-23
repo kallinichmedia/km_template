@@ -1,0 +1,36 @@
+
+.ce-teammatrix {
+    > .inner {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 0;
+        gap: 2rem; 
+
+        .column{
+            flex: 0 0 100%;
+            width: 100%;
+            position: relative;
+            
+        }
+
+        &[data-columns="2"] {
+            .column {
+                flex: 0 0 calc(~"50% - 1rem");
+                width: calc(~"50% - 1rem");                
+            }
+        }
+
+        &[data-columns="3"] {
+            .column {
+                flex: 0 0 calc(~"33.3333% - 1.3333rem");
+                width: calc(~"33.3333% - 1.3333rem");
+
+                &:nth-child(1), &:nth-child(3) {
+                    margin-top: 17%;
+                }
+            }
+        }
+    }    
+}

@@ -1,0 +1,45 @@
+name: km/textlogo-item
+typeName: km_textlogoitem
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+
+  -
+    identifier: header
+    useExistingField: true
+    label: Titel
+
+  -
+    identifier: bodytext
+    type: Textarea
+    enableRichtext: true
+    label: 'Zitat-Text'
+    useExistingField: true
+
+  -
+    identifier: image
+    label: 'Logo'
+    useExistingField: true
+    extendedPalette: true
+    max-items: 1
+    allowed: common-image-types
+    cropVariants:
+      common:
+        title: allgemein
+        allowedAspectRatios:
+          square:
+            title: Square
+            value: 1/ 1
+      phone:
+        disabled: true
+      tablet:
+        disabled: true
+      desktop:
+        disabled: true
+
+  
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

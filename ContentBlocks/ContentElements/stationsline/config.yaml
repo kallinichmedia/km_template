@@ -1,0 +1,26 @@
+name: km/stationsline
+typeName: km_stationsline
+group: km_special
+title: Stationslinie
+prefixFields: true
+prefixType: full
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+
+fields:
+  -
+    identifier: header
+    label: Titel(intern)
+    useExistingField: true
+  - 
+    identifier: station
+    type: Collection
+    labelField: description
+    fields:
+      -
+        identifier: description
+        label: Beschreibung
+        type: Textarea
+        enableRichtext: true

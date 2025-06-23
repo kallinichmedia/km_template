@@ -1,0 +1,117 @@
+.mask_kontaktperson {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+
+    .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+        justify-content: center;
+
+        > div {
+            max-width: 60rem;
+        }
+
+        .imagerow {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 4vw;
+
+            @media screen and (min-width: 480px) {
+                font-size: 1rem;
+            }
+
+            .imagewrap {
+                width: 20em;
+                /* max-width: 70%; */
+                height: auto;
+                position: relative;
+                margin: 0 auto;
+
+                .imgmask {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    position: relative;
+                    font-size: 1em;
+          
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        float: left;
+                    }
+
+                    .title {
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                        width: 100%;
+                        padding: 1rem 0 2rem 0;
+                        background-color: rgba(0,0,0,0.5);
+                        color: white;
+                        font-size: 1.5em;
+                        font-weight: bold;
+                        text-align: center;                        
+                    }
+                }
+
+                .bubble {
+                    position: absolute;
+                    top: 0; right: 0;
+                    padding: 1em;
+                    box-sizing: border-box;
+                    width: 33%;
+                    height: 33%;
+                    background-color: @1stcolor;
+                    .bdrs(50%);
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    .transform(rotate(10deg));
+
+                    b {
+                        font-size: 1.5em;
+                        font-weight: 700;                        
+                    }
+                }
+            }
+        }
+
+        .textrow {
+            text-align: center;
+
+            span.title, span.text {
+                font-size: 2.2rem;
+                display: block;
+                line-height: 1.2em;
+            }
+
+            span.title {
+                font-weight: bold;             
+            }
+        }
+
+    }
+}
+
+
+/*
+
+    cqw: 1% of a query container's width
+    cqh: 1% of a query container's height
+    cqi: 1% of a query container's inline size
+    cqb: 1% of a query container's block size
+    cqmin: The smaller value of either cqi or cqb
+    cqmax: The larger value of either cqi or cqb
+
+
+*/

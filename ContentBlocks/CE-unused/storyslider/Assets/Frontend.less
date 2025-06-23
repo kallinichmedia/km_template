@@ -1,0 +1,130 @@
+.ce-storyslide {
+
+    --swiper-pagination-color: @1stcolor;
+    --swiper-pagination-color-active: @2ndcolor;
+    --swiper-pagination-bullet-horizontal-gap: 0.25rem;
+
+    --darkblue: @dunkelblau;
+    --violett: @violet;
+    --berry: @magenta;
+
+    .ce-storyslide-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        z-index: 0;
+        transform: translate(-50%, -50%) scale(0);
+
+        .swiper {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .ce-storyslide-close {
+        position: absolute; 
+        bottom: 3rem;
+        right: 3rem;
+        z-index: 100;
+        display: flex;
+        gap: 1em;
+        cursor: pointer;
+        color: white;
+        align-items: center;
+        svg {
+            width: auto;
+            height: 1.2rem;
+            * {
+                fill: white;
+            }
+        }
+    }
+
+    .navigation {
+        position: absolute;
+        bottom: 3rem;
+        left: 0;        
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: 100;
+        gap: 0.25rem;
+        pointer-events: none;
+
+        button {
+            pointer-events: auto;
+            width: 1.75rem;
+            height: 1.75rem;
+            font-weight: 900;
+            background: transparent;
+            border: 2px solid var(--swiper-pagination-color);
+            border-radius: 50%;
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--swiper-pagination-color);
+            margin: 0;
+            transition: all 0.2s ease;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            cursor: pointer;
+
+            &.swiper-button-disabled {
+                opacity: 0.5;
+                color: var(--swiper-pagination-color);
+                border-color: var(--swiper-pagination-color);
+                cursor: not-allowed;
+            }
+        }
+    }
+
+
+    .ce-storyslide-modal-item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+
+        .punchline {
+            .huge-font-size;
+            line-height: 1;
+            margin-bottom: 0;
+            font-weight: 900;
+        }
+
+        .subline {
+           margin-bottom: 4rem;
+           text-align: right;
+            .bigger-font-size;
+        }
+
+        .buttonrow {
+            text-align: center;
+        }
+
+
+
+
+        &.style-darkblue {
+            background-color: var(--darkblue);
+        }
+
+        &.style-violett {
+            background-color: var(--violett);
+        }
+
+        &.style-berry {
+            background-color: var(--berry);
+        }
+    }
+}
+
+
+

@@ -1,0 +1,73 @@
+
+
+<f:layout/>
+
+<!-- This removes the <header> partial of FSC -->
+    <f:section name="Header" />
+
+
+<f:section name="Main">
+    <f:asset.css identifier="km-pagestabbed-fe-css" href="{cb:assetPath()}/frontend.css"/>
+    <f:asset.script identifier="km-pagestabbed-fe-js" src="{cb:assetPath()}/frontend.js"/>
+
+     <div class="ce-pagestabbed">
+
+        <div class="frame frame-small">
+
+            <f:comment>
+
+                <f:if condition="{data.title}">
+                    <h2 class="content-block-title ">
+                        {data.header}
+                    </h2>
+                </f:if>
+            </f:comment>
+         
+            <f:if condition="{data.page_select}">
+                <div class="tab-nav">
+                    <f:for each="{data.page_select}" as="page" iteration="iteration">
+                        <div class="tab-nav-item {f:if(condition: iteration.isFirst, then: 'active')}" data-tab="tab-{contentBlock.uid}-{page.uid}">
+                            {page.title}
+                        </div>
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+    
+        <div class="tabs-content">
+            <f:for each="{data.page_select}" as="page" iteration="iteration">
+                <div class="tab-content-panel {f:if(condition: iteration.isFirst, then: 'active')}" id="tab-{contentBlock.uid}-{page.uid}">        
+                    <f:cObject typoscriptObjectPath="lib.contentBlock.renderPage" data="{pageUID: page.uid}" />
+                </div>
+            </f:for>
+        </div>
+
+        
+        
+        <f:if condition="{data.page_select}">
+            <div class="frame frame-default">
+                <header>
+                    <h4 class="large-font-size default-headline">{data.subheader->f:format.raw()}</h4>
+                </header>
+                <section class="ce-shortcutlist">
+                    
+
+                    
+
+                    <f:for each="{data.page_select}" as="page" iteration="iteration">
+                        
+                        <dl class="{f:if(condition: iteration.isFirst, then: 'active')}">
+                            <dt>{page.title->f:format.raw()}.</dt>
+                            <dd>
+                                <a href="#" data-tab="tab-{contentBlock.uid}-{page.uid}">{page.subtitle->f:format.raw()} »</a>
+                            </dd>
+                        </dl>
+                    </f:for>
+                    
+                </section>
+            </div>
+            
+        </f:if>
+    </div>
+    
+</f:section>

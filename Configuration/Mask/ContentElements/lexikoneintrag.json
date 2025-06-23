@@ -1,0 +1,62 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "lexikoneintrag": {
+                    "color": "#0abefa",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "bodytext",
+                        "image"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-graduation-cap",
+                    "iconOverlay": "fa-graduation-cap",
+                    "key": "lexikoneintrag",
+                    "label": "Lexikon-Eintrag",
+                    "labels": [
+                        "Begriff",
+                        "Erkl\u00e4rung",
+                        "Bilder"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 2
+                }
+            },
+            "tca": {
+                "bodytext": {
+                    "bodytextTypeByElement": {
+                        "box_nummeriert": "richtext",
+                        "grosses_intro": "text",
+                        "kontaktperson": "text",
+                        "lexikoneintrag": "richtext"
+                    },
+                    "coreField": 1,
+                    "fullKey": "bodytext",
+                    "key": "bodytext"
+                },
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "image": {
+                    "coreField": 1,
+                    "fullKey": "image",
+                    "imageoverlayPalette": 1,
+                    "key": "image",
+                    "type": "file"
+                }
+            }
+        }
+    }
+}

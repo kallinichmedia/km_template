@@ -1,0 +1,31 @@
+
+<div class="filter-item c{data.uid}" id="c{data.uid}" data-category="1" data-sort="value">
+
+    <f:if condition="{data.header}">
+        <h3 class="begriff">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
+                <g id="Gruppe_327" data-name="Gruppe 327" transform="translate(0 29) rotate(-90)">                  
+                  <g id="Gruppe_116" data-name="Gruppe 116" transform="translate(21.783 5.262) rotate(90)">
+                    <path id="Pfad_58" data-name="Pfad 58" d="M0,0H9.6V9.6" transform="translate(6.788) rotate(45)" fill="none" stroke="#14366c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+                  </g>
+                </g>
+            </svg> 
+            <span>{data.header->f:format.raw()}</span>
+        </h3>
+    </f:if>
+    <div class="definition">
+        <div class="col-text">
+            <f:if condition="{data.bodytext}">
+                {data.bodytext -> f:format.html()}
+            </f:if>
+        </div>
+        
+        <div class="col-pics">
+            <f:for each="{data.image}" as="file">
+                <f:image image="{file}" width="1200" />
+                {file.description}
+            </f:for>
+        </div>
+    </div>
+    
+</div>

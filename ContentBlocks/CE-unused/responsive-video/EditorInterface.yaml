@@ -1,0 +1,23 @@
+name: km/responsive-video
+typeName: km_responsivevideo
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic  
+
+  - 
+    identifier: image
+    useExistingField: true
+    label: Video
+    type: File
+    
+    minitems: 0
+    maxitems: 1
+    allowed: youtube,vimdeo
+
+basics:
+    - TYPO3/Appearance
+    - TYPO3/Links

@@ -1,0 +1,15 @@
+<f:layout/>
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+    
+<f:section name="Main">
+    <f:asset.css identifier="km-ticker-fe-css" href="{cb:assetPath()}/frontend.css"/>
+    <f:asset.script identifier="km-ticker-fe-js" src="{cb:assetPath()}/frontend.js"/>
+
+    <div class="ce-ticker" data-speed="200" data-direction="left" data-stopponhover="0">
+        {data.subheader->f:format.raw()}
+    </div>
+    
+
+</f:section>

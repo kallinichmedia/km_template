@@ -1,0 +1,20 @@
+name: km/pageheadline
+typeName: km_pageheadline
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic 
+
+  -
+    identifier: subheader
+    useExistingField: true
+
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

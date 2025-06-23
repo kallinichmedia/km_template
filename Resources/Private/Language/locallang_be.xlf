@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2022-09-09UTC07:41:490">
+        <header>
+            <authorName>Andreas Leinberger</authorName>
+            <authorEmail>andreas.leinberger@kallinich-media.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="backend_layout.default">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.singlecontent">
+                <source>Einfacher Inhalt ohne Kontakt und Prefooter</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.lexikon">
+                <source>Lexikon</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.wissen">
+                <source>Wissen</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.normal">
+                <source>Normal</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.intro">
+                <source>Introbereich</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.contact">
+                <source>Kontaktbereich (vererbt)</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.prefooter">
+                <source>Content vor Footer</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,114 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "grosses_intro": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "image_zoom",
+                        "image",
+                        "bodytext"
+                    ],
+                    "columnsOverride": {
+                        "bodytext": {
+                            "config": {
+                                "wrap": "virtual"
+                            },
+                            "fullKey": "bodytext",
+                            "key": "bodytext",
+                            "type": "richtext"
+                        },
+                        "image": {
+                            "config": {
+                                "appearance": {
+                                    "elementBrowserEnabled": 1,
+                                    "enabledControls": {
+                                        "delete": 1,
+                                        "dragdrop": 1,
+                                        "hide": 1,
+                                        "info": 1,
+                                        "localize": 1,
+                                        "sort": 0
+                                    },
+                                    "fileUploadAllowed": 1,
+                                    "useSortable": 1
+                                },
+                                "maxitems": "1",
+                                "minitems": ""
+                            },
+                            "fullKey": "image",
+                            "imageoverlayPalette": 1,
+                            "key": "image",
+                            "type": "file"
+                        },
+                        "image_zoom": {
+                            "config": {
+                                "default": "0",
+                                "items": [],
+                                "renderType": "checkboxToggle"
+                            },
+                            "fullKey": "image_zoom",
+                            "key": "image_zoom",
+                            "type": "check"
+                        }
+                    },
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "Nutze <p> f\u00fcr Zeilen und Klassen f\u00fcr Looks:\n.punshline1 (blau auf weiss)\n.punshline2 (weiss auf blau)\n.punshline3 (blau auf gelb)\n.punshlineS (klein)\n"
+                    ],
+                    "icon": "fa-image",
+                    "iconOverlay": "fa-image",
+                    "key": "grosses_intro",
+                    "label": "Grosses Intro",
+                    "labels": [
+                        "Titel (nur intern)",
+                        "volle Bildschirm-H\u00f6he",
+                        "Bilder",
+                        "Text"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "tca": {
+                "bodytext": {
+                    "bodytextTypeByElement": {
+                        "box_nummeriert": "richtext",
+                        "grosses_intro": "text",
+                        "kontaktperson": "text",
+                        "lexikoneintrag": "richtext"
+                    },
+                    "coreField": 1,
+                    "fullKey": "bodytext",
+                    "key": "bodytext"
+                },
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "image": {
+                    "coreField": 1,
+                    "fullKey": "image",
+                    "imageoverlayPalette": 1,
+                    "key": "image",
+                    "type": "file"
+                },
+                "image_zoom": {
+                    "coreField": 1,
+                    "fullKey": "image_zoom",
+                    "key": "image_zoom",
+                    "type": "check"
+                }
+            }
+        }
+    }
+}

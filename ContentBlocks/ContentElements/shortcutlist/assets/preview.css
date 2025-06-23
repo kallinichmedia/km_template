@@ -1,0 +1,70 @@
+.ce-shortcutlist {
+  --kmscl-textcolor: #17242f;
+  --kmscl-linkcolor: #0073d2;
+  --kmscl-linkhovercolor: var(--themecolor, #0073d2);
+}
+.ce-shortcutlist h4 {
+  color: var(--themecolor, #0073d2);
+  margin-bottom: 0.25rem;
+  font-weight: 900;
+  font-size: 1.25rem !important;
+  line-height: 1.25em !important;
+}
+.ce-shortcutlist dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem !important;
+}
+@media screen and (min-width: 1200px) {
+  .ce-shortcutlist dl {
+    font-size: 1.25rem !important;
+    line-height: 1.25em !important;
+  }
+}
+.ce-shortcutlist dl dt {
+  font-weight: 900;
+  flex: 0 0 100%;
+}
+@media screen and (min-width: 1200px) {
+  .ce-shortcutlist dl dt {
+    flex: 0 0 auto;
+  }
+}
+.ce-shortcutlist dl dd {
+  margin-bottom: 1rem;
+  margin-left: 0;
+}
+@media screen and (min-width: 1200px) {
+  .ce-shortcutlist dl dd {
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+  }
+}
+.ce-shortcutlist dl dd ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.ce-shortcutlist dl dd ul li {
+  display: inline;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ce-shortcutlist dl dd ul li:before {
+  display: none;
+}
+.ce-shortcutlist dl dd a {
+  color: var(--kmscl-linkcolor);
+  /* text-decoration: none; */
+  transition: all 0.3s ease;
+}
+.ce-shortcutlist dl dd a:hover {
+  /* text-decoration: none; */
+  color: var(--kmscl-linkhovercolor);
+}

@@ -1,0 +1,53 @@
+<div class="mask_kontaktdetails">   
+    <div class="inner">
+
+        <f:if condition="{data.header}">
+            <span class="title h2">{data.header->f:format.raw()}</span>
+        </f:if>
+
+        <!-- Definition List Telefon, Email, Whatsapplink -->
+
+        <div class="detailslist">
+
+            <f:if condition="{data.tx_mask_phone}">
+                <dl>
+                    <dt>Telefon</dt>
+                    <dd>{data.tx_mask_phone}</dd>
+                </dl>
+            </f:if>
+
+            <f:if condition="{data.tx_mask_email}">
+                <dl>
+                    <dt>E-Mail</dt>
+                    <dd>{data.tx_mask_email}</dd>
+                </dl>
+            </f:if>
+            
+            
+            <dl class="contact-whatsapp"> 
+                <dt>WhatsApp</dt>
+                <dd>
+                    <span>QR-Code scannen</span>
+                    <div class="qrcodebox">
+                        <div class="inner">
+                            <div class="qrcode">
+                                <f:link.typolink parameter="{data.image.0.link}">
+                                    <f:image image="{data.image.0}" width="200" />
+                                </f:link.typolink>                       
+                            </div>
+                            <div class="qrcodetext">
+                                <span class="text">
+                                    Scanne diesen Code, um einen Whatsapp Chat mit Homestory zu beginnen.<br/><br/>
+                                    <f:link.typolink class="btn" parameter="{data.image.0.link}">WhatsApp öffnen</f:link.typolink>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+

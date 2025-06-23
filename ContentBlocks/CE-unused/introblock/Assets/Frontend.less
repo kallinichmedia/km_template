@@ -1,0 +1,199 @@
+.ce-hero {
+    height: 100svh;
+    width: 100svw;
+    container-type: inline-size;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    overflow: hidden;
+
+
+    .scroll-down {
+        position: absolute;
+        bottom: 0.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        cursor: pointer;
+        border: 1px solid #ffffff77;        
+        border-radius: 0.25rem;
+        background-color: transparent;
+        padding: 0.15rem 0.5rem;
+        color: #ffffff77;
+        text-transform: uppercase;
+        svg {
+            width: 1rem;
+            height: auto;
+            * {
+                fill: #ffffff77;
+            }            
+        }
+    }
+
+    .bgcolorobject {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .stage-0-wrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 1;
+        opacity: 1;
+        aspect-ratio: 1 / 1;
+        transition: opacity 1s ease-in-out;
+    }
+  
+    
+    .accent-small1 {
+        position: absolute;
+        left: -5%;
+        top: 30%;
+        width: 15%;
+        height: auto;
+    }
+
+    .accent-small2 {
+        position: absolute;
+        right: -5%;
+        bottom: 30%;
+        width: 7%;
+        height: auto;
+    }
+    
+    .accent-main {
+        aspect-ratio: 1.7 / 1;
+        max-width: 100cqw;
+        max-height: 100cqh;
+        width: 90cqw;
+        height: 90cqh;
+        position: relative;
+
+        @media screen and (min-width: 1200px) {
+            max-width: 70cqw;
+            max-height: 70cqh;
+        }
+    }
+
+    .overlay-block {
+        container-type: inline-size;
+        width: 80%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-inline: 1cqw;
+        gap: 3cqh;
+
+
+        svg {
+            width: 80%;
+            height: auto;
+        }
+
+        .textpos {
+            width: 100%;            
+            display: flex;
+            justify-content: right;
+            .text {
+                display: inline-block;
+                font-size: ~"max(5cqw, 1rem)";
+                line-height: 1;
+                text-align: left;
+            }
+        }
+    }
+
+
+
+    .storyline {
+        position: absolute;
+        width: calc(~"100svw - 2rem");
+        height: 100svh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        pointer-events: none;
+
+        .textanimation > div {
+            
+            opacity: 0;
+        }
+        
+        
+        > div {
+            
+        }
+
+        .punchline {
+            .huge-font-size;
+            line-height: 1;
+            margin-bottom: 0;
+            font-weight: 900;
+            .inlinekay {
+                margin-left: 0.25rem;
+                height: 1.35em;
+            }
+        }
+
+        .subline {
+           margin-bottom: 4rem;
+           text-align: right;
+            .bigger-font-size;
+        }
+
+        .buttonrow {
+            text-align: center;
+            pointer-events: none;
+            span {
+                display: inline-block; 
+                cursor: pointer;
+                pointer-events: all;
+            }
+            .nextbtn {
+                cursor: pointer;
+                opacity: 1;
+                
+            }
+        }
+
+        .textanimation {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+           
+
+            > div:not(:first-child) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+   
+
+                
+              
+            }
+        }
+       
+    }
+}
+
+.intro-option1 {
+    .big-k-title {
+        .huge-font-size;
+        font-weight: 900;
+    }
+}

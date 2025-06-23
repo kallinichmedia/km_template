@@ -1,0 +1,65 @@
+.frame-type-form_formframework {
+
+
+    .row {
+        --bs-gutter-x: 3rem;
+        --bs-gutter-y: 3rem;
+        margin-block: 1rem;
+
+        >div {
+            margin-top: 0;
+        }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid @page-textcolor;
+        width: 100%;
+        padding: 0.25em 0.5em;
+        font-size: 1rem;
+    }
+
+    textarea {
+        border: 1px solid @page-textcolor;
+        height: 10rem;
+    }
+
+    select {
+        width: 100%;
+        background:
+            unset;
+        border:
+            2px solid @page-textcolor;
+        border-radius:
+            1rem;
+        padding:
+            .4rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+        .input {
+            input {}
+        }
+    }
+
+    .form-uploadnotes {
+        display: flex;
+        gap: 1rem;  
+        margin-bottom: 1rem;
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;   
+            
+            * {
+                fill: @1stcolor;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+name: km/refslider
+typeName: km_refslide
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true
+  -
+    identifier: image
+    useExistingField: true
+    label: Bilder
+    description: Nutze Bild-Felder Link und Title

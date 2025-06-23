@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:if condition="{data.layout}==3">
+        <f:then>
+            <div class="cutText">
+                <f:format.html>{data.bodytext}</f:format.html>
+                <div class="moretext-toggle">
+                    <span class="text"></span>
+                    <span class="theline"></span>
+                    <span class="icon">
+                        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 16.6 9.8" style="enable-background:new 0 0 16.6 9.8;" xml:space="preserve">
+                            <g id="Gruppe_1033" transform="translate(0.005 -0.226)">
+                                <g id="Gruppe_116" transform="translate(21.58 5.261) rotate(90)">
+                                    <path d="M4.8,13.3c0,0.4-0.2,0.8-0.4,1.1l-6.8,6.8c-0.6,0.6-1.5,0.6-2.1,0c-0.6-0.6-0.6-1.5,0-2.1l5.7-5.7l-5.7-5.7
+                                        C-5.2,7-5.2,6-4.6,5.4c0.6-0.6,1.5-0.6,2.1,0l6.8,6.8C4.6,12.5,4.8,12.9,4.8,13.3z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+
+
+        </f:then>
+        <f:else>
+            <f:format.html>{data.bodytext}</f:format.html>
+        </f:else>
+    </f:if>
+</f:section>
+</html>

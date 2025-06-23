@@ -1,0 +1,55 @@
+/* Created by Content Blocks */
+
+.ce-quote {
+    padding-block: 1rem;
+  }
+  .ce-quote .inner {
+    position: relative;
+  }
+  .ce-quote .inner .watermark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: contain;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .ce-quote .inner .watermark * {
+    fill: #f2f1ef;
+  }
+  .ce-quote .inner .ce-quote__quote {
+    z-index: 10;
+    position: relative;
+    padding-inline: 4rem 0;
+    padding-block: 0;
+  }
+ 
+  .ce-quote .inner .ce-quote__quote .ce-quote__quote__text {
+    position: relative;
+    margin-bottom: 0rem;
+  }
+  .ce-quote .inner .ce-quote__quote .ce-quote__quote__text .qmark {
+    position: absolute;
+    width: 3rem;
+    z-index: 20;
+  }
+  .ce-quote .inner .ce-quote__quote .ce-quote__quote__text .qmark * {
+    fill: #17242f;
+  }
+  .ce-quote .inner .ce-quote__quote .ce-quote__quote__text .qmark.qmark-in {
+    top: 0;
+    right: calc(100% + 1rem);
+  }
+  .ce-quote .inner .ce-quote__quote .ce-quote__quote__text .qmark.qmark-out {
+    top: 100%;
+    left: 100%;
+    display: none;
+  }
+  .ce-quote .inner .ce-quote__quote .ce-quote__quote__text .ce-quote-text {
+    text-align: left;
+    position: relative;
+    z-index: 10;
+  }

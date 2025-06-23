@@ -1,0 +1,34 @@
+# lib.contentBlock.renderPage = CONTENT
+# lib.contentBlock.renderPage {
+#   table = tt_content
+#   select {
+#     pidInList.data = register:pageUid
+#     orderBy = sorting
+#   }
+#   renderObj =< tt_content
+# }
+
+lib.contentBlock.renderPage = COA
+lib.contentBlock.renderPage {
+    #putput UID FPR tESTING
+    #10 = TEXT
+    #10 {
+    #    field = pageUID
+    #    wrap = <h1>Page UID: |</h1>
+    #}
+  
+  
+    20 = CONTENT
+    20 {
+        table = tt_content
+        select {
+            pidInList.field = pageUID
+            orderBy = sorting
+            # Only render top-level content
+            where = tx_container_parent = 0
+        }
+        renderObj =< tt_content
+    }
+
+}
+

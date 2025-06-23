@@ -1,0 +1,14 @@
+.ce-breadcrumb {
+  margin-bottom: 2rem;
+}
+.ce-breadcrumb a {
+  color: #0073d2;
+  font-size: 1rem; 
+  text-decoration: none;
+}
+.ce-breadcrumb h1 {
+  font-size: inherit;
+  display: inline;
+  font-size: 0.8rem;
+  font-weight: 900;
+}

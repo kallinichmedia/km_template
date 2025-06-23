@@ -1,0 +1,30 @@
+name: km/arraycontacts
+typeName: km_arraycontacts
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+
+  -
+    identifier: header
+    useExistingField: true
+    label: Titel(intern)
+    
+  - identifier: person
+    type: Relation
+    allowed: 'tx_km_kmcontact'
+    maxitems: 30
+
+
+  - identifier: displaymode
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'Bild/Text'
+        value: pictext
+      - label: 'Bild'
+        value: pic
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

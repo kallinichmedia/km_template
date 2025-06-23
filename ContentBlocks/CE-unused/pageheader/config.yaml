@@ -1,0 +1,26 @@
+name: km/pageheader
+typeName: km_pageheader
+group: default
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic 
+
+  - identifier: bodytext
+    label: SVG-Source
+    type: Textarea
+    useExistingField: true
+
+  - identifier: image
+    type: File
+    minitems: 1
+    maxitems: 3
+    allowed: common-image-types
+  
+
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

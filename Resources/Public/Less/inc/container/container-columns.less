@@ -1,0 +1,175 @@
+
+
+/* Für alle */
+.ce-twocolumns, .ce-threecolumns, .ce-fourcolumns {
+
+    // set css variable gap to 30px
+    --gap: 30px;
+
+/*     > .inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--gap);
+    } */
+}
+
+/* Zweispalter */
+
+.ce-twocolumns .inner{
+    .column {
+/*         flex: 0 0 100%;
+        width: 100%;
+
+        > .frame {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        @media (min-width: 768px) {
+            flex: 0 0 calc(~"50% - var(--gap)");
+            width: calc(~"50% - var(--gap)");    
+        } */
+    }
+}
+
+// Spezial 60% - 40%
+.frame-type-twocolumns.frame-layout-50 {
+    .column {
+/*         flex: 0 0 100%;
+        width: 100%;
+
+        > .frame {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        @media (min-width: 768px) {
+            flex: 0 0 calc(~"60% - var(--gap)");
+            width: calc(~"60% - var(--gap)");    
+        } */
+    }
+    
+    .column:nth-child(2) {
+/*         @media (min-width: 768px) {
+            flex: 0 0 calc(~"40% - var(--gap)");
+            width: calc(~"40% - var(--gap)");    
+        } */
+    }
+}
+
+// Spezial Kontakblock link ausdehnen, rechts nur was nötig ist
+
+.frame-type-twocolumns.frame-layout-60 {
+    
+    .inner {
+        gap: 3rem;
+    }
+
+    .column {
+        flex: 0 0 100%;
+
+
+        > .frame {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        @media (min-width: 768px) {
+            flex: 1;
+            
+        }
+    }
+    
+    .column:nth-child(2) {
+        @media (min-width: 768px) {
+            flex: 0 0 16rem;
+             
+        }
+    }
+
+}
+
+
+
+/* Dreispalter */
+
+.ce-threecolumns .inner{
+    
+/*     .column {
+        flex: 0 0 100%;
+        width: 100%;
+        
+        @media (min-width: 768px) {
+            flex: 0 0 calc(~"33.3333% - var(--gap)");
+            width: calc(~"33.3333% - var(--gap)");    
+        }
+    } */
+}
+
+
+/* Vierspalter */
+
+ 
+.ce-fourcolumns .inner{
+/*     .column {
+        flex: 0 0 100%;
+        width: 100%;
+        
+        @media (min-width: 768px) {
+            flex: 0 0 calc(~"25% - var(--gap)");
+            width: calc(~"25% - var(--gap)");    
+        }
+    } */
+}
+
+
+
+
+.row-header {
+    display: flex;
+    --bs-gutter-x: 3rem;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+
+    @media screen and (min-width: 992px) {
+        padding-inline: 0;
+    }
+
+
+    > * {
+        flex: 0 0 100%;
+        width: 100%;
+        
+
+        @media screen and (min-width: 992px) {
+            flex: 0 0 50%;
+            width: 50%;            
+        }
+    }
+
+    .col-text {
+        max-width: 750px;
+    }
+
+    @media screen and (max-width: 991px) {
+        .col-img {
+            padding-inline: 0;
+            margin-bottom:  0.5rem;
+        }
+    }
+
+    .imgwrap {
+        line-height: 0;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.frame-space-before-headerfont {
+    @media screen and (min-width: 992px) {
+        margin-top: -15dvw;        
+    }
+}

@@ -1,0 +1,49 @@
+name: km/topiccloud
+typeName: km_topiccloud
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic 
+  -
+    identifier: items
+    label: 'Items'
+    type: Collection
+    fields:
+      -
+        identifier: title
+        label: 'Title'
+        type: Text
+        config:
+          max: 255
+      -
+        identifier: positionx
+        label: 'Position(% von links)'
+        type: Number
+      -
+        identifier: positionY
+        label: 'Position(% von oben)'
+        type: Number
+      - 
+        identifier: url
+        label: 'Link'
+        type: Link
+        autocomplete: true
+        default: 'https://typo3.org'
+        allowedTypes:
+          - page
+          - url
+          - file
+        required: false
+      -
+        identifier: image
+        label: 'Bild'
+        type: File
+        maxitems: 1
+        allowed: common-image-types
+
+basics:
+    - TYPO3/Appearance
+    - TYPO3/Links

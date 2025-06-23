@@ -1,0 +1,78 @@
+.tx-filteredjobs {
+    .jobsfilter {
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        a {
+            white-space: nowrap;
+            background: white;
+            border: 3px solid @1stcolor;
+            box-sizing: border-box;
+            color: @1stcolor;
+            transition: all 0.2s ease-in-out;
+
+            &:hover, &.active {
+                background: @1stcolor;
+                color: white;
+            }
+        }
+    }
+
+    .jobslist {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        > a {
+            display: flex;
+            padding: 1rem;
+            border: 3px solid @1stcolor;
+            box-sizing: border-box;
+            position: relative;
+            gap: 1rem;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+
+            .jobtitle {
+                font-weight: 900;
+                color: @page-textcolor;                
+
+            }
+
+            .btnaccent {
+                display: inline-block;
+                background: @1stcolor;
+                color: white;
+                border-radius: 100px;
+                padding: 0 1rem;
+                align-self: flex-start;
+            }
+            
+            
+            /* Columns */
+
+            
+            
+            @media screen and (min-width: 540px) {
+                flex: 0 0 calc(~"50% - 1rem");
+                width: calc(~"50% - 1rem");
+            }
+            
+            // 3 columns
+            @media screen and (min-width: 768px) {
+                flex: 0 0 calc(~"33.3333% - 0.6667rem");
+                width: calc(~"33.3333% - 0.6667rem");                
+            }
+
+            // 5 columns
+            @media screen and (min-width: 1200px) {
+                flex: 0 0 calc(~"20% - 0.8rem");
+                width: calc(~"20% - 0.8rem");                
+            }
+
+
+        }
+    }
+}

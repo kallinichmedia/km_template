@@ -1,0 +1,56 @@
+
+
+<section id="c{data.uid}">
+    <div class="tx-timeline-swiper">
+        <div class="backdrop">
+            <div class="frame-type-header">
+                <header>
+                    <h3 class=" default-headline">
+                        Mein Weg 
+                    </h3>            
+                    <span class=" subheadline">
+                        In Jahreszahlen
+                    </span>       
+                </header>
+            </div>
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <f:for each="{data.tx_mask_history_events}" as="data_item">
+                        <div class="swiper-slide" data-year="{data_item.tx_mask_history_event_data->f:format.raw()}">
+                            <f:if condition="{event.imageBg.0}">
+                                <f:then>
+                                    <div class="bg-image">
+                                        <f:image image="{event.imageBg.0}" />
+                                    </div>
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{data.assets.0}">
+    
+                                        <div class="bg-image">
+                                            <picture>
+                                                <source srcset="<f:uri.image image='{data.assets.0}' treatIdAsReference='1' width='768' cropVariant='default' />" media="(min-width: 768px)">
+                                                <source srcset="<f:uri.image image='{data.assets.0}' treatIdAsReference='1' width='768' cropVariant='mobile' />" media="(max-width: 767px)">
+                                                <img src="<f:uri.image image='{data.assets.0}' treatIdAsReference='1' width='768' cropVariant='mobile' />" class="image-embed-item img-fluid" alt="{file.alternative}" />
+                                            </picture>
+                                        </div>
+                                    </f:if>
+                                </f:else> 
+                            </f:if> 
+                            <f:comment>
+                            </f:comment>
+                            <div class="swiper-slide-content">
+                                <span class="timeline-year">{data_item.tx_mask_history_event_data->f:format.raw()}</span>
+                                <h4 class="timeline-title">{data_item.tx_mask_history_event_title->f:format.raw()}</h4>
+                                <p class="timeline-text">{data_item.tx_mask_history_event_text->f:format.raw()}</p>
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>

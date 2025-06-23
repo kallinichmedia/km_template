@@ -1,0 +1,35 @@
+<!-- Equivalent zu name="Default" -->
+<f:layout/>  
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<!-- needs to be inside here -->
+
+    <f:asset.css identifier="km-shortcutlist-fe-css" href="{cb:assetPath()}/frontend.css"/>
+    <f:asset.script identifier="km-shortcutlist-fe-js" href="{cb:assetPath()}/frontend.js"/>
+
+	<!-- Main Content -->
+    
+    <section class="ce-shortcutlist">
+
+    
+        <f:for each="{data.row}" as="row" iteration="i">           
+            <dl>
+                <dt>{row.title->f:format.raw()}</dt>
+                <dd>
+                    {row.bodytext->f:format.html()}
+                </dd>
+            </dl>
+        </f:for>  
+            
+    </section>
+    
+</f:section>
+
+
+
+
+
+
+

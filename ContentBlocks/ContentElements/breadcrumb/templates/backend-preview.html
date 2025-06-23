@@ -1,0 +1,35 @@
+
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    <f:asset.css identifier="my-backend-breadcrumb-styles" href="{cb:assetPath()}/preview.css"/>
+    <div class="ce-breadcrumb">
+    <f:for each="{data.items}" as="item" iteration="i">
+        <f:if condition="{i.isLast}">
+            <f:then>
+                <h1><f:link.typolink parameter="{item.url}">{item.title}</f:link.typolink></h1>
+            </f:then>
+            <f:else>
+                <f:link.typolink parameter="{item.url}"><span>{item.title}</span></f:link.typolink>&nbsp;&raquo;&nbsp;
+            </f:else>
+        </f:if>
+    </f:for>
+</div>
+
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>

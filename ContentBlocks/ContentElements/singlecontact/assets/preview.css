@@ -1,0 +1,45 @@
+.ce-singlecontact .the-person {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.ce-singlecontact .the-person .imagewrap {
+  width: 8rem;
+  height: 8rem;
+  margin-right: 20px;
+}
+.ce-singlecontact .the-person .imagewrap img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.ce-singlecontact .the-person .datawrap h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.ce-singlecontact .the-person .datawrap a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #000;
+  text-decoration: none;
+}
+.ce-singlecontact .the-person .datawrap a:hover {
+  text-decoration: underline;
+}
+.ce-singlecontact .the-person .datawrap a svg {
+  width: auto;
+  height: 1.25em;
+}
+.ce-singlecontact .the-person .datawrap a svg * {
+  fill: var(--themecolor, #0073d2);
+}
+.ce-singlecontact .the-person .datawrap .nameblock {
+  margin-bottom: 1rem;
+}
+.ce-singlecontact .the-person .datawrap .nameblock .name {
+  font-weight: 900;
+}
+.ce-singlecontact .the-person .datawrap .nameblock span {
+  display: block;
+}

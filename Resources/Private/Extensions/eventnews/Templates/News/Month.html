@@ -1,0 +1,148 @@
+{namespace events=GeorgRinger\Eventnews\ViewHelpers}
+{namespace n=GeorgRinger\News\ViewHelpers}
+<f:layout name="General" />
+
+<f:section name="content">
+
+
+	<div class="eventsaccordion">
+
+		
+		<events:calendar newsList="{newsWithNoDaySupport}" demand="{demand}" firstDayOfWeek="1">
+			
+			<div class="pager">
+
+				
+
+				<div class="previous">
+					<f:link.action controller="News" action="month" arguments="{overwriteDemand:{month:previousMonthData.month,year:previousMonthData.year}}" pageUid="{currentPageId}" rel="nofollow">
+						&laquo; {f:format.date(date:previousMonthData.date,format:'%B %Y')}
+					</f:link.action>
+				</div>
+				<div><span>{f:format.date(date:currentMonthData.date,format:'%B %Y')}</span></div>
+				<div class="next">
+					<f:link.action controller="News" action="month" arguments="{overwriteDemand:{month:nextMonthData.month,year:nextMonthData.year}}" pageUid="{currentPageId}" rel="nofollow">
+						{f:format.date(date:nextMonthData.date,format:'%B %Y')} &raquo;
+					</f:link.action>
+				</div>
+			</div>
+	
+			
+			<div>
+				<f:comment>
+					<tr class="days">
+						<f:for each="{weeks.0}" as="day">
+							<th>
+								{f:format.date(date: day.ts, format: '%a')}
+							</th>
+						</f:for>
+					</tr>
+				</f:comment>
+				
+		
+				<f:for each="{weeks}" as="week">	
+					<div class="weekobject">
+						<div class="weeknumber">
+							{f:format.date(date: week.0.ts, format: 'KW%W')}
+						</div>
+						<div class="weekcontent">
+							<div class="inner">
+								<div class="padding">									
+									<f:for each="{week}" as="day">
+										<f:if condition="{day.curmonth} && {day.news}">
+											<f:render section="calday" arguments="{day:day, settings:settings}" />
+										</f:if>
+									</f:for>
+								</div>
+							</div>
+						</div>
+					</div>
+				</f:for>
+				
+			</div>
+		</events:calendar>
+	</div>
+		
+		
+		<f:comment>
+
+			<div class="col-md-3">
+				<h2>
+					<f:translate key="list" extensionName="eventnews" />
+				</h2>
+				<div class="row">
+					<f:for each="{news}" as="n">
+						<f:if condition="{overwriteDemand.day}">
+							<f:then>
+								<f:if condition="{events:dayCompare(newsItem:n,demand:demand)}">
+									<f:render section="listItem" arguments="{_all}" />
+								</f:if>
+							</f:then>
+							<f:else>
+								<f:render section="listItem" arguments="{_all}" />
+							</f:else>
+						</f:if>
+						
+					</f:for>
+				</div>
+			</div>
+		</f:comment>
+	</div>
+</f:section>
+
+<f:section name="listItem">
+	<div class="">
+		<strong>
+			<n:link newsItem="{n}" settings="{settings}">{n.title}</n:link>
+			| {f:format.date(date:n.datetime,format:'%d.%m')}</strong>
+		<ul>
+			<f:if condition="{n.organizer}">
+				<li><strong>
+					<f:translate key="organizer" extensionName="eventnews" />
+				</strong>: {n.organizer.title}
+					<small>(uid: {n.organizer.uid})</small>
+				</li>
+			</f:if>
+			<f:if condition="{n.location}">
+				<li><strong>
+					<f:translate key="location" extensionName="eventnews" />
+				</strong>: {n.location.title}
+					<small>(uid: {n.location.uid})</small>
+				</li>
+			</f:if>
+			<f:if condition="{n.eventEnd}">
+				<li>
+					<strong>
+						<f:translate key="event_end" extensionName="eventnews" />
+					</strong>: {f:format.date(date:n.eventEnd,format:'%d.%m.%Y')}
+				</li>
+			</f:if>
+		</ul>
+	</div>
+</f:section>
+
+<f:section name="calday">
+	<div class="day day{f:format.date(date: day.ts, format: 'N')} {f:if(condition: day.curmonth, then: 'curmonth', else: 'othermonth')}{f:if(condition: day.news, then: ' hasevents')}{f:if(condition: day.curday, then: ' today')}{f:if(condition: '{day.news->f:count()} > 1', then: ' hasMoreThanOne', else: ' hasJustOne')} eventcount-{day.news->f:count()}">
+		<f:if condition="{day.dayBelongsToCurrentMonth}">
+			<f:if condition="{day.news}">
+				<f:then>
+					<h3>{day.day}.{day.month}</h3>
+
+					<f:for each="{day.news}" as="newsItem">
+						<div class="eventbox">							
+							<span class="time">{f:format.date(date:newsItem.datetime,format:'H:i')}</span>
+							<p class="desc">{newsItem.title->f:format.raw()}</p>							
+						</div>
+					</f:for>
+
+				</f:then>
+				<f:else>
+					<!-- {day.day} -->
+				</f:else>
+			</f:if>
+		</f:if>
+	</div>
+</f:section>
+
+
+

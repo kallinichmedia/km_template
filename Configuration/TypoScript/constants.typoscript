@@ -1,0 +1,99 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">
+
+
+##############################
+#### FLUID STYLED CONTENT ####
+##############################
+styles {
+    templates {
+        layoutRootPath = EXT:km_template/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:km_template/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:km_template/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+###################
+#### POWERMAIL ####
+###################
+plugin.tx_powermail.view {
+    templateRootPath = EXT:km_template/Resources/Private/Extensions/powermail/Templates/
+    partialRootPath = EXT:km_template/Resources/Private/Extensions/powermail/Partials/
+    layoutRootPath = EXT:km_template/Resources/Private/Extensions/powermail/Layouts/
+}
+
+
+
+##############
+#### NEWS ####
+##############
+
+plugin.tx_news {
+   view {
+      templateRootPath = EXT:km_template/Resources/Private/Extensions/news/Templates/
+      partialRootPath = EXT:km_template/Resources/Private/Extensions/news/Partials/
+      layoutRootPath = EXT:km_template/Resources/Private/Extensions/news/Layouts/      
+   }
+}
+
+
+
+
+############
+### PAGE ###
+############
+page {
+     fluidtemplate {
+        layoutRootPath = EXT:km_template/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:km_template/Resources/Private/Partials/Page/
+        templateRootPath = EXT:km_template/Resources/Private/Templates/Page/
+    }
+    meta {
+        description =
+        author =
+        keywords =
+        viewport = width=device-width, initial-scale=1
+        robots = index,follow
+        apple-mobile-web-app-capable = no
+        compatible = IE=edge
+    }
+    tracking {
+        google {
+            trackingID =
+            anonymizeIp = 1
+        }
+    }
+    
+    settings {
+        header {
+            
+            # cat=plugin.km_template/header; type=string; label=Header Email
+            email = info@ponturo.de
+            
+            # cat=plugin.km_template/header; type=string; label=Header Phone
+            phone =  +496925782670
+            
+            # cat=plugin.km_template/header; type=string; label=Header Email Karriere
+            emailKarriere = karriere@ponturo.de
+
+            # cat=plugin.km_template/header; type=string; label=Header Phone Karriere
+            phoneKarriere =  +49692578267110
+        }
+    }
+}
+
+
+##############
+### CONFIG ###
+##############
+config {
+    no_cache = 0
+    removeDefaultJS = 0
+    admPanel = 1
+    prefixLocalAnchors = all
+    # headerComment = build by sitepackagebuilder.com
+    sendCacheHeaders = 1
+}

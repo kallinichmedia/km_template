@@ -1,0 +1,131 @@
+.ce-arraycontacts .inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.ce-arraycontacts .inner .the-person {
+  flex: 0 0 calc(50% - 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .ce-arraycontacts .inner .the-person {
+    flex: 0 0 calc(33.3333% - 2rem);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .ce-arraycontacts .inner .the-person {
+    flex: 0 0 calc(25% - 2rem);
+  }
+}
+.ce-arraycontacts .inner .the-person .descriptionwrap {
+  display: none;
+  visibility: hidden;
+}
+.ce-arraycontacts .inner .the-person .imagewrap {
+  line-height: 0;
+}
+.ce-arraycontacts .inner .the-person .datawrap {
+  position: relative;
+  padding-right: 2rem;
+}
+.ce-arraycontacts .inner .the-person .datawrap .nameblock span {
+  display: block;
+}
+.ce-arraycontacts .inner .the-person .datawrap .nameblock .name {
+  font-weight: 900;
+}
+.ce-arraycontacts .inner .the-person .datawrap .nameblock .position {
+  font-size: 0.8rem;
+  line-height: 1em;
+}
+.ce-arraycontacts .inner .the-person .datawrap .toggleIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.ce-arraycontacts .inner .the-person .datawrap .toggleIcon svg {
+  width: 1rem;
+  height: 1rem;
+}
+.ce-arraycontacts .inner .the-person .datawrap .toggleIcon svg * {
+  fill: var(--themecolor, #0073d2);
+}
+.ce-arraycontacts .inner .detailscontainer {
+  background-color: #f4f3fa;
+  box-shadow: 0 0 0 100vmax #f4f3fa;
+  clip-path: inset(0 -100vmax);
+  display: none;
+  flex: 0 0 100%;
+}
+.ce-arraycontacts .inner .detailscontainer .inner {
+  padding: 3rem 0;
+  margin: 0 auto;
+  max-width: 900px;
+  display: block;
+}
+.ce-arraycontacts .inner .detailscontainer .inner h3 {
+  font-weight: 300;
+}
+.ce-arraycontacts-pic .inner {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.ce-arraycontacts-pic .inner .gradientOverlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+  z-index: 5;
+  pointer-events: none;
+}
+.ce-arraycontacts-pic .the-person-pic {
+  flex: 0 0 50%;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .ce-arraycontacts-pic .the-person-pic {
+    flex: 0 0 333.3333%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .ce-arraycontacts-pic .the-person-pic {
+    flex: 0 0 25%;
+  }
+}
+.ce-arraycontacts-pic .the-person-pic .imagewrap {
+  line-height: 0;
+}
+.ce-arraycontacts-pic .the-person-pic .imagewrap img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.ce-arraycontacts-pic .the-person-pic .datawrap {
+  position: absolute;
+  transition: all 0.15s ease;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: #16cbaf;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ce-arraycontacts-pic .the-person-pic:hover {
+  z-index: 10;
+}
+.ce-arraycontacts-pic .the-person-pic:hover .datawrap {
+  opacity: 1;
+  transform: translateX(100%);
+}
+.ce-arraycontacts-pic .the-person-pic:nth-child(4n-1) .datawrap,
+.ce-arraycontacts-pic .the-person-pic:nth-child(4n) .datawrap {
+  transform: translateX(-100%);
+}

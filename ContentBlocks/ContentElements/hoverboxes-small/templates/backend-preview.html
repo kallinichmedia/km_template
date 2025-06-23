@@ -1,0 +1,46 @@
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    <f:asset.css identifier="my-backend-hoverboxensmall-styles" href="{cb:assetPath()}/preview.css"/>
+    
+    <div class="hoverboxsm-set">
+        
+        <f:for each="{data.items}" as="box" iteration="itty">
+            <div class="hoverboxsm">
+                <div class="front">
+                    <span class="title">{box.title->f:format.raw()}</span>
+                    <div class="textblock">
+                        <div class="inner">
+                            {box.textblock->f:transform.html()}
+                        </div>
+                    </div>
+                </div>
+              
+    
+                <svg class="plus" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 67.914 68.108">                               
+                    <rect id="bar2" x=".097" y="22.67" width="67.719" height="22.768"></rect>
+                    <rect id="bar1" x=".097" y="22.67" width="67.719" height="22.768" transform="translate(68.011 .097) rotate(90)"></rect>
+                </svg>
+            </div>
+        </f:for>
+    </div>
+
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>
+
+

@@ -1,0 +1,74 @@
+@dunkelblau: #00103E;
+@orange: #E7412B;
+@blau: #0073d2;
+@violet: #661067;
+@magenta: #a60781;
+@senfgelb: #DC9308;
+@beige: #B2AD99;
+
+
+
+@1stcolor: var(--themecolor, @blau);
+@1stcolor-dark: #151f76;
+@2ndcolor: @blau;
+@2ndcolorb: @dunkelblau;
+
+@3rdcolor: #16cbaf;
+@3rdcolor-light: darken(@3rdcolor, 20%);
+
+
+
+.seite_12 {
+    --themecolor: @1stcolor-dark;
+}
+
+
+.seite_13 {
+    --themecolor: @magenta;
+}
+
+
+
+.seite_14 {
+    --themecolor: #1edaee;
+}
+
+@menu-breakpoint: 1200px;
+
+
+@page-background: white; 
+@page-textcolor: #17242f;
+
+@page-button-bg: @1stcolor;
+@page-button-color: white;
+
+@gap-unit: 1.5rem;
+
+@navcolor: @page-textcolor;
+@navcolor-active: @1stcolor;
+
+@header-text: @1stcolor;
+@header-background: @1stcolor;
+
+
+@footer-text: white;
+@footer-background: @dunkelblau;
+
+/*  Breakpoints */
+@phoneLandscapeViewportWidth: 480px;
+@tabletViewportWidth: 768px;
+@tabletLandscapeViewportWidth: 1024px;
+@desktopViewportWidth: 1260px;
+@desktopViewportWidthWide: 1600px;
+@desktopFHDViewportWidthWide: 1920px;
+
+/* Typo3 */
+@base-font-size: 20px;
+
+@small-font-size: 16px;
+@medium-font-size: 24px;
+@large-font-size: 36px;
+@xl-font-size: 55px;
+
+@form-font-size: 24px;
+

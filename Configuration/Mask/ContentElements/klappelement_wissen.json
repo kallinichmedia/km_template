@@ -1,0 +1,142 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "klappelement_wissen": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_bgcolor",
+                        "tx_mask_wissen_item"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "klappelement_wissen",
+                    "label": "Klappelement Wissen",
+                    "labels": [
+                        "",
+                        "Elemente"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "sql": {
+                "tx_mask_bgcolor": {
+                    "tt_content": {
+                        "tx_mask_bgcolor": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_wissen_item": {
+                    "tt_content": {
+                        "tx_mask_wissen_item": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_bgcolor": {
+                    "config": {
+                        "renderType": "colorpicker",
+                        "size": 10,
+                        "type": "input",
+                        "valuePicker": {
+                            "items": [
+                                [
+                                    "Blau",
+                                    "#022c58"
+                                ],
+                                [
+                                    "Orange",
+                                    "#fcaa20"
+                                ],
+                                [
+                                    "none",
+                                    "#00000000"
+                                ]
+                            ]
+                        }
+                    },
+                    "fullKey": "tx_mask_bgcolor",
+                    "key": "bgcolor",
+                    "type": "colorpicker"
+                },
+                "tx_mask_wissen_item": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_wissen_item",
+                    "key": "wissen_item",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_wissen_item": {
+            "sql": {
+                "tx_mask_antwort": {
+                    "tx_mask_wissen_item": {
+                        "tx_mask_antwort": "mediumtext"
+                    }
+                },
+                "tx_mask_frage": {
+                    "tx_mask_wissen_item": {
+                        "tx_mask_frage": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_antwort": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "richtextConfiguration": "km_template",
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_antwort",
+                    "inlineParent": "tx_mask_wissen_item",
+                    "key": "antwort",
+                    "label": "Antowrt",
+                    "order": 2,
+                    "type": "richtext"
+                },
+                "tx_mask_frage": {
+                    "config": {
+                        "default": "Wer wie was?",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_frage",
+                    "inlineParent": "tx_mask_wissen_item",
+                    "key": "frage",
+                    "label": "Frage",
+                    "order": 1,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+name: km/hoverbox
+typeName: km_hoverbox
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic  
+
+  - identifier: color
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'Blau'
+        value: blue
+      - label: 'Dunkel'
+        value: darkblue
+      - label: 'Beerig'
+        value: berry
+      - label: 'Cyan'
+        value: cyan
+      - label: 'Aquamarin auf Weiss'
+        value: aquamarinonwhite
+
+  -
+    identifier: boldtext
+    label: "Text fett"
+    type: Text
+  -
+    identifier: thintext
+    label: "Text dünn"
+    type: Text
+
+  - identifier: usesvg
+    label: SVG-Code nutzen
+    type: Checkbox
+    onChange: reload
+  -
+    identifier: svgsource
+    label: "SVG-Sourcecode"
+    type: Textarea  
+    displayCond: 'FIELD:usesvg:=:1'
+  -
+    identifier: bodytext
+    useExistingField: true
+    label: "Volltext"
+    type: Textarea
+    enableRichtext: true
+    useExitingField: true
+
+
+
+      
+
+
+     
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

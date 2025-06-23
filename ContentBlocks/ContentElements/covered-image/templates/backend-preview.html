@@ -1,0 +1,41 @@
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+     <f:asset.css identifier="km-coveredimg-be-css" href="{cb:assetPath()}/preview.css"/>
+    
+    <!-- Your content -->    
+
+    <div class="ce-covered-image">
+        <picture>
+            <source media="(max-width: 799px)" srcset="{f:uri.image(image: '{data.image.0}', cropVariant: 'phone', treatIdAsReference: 1)}" />
+            <source media="(min-width: 800px)" srcset="{f:uri.image(image: '{data.image.0}',  cropVariant: 'tablet', treatIdAsReference: 1)}" />
+            <f:image image="{data.image.0}" cropVariant="phone" class="" title="" alt="" />
+        </picture>
+
+        <f:if condition="{data.image.1}">
+            <f:image src="{cb:assetPath()}/gradientOverlay.png" treatIdAsReference="1" class="gradientOverlay" />
+        </f:if>
+        
+        <div class="overlay">
+            {data.bodytext->f:format.raw()}       
+        </div>
+        <f:link.typolink class="btn btn-secondary" parameter="{data.url}">{data.text->f:format.raw()}</f:link.typolink>
+    </div>
+            
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>

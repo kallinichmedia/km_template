@@ -1,0 +1,42 @@
+<f:layout/>
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+    
+<f:section name="Main">
+    <f:comment>
+        <f:asset.css identifier="km-textlogo-fe-css" href="{cb:assetPath()}/frontend.css"/>
+        <f:asset.script identifier="km-textlogo-fe-js" href="{cb:assetPath()}/frontend.js"/>
+    </f:comment>
+    <!-- Your content -->    
+   
+    <div class="ce-textlogo">
+    
+        <div class="inner d-flex">
+            <div class="imagewrap">
+                <f:if condition="{data.image.0}">
+                    <f:image image="{data.image.0}" cropVariant="common" alt="{data.image.0.alternative}" treatIdAsReference="1" />
+                </f:if>
+            </div>
+
+            <div class="textwrap">
+                <f:if condition="{data.header}">
+                    <span class="header">{data.header->f:format.raw()}</span>
+                </f:if>
+                <f:if condition="{data.bodytext}">
+                    <div class="text">
+                        {data.bodytext->f:format.html()}
+                    </div>
+                </f:if>
+            </div>            
+           
+        </div>
+    </div>
+    
+
+</f:section>
+
+
+
+
+

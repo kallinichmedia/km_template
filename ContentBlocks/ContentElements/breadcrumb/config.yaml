@@ -1,0 +1,33 @@
+name: km/breadcrumb
+typeName: km_breadcrumb
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true
+  
+    
+  -
+    identifier: items
+    label: Schritte
+    type: Collection
+    labelfield: title
+    fields:
+      - 
+        identifier: item
+        type: Palette
+        label: Einzel-Schritt
+        fields:
+          - 
+            identifier: title
+            type: Text
+            required: true
+          -
+            identifier: url
+            type: Link
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

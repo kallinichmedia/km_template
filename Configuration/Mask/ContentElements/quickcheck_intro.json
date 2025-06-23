@@ -1,0 +1,341 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "quickcheck_intro": {
+                    "color": "#fcaa20",
+                    "colorOverlay": "#fcaa20",
+                    "columns": [
+                        "tx_mask_000be2fc1e8ae8",
+                        "tx_mask_86e1527e2a9f78"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-cube",
+                    "iconOverlay": "fa-cube",
+                    "key": "quickcheck_intro",
+                    "label": "Quickcheck intro",
+                    "labels": [
+                        "",
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                }
+            },
+            "palettes": {
+                "tx_mask_000be2fc1e8ae8": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_toptext",
+                        "tx_mask_title",
+                        "tx_mask_subtitle"
+                    ]
+                },
+                "tx_mask_86e1527e2a9f78": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_bgpic",
+                        "tx_mask_6b0f7152a7bb28",
+                        "tx_mask_bgcolor",
+                        "tx_mask_bfc86ff0b57fc8",
+                        "tx_mask_form"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_bgcolor": {
+                    "tt_content": {
+                        "tx_mask_bgcolor": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_bgpic": {
+                    "tt_content": {
+                        "tx_mask_bgpic": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_form": {
+                    "tt_content": {
+                        "tx_mask_form": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_subtitle": {
+                    "tt_content": {
+                        "tx_mask_subtitle": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_title": {
+                    "tt_content": {
+                        "tx_mask_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_toptext": {
+                    "tt_content": {
+                        "tx_mask_toptext": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_000be2fc1e8ae8": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_000be2fc1e8ae8",
+                    "key": "000be2fc1e8ae8",
+                    "type": "palette"
+                },
+                "tx_mask_6b0f7152a7bb28": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "description": {
+                        "quickcheck_intro": ""
+                    },
+                    "fullKey": "tx_mask_6b0f7152a7bb28",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "quickcheck_intro": "tx_mask_86e1527e2a9f78"
+                    },
+                    "key": "6b0f7152a7bb28",
+                    "label": {
+                        "quickcheck_intro": ""
+                    },
+                    "order": {
+                        "quickcheck_intro": 2
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_86e1527e2a9f78": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_86e1527e2a9f78",
+                    "key": "86e1527e2a9f78",
+                    "type": "palette"
+                },
+                "tx_mask_bfc86ff0b57fc8": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "description": {
+                        "quickcheck_intro": ""
+                    },
+                    "fullKey": "tx_mask_bfc86ff0b57fc8",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "quickcheck_intro": "tx_mask_86e1527e2a9f78"
+                    },
+                    "key": "bfc86ff0b57fc8",
+                    "label": {
+                        "quickcheck_intro": ""
+                    },
+                    "order": {
+                        "quickcheck_intro": 4
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_bgcolor": {
+                    "config": {
+                        "renderType": "colorpicker",
+                        "size": 10,
+                        "type": "input",
+                        "valuePicker": {
+                            "items": [
+                                [
+                                    "Blau",
+                                    "#022c58"
+                                ],
+                                [
+                                    "Orange",
+                                    "#fcaa20"
+                                ],
+                                [
+                                    "none",
+                                    "#00000000"
+                                ]
+                            ]
+                        }
+                    },
+                    "description": {
+                        "quickcheck_intro": ""
+                    },
+                    "fullKey": "tx_mask_bgcolor",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "quickcheck_intro": "tx_mask_86e1527e2a9f78"
+                    },
+                    "key": "bgcolor",
+                    "label": {
+                        "quickcheck_intro": "Hintergrundfarbe \u00fcberschreiben"
+                    },
+                    "order": {
+                        "quickcheck_intro": 3
+                    },
+                    "type": "colorpicker"
+                },
+                "tx_mask_bgpic": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileByUrlAllowed": 1,
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "minitems": ""
+                    },
+                    "description": {
+                        "quickcheck_intro": ""
+                    },
+                    "fullKey": "tx_mask_bgpic",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "quickcheck_intro": "tx_mask_86e1527e2a9f78"
+                    },
+                    "key": "bgpic",
+                    "label": {
+                        "quickcheck_intro": "Hintergrundbild"
+                    },
+                    "onlineMedia": [
+                        "youtube",
+                        "vimeo"
+                    ],
+                    "order": {
+                        "quickcheck_intro": 1
+                    },
+                    "type": "media"
+                },
+                "tx_mask_form": {
+                    "cTypes": [
+                        "list"
+                    ],
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "tt_content",
+                        "maxitems": "1",
+                        "minitems": "1",
+                        "overrideChildTca": {
+                            "columns": {
+                                "colPos": {
+                                    "config": {
+                                        "default": 999
+                                    }
+                                }
+                            }
+                        },
+                        "type": "inline"
+                    },
+                    "description": {
+                        "quickcheck_intro": ""
+                    },
+                    "fullKey": "tx_mask_form",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "quickcheck_intro": "tx_mask_86e1527e2a9f78"
+                    },
+                    "key": "form",
+                    "label": {
+                        "quickcheck_intro": "Formular"
+                    },
+                    "order": {
+                        "quickcheck_intro": 5
+                    },
+                    "type": "content"
+                },
+                "tx_mask_subtitle": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "quickcheck_intro": ""
+                    },
+                    "fullKey": "tx_mask_subtitle",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "quickcheck_intro": "tx_mask_000be2fc1e8ae8"
+                    },
+                    "key": "subtitle",
+                    "label": {
+                        "quickcheck_intro": "Subtitel"
+                    },
+                    "order": {
+                        "quickcheck_intro": 3
+                    },
+                    "type": "string"
+                },
+                "tx_mask_title": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "quickcheck_intro": ""
+                    },
+                    "fullKey": "tx_mask_title",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "quickcheck_intro": "tx_mask_000be2fc1e8ae8"
+                    },
+                    "key": "title",
+                    "label": {
+                        "quickcheck_intro": "Titel"
+                    },
+                    "order": {
+                        "quickcheck_intro": 2
+                    },
+                    "type": "string"
+                },
+                "tx_mask_toptext": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "quickcheck_intro": ""
+                    },
+                    "fullKey": "tx_mask_toptext",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "quickcheck_intro": "tx_mask_000be2fc1e8ae8"
+                    },
+                    "key": "toptext",
+                    "label": {
+                        "quickcheck_intro": "Kleiner Text"
+                    },
+                    "order": {
+                        "quickcheck_intro": 1
+                    },
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

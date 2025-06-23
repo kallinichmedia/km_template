@@ -1,0 +1,28 @@
+name: km/reference
+typeName: km_reference
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true
+  - 
+    identifier: categories
+    label: 'Kategorien'
+    useExistingField: true
+    type: Category
+    minitems: 1
+    relationship: oneToOne
+  -
+    identifier: isvideo
+    label: 'Ist Videobox'
+    type: Checkbox
+  -
+    identifier: image
+    useExistingField: true
+    label: 'Bild'
+    type: File
+    maxitems: 10
+    extendedPalette: false
+    allowed: common-media-types

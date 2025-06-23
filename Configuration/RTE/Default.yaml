@@ -1,0 +1,154 @@
+# Load default processing options
+imports:
+    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Processing.yaml' }
+    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
+    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
+
+# Add configuration for the editor
+# For complete documentation see https://ckeditor.com/docs/ckeditor5/latest/features/index.html
+editor:
+  config:
+    contentsCss: "EXT:km_template/Resources/Public/Css/rte.css"
+    style:
+      definitions:    
+        - { name: 'Orange title H2', element: 'h2', classes: [], styles: { color: 'orange', background: 'blue' } }
+        - { name: 'Orange title H3', element: 'h3', classes: [], styles: { color: 'orange', background: 'blue' } }
+        - { name: 'Quote / Citation', element: 'blockquote', classes: [],  }
+        - { name: 'Code block', element: 'code', classes: [],  }
+        # Inline styles
+        - { name: 'Yellow marker', element: 'span', classes: [], styles: { background-color: 'yellow' } }
+
+        - { name: "Lead", element: "p", classes: ['lead'], }
+        - { name: "Kein Abstand", element: "p", classes: ['nomargin'], }
+        - { name: "Text Farbe1", element: "span", classes: ['span-color1'], }
+        - { name: "externer Link", element: "a", classes: ['external'], }
+        - { name: "Button", element: "a", classes: ['btn'], }
+        - { name: "Button rot", element: "a", classes: ['btn btn-primary'], }
+        - { name: "More-Texte", element: "span", classes: ['reveal-text'], }
+        - { name: "kein Zeilenumbruch", element: "span", classes: ['no-break'], }
+    
+        # Schriftgroessen p
+        - { name: "h1 klein", element: "h1", classes: ['small-font-size'], }
+        - { name: "h1 gross", element: "h1", classes: ['big-font-size'], }
+        - { name: "h1 groesser", element: "h1", classes: ['bigger-font-size'], }
+        - { name: "h1 riesig", element: "h1", classes: ['large-font-size'], }
+        - { name: "h1 mega", element: "h1", classes: ['huge-font-size'], }
+
+        - { name: "h2 klein", element: "h2", classes: ['small-font-size'], }
+        - { name: "h2 gross", element: "h2", classes: ['big-font-size'], }
+        - { name: "h2 groesser", element: "h2", classes: ['bigger-font-size'], }
+        - { name: "h2 riesig", element: "h2", classes: ['large-font-size'], }
+        - { name: "h2 mega", element: "h2", classes: ['huge-font-size'], }
+
+        - { name: "h3 klein", element: "h3", classes: ['small-font-size'], }
+        - { name: "h3 gross", element: "h3", classes: ['big-font-size'], }
+        - { name: "h3 groesser", element: "h3", classes: ['bigger-font-size'], }
+        - { name: "h3 riesig", element: "h3", classes: ['large-font-size'], }
+        - { name: "h3 mega", element: "h3", classes: ['huge-font-size'], }
+
+
+        # Schriftgroessen p
+        - { name: "klein", element: "p", classes: ['small-font-size'], }
+        - { name: "gross", element: "p", classes: ['big-font-size'], }
+        - { name: "groesser", element: "p", classes: ['bigger-font-size'], }
+        - { name: "riesig", element: "p", classes: ['large-font-size'], }
+        - { name: "mega", element: "p", classes: ['huge-font-size'], }
+
+  
+    toolbar:
+      items:
+        - removeFormat
+        - undo
+        - redo
+        # grouping separator
+        - '|'
+        - findAndReplace
+        - link
+        - '|'
+        - insertTable
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - TableProperties
+        - TableCellProperties
+        - '|'
+        - selectAll
+        - '|'
+        - sourceEditing
+        - showBlocks
+        - horizontalLine
+        # line break
+        - '-'
+        - bold
+        - italic
+        - underline
+        - strikethrough
+        - subscript
+        - superscript
+        - softhyphen
+        - '|'
+        - bulletedList
+        - numberedList
+        - blockQuote
+        - indent
+        - outdent
+        - alignment
+        - '|'
+        - specialCharacters
+        - '-'
+        - style
+        - heading
+        - fontFamily
+        - fontBackgroundColor
+        - fontColor
+        - fontSize
+
+    alignment:
+      options:
+        - { name: 'left', className: 'text-start' }
+        - { name: 'center', className: 'text-center' }
+        - { name: 'right', className: 'text-end' }
+        - { name: 'justify', className: 'text-justify' }
+
+    table:
+      defaultHeadings: { rows: 1 }
+      contentToolbar:
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - tableProperties
+        - tableCellProperties
+        - toggleTableCaption
+
+    fontColor:
+      colors:
+        - { label: 'Orange', color: '#ff8700' }
+        - { label: 'Blue', color: '#0080c9' }
+        - { label: 'Green', color: '#209d44' }
+
+    fontBackgroundColor:
+      colors:
+        - { label: 'Stage orange light', color: '#fab85c' }
+
+    fontFamily:
+      options:
+        - 'default'
+        - 'Arial, sans-serif'
+
+    fontSize:
+      options:
+        - 'default'
+        - 18
+        - 21
+
+    list:
+      properties:
+        styles: true
+        startIndex: true
+        reversed: true
+
+    importModules:
+      - { 'module': '@ckeditor/ckeditor5-font', 'exports': ['Font'] }
+      - { 'module': '@ckeditor/ckeditor5-show-blocks', 'exports': ['ShowBlocks'] }
+      - { 'module': '@ckeditor/ckeditor5-word-count', 'exports': ['WordCount'] }
+      - { 'module': '@ckeditor/ckeditor5-list', 'exports': [ 'ListProperties' ] }

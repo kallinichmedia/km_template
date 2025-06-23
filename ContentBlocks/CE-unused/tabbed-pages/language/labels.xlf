@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="labels.xlf" source-language="en" date="2025-04-10T12:56:39+00:00" product-name="km/tabbed-pages">
+		<header/>
+		<body>
+			<trans-unit id="title">
+				<source>Tabs aus Seiten</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>Description for Content Element km/tabbed-pages</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

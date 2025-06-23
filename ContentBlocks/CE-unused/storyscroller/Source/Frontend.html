@@ -1,0 +1,47 @@
+
+<!-- Equivalent zu name="Default" -->
+<f:layout/>  
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<!-- needs to be inside here -->
+	<cb:asset.css identifier="content-block-css-km-km/storyscroller" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/storyscroller" file="Frontend.js"/>
+
+	<!-- Main Content -->
+
+    <!-- Anchor to start -->
+    <a id="storyscroller"></a>
+    <div class="ce-storyscroller">
+
+        <f:for each="{data.items}" as="item" iteration="i">
+
+            <div class="ce-storyscroller-item style-{item.color}" data-index="{i.index}">
+                <div class="ce-storyslide-modal-item-content">
+                    <div class="ce-storyslide-modal-item-content-inner">
+                        <div class="ce-storyslide-modal-item-content-inner-text">
+                            <h2 class="punchline">{item.punchline->f:format.raw()}</h2>
+                            <p class="subline">{item.Subline->f:format.raw()}</p> 
+                            <p class="buttonrow">
+                                <f:if condition="{item.link}">
+                                    <f:then>
+                                        <f:link.typolink parameter="{item.link}" class="btn">
+                                            {f:if(condition: '{item.linktext}', then: '{item.linktext->f:format.raw()}', else: 'Weiter')}
+                                        </f:link.typolink>
+                                    </f:then>
+                                    <f:else>
+                                        <a class="btn nextbtn">{f:if(condition: '{item.linktext}', then: '{item.linktext->f:format.raw()}', else: 'Weiter')}</a>
+                                    </f:else>
+                                </f:if>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+                    
+        </f:for>
+    
+    </div>
+</f:section>

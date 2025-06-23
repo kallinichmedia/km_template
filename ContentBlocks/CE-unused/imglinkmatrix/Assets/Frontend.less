@@ -1,0 +1,60 @@
+.ce-imglinkmatrix {
+    .inner {
+        /* display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end; */
+        
+
+        .linkrow {
+            display: flex;
+
+            flex-direction: row;
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            > div {
+                flex: 0 0 100%;
+                @media screen and (min-width: 1024px) {
+                    flex: 0 0 50%;
+                }
+            }
+        }
+
+        .linkbox {
+            flex: 0 0 100%;
+            display: block;
+            position: relative;
+            container-type: inline-size;
+            line-height: 0;
+            background-color: #00103e;
+            @media screen and (min-width: 1024px) {
+                    flex: 0 0 50%;
+            }
+
+
+            img {
+                width: 100%;
+                height: auto;
+                position: relative;
+                z-index: 10;
+            }
+
+            span.title {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    z-index: 20;
+                    left: 50%;
+                    transform: translateX(-50%); 
+                    font-weight: 900;
+                    color: #fff;
+                    text-decoration: none;                 
+                    font-size: 10.3cqw;                    
+                    line-height: 1;
+                    text-align: center;
+            }
+        }
+    }
+}

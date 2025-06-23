@@ -1,0 +1,150 @@
+.ce-stationsline {
+    --color: @blau;;
+    .inner {
+        display: grid;
+        // grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: .7fr 1fr 1fr 1fr .7fr;
+        grid-template-rows: 1fr 1rem 1fr;
+        --lineHeight: 1rem;
+
+        .station {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-self: stretch;
+            --stuffWidth: 48px;
+            --circleWidth: 54px;
+            --connectorWidth: 6px;
+            transform: translateX(calc(var(--stuffWidth) /-2));
+
+            .stuff {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: var(--stuffWidth);
+                
+
+                .count {
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+
+                .connector {
+                    height: 100%;
+                    background: var(--color);
+                    width: var(--connectorWidth);
+                    transform: translateX(-50%);
+                }
+
+                .circle {
+                    width: var(--circleWidth);
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    background: var(--color);
+                    transform: translateX(-50%);
+                    left: 50%;
+                    position: relative;
+                }
+
+            }
+
+
+            p {
+                margin-bottom: 0;
+            }
+
+            &:nth-child(1) {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            &:nth-child(2) {
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 4;
+
+                .stuff {
+                    flex-direction: column-reverse;
+                }
+            }
+
+            &:nth-child(3) {
+                grid-column-start: 4;
+                grid-column-end: 5;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            &:nth-child(odd){
+                .stuff {
+                    transform: ~"translateY(38px)";
+                }
+                .description{
+                    padding-bottom: 1rem;
+                }
+            }
+
+            &:nth-child(even){
+                .stuff {
+                    transform: ~"translateY(-38px)";
+                }
+                .description{
+                    padding-top: 1rem;
+                }
+            }
+        }
+
+        .theLine {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            display: grid;
+            // grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: .7fr 1fr 1fr 1fr .7fr;
+            grid-template-rows: 1rem;
+
+            .line {
+                height: var(--lineHeight);
+                width: 100%;
+                background: repeating-linear-gradient(to right,
+                        var(--color) 0,
+                        var(--color) var(--stripe),
+                        /* Strichbreite */
+                        transparent var(--stripe),
+                        transparent calc(var(--stripe) + var(--gap))
+                        /* Gesamtlänge eines Zyklus */
+                    );
+
+                &.one {
+                    --stripe: 0.25rem;
+                    /* Dünnste Linie */
+                    --gap: 0.25rem;
+                }
+
+                &.two {
+                    --stripe: 0.5rem;
+                    /* Doppelt so breit wie die erste */
+                    --gap: 0.25rem;
+                }
+
+                &.three {
+                    --stripe: 1rem;
+                    /* Doppelt so breit wie die zweite */
+                    --gap: 0.25rem;
+                }
+
+                &.four {
+                    background: var(--color);
+                    /* Vollständig blau */
+                    grid-column-start: 4;
+                    grid-column-end: 6;
+                }
+            }
+        }
+    }
+}

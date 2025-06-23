@@ -1,0 +1,62 @@
+name: km/metrics
+typeName: km_metrics
+group: common
+prefixFields: true
+prefixType: full
+fields:
+
+
+  -
+    identifier: header
+    label: 'Wert-Label'
+    useExistingField: true
+    config:
+      max: 100
+
+  -
+    identifier: config
+    type: Palette
+    fields: 
+
+    -
+      identifier: value
+      label: 'W'
+      description: 'ganzzahlige'
+      type: Number
+      format: integer
+      default: 100
+      size: 20
+      range:
+        lower: 1
+        upper: 999999 
+
+    -
+      identifier: duration
+      label: 'Dauer'
+      description: 'in Millisekunden'
+      type: Number
+      format: integer
+      default: 100
+      size: 20
+      range:
+        lower: 1
+        upper: 999999
+
+    -
+      identifier: delay
+      label: 'Verzögerung'
+      description: 'in Millisekunden'
+      type: Number
+      format: integer
+      default: 100
+      size: 20
+      range:
+        lower: 1
+        upper: 999999
+
+  -
+    identifier: svgicon
+    label: 'SVG Source'
+    type: Textarea
+    rows: 20
+

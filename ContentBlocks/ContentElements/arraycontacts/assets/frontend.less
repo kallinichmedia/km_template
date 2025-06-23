@@ -1,0 +1,202 @@
+.ce-arraycontacts {
+    .inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        .the-person {
+            flex: 0 0 calc(~"50% - 2rem");
+            @media screen and (min-width: 768px) {
+                flex: 0 0 calc(~"33.3333% - 2rem");                
+            };
+            
+            @media screen and (min-width: 1024px) {
+                flex: 0 0 calc(~"25% - 2rem");                
+            };
+
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .descriptionwrap {
+                display: none;
+                visibility: hidden;
+            }
+
+            .imagewrap {
+                line-height: 0;
+            }
+            
+            .datawrap {
+                position: relative;
+                padding-right: 2rem;
+                .nameblock {
+                    span {
+                        display: block;
+                    }
+
+                    .name {
+                        font-weight: 900;
+                    }
+
+                    .position {
+                        font-size: 0.8rem;
+                        line-height: 1em;
+                    }
+
+                }
+                .toggleIcon {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    svg {
+                        width: 1rem;
+                        height: 1rem;
+                        * { fill: @1stcolor;}
+                    }
+                }
+            }
+        }
+
+        .detailscontainer {
+            background-color: #f4f3fa;            
+            box-shadow: 0 0 0 100vmax #f4f3fa;
+            clip-path: inset(0 -100vmax);
+            display: none;
+            flex: 0 0 100%;
+
+            .inner {
+                padding: 3rem 0;
+                margin: 0 auto;
+                max-width: 900px;
+                display: block;
+
+                h3 {
+                    font-weight: 300;
+
+                }
+            }
+        }
+    }
+}
+
+
+.ce-arraycontacts-pic {
+
+    .inner {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        overflow: hidden;
+
+        .gradientOverlay {
+            position: absolute;
+            inset: 0;
+            opacity: 0.8;
+            z-index: 5;
+            pointer-events: none;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    .the-person-pic {
+        flex: 0 0 100%;
+        position: relative;
+        container-type: inline-size;
+        z-index: 3;
+
+        @media screen and (min-width: 640px) {
+            flex: 0 0 50%;
+        }
+
+        @media screen and (min-width: 768px) {
+            flex: 0 0 33.3333%;                
+        };
+        
+        @media screen and (min-width: 1024px) {
+            flex: 0 0 25%;                
+        };
+
+        .imagewrap {
+            z-index: 1;            
+            line-height: 0;
+            position: relative;
+            z-index: 10;
+
+
+            img {
+                width: 100%;
+                height: auto;             
+            }
+        }
+
+        .datawrap {
+            z-index: 3;
+            position: absolute;   
+
+            transition-delay: 0.25s;  
+            transition-property: opacity, transform;
+            transition-duration: 0.15s;
+            transition-timing-function: ease-out;
+
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            background-color: @3rdcolor;
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+
+            span { display: block;}
+
+            .nameblock {
+                margin-bottom: 1rem;
+                font-size: 5cqw;
+                line-height: 1.2;
+            }
+
+            .desc {
+                font-size: ~"max(3cqw, 0.7rem)";
+            }
+
+        }
+
+        &:hover {
+            z-index: 20;
+            .datawrap {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .datawrap {
+                transform: translateY(100%);               
+            }
+
+            @media screen and (min-width: 1024px) {
+                .datawrap {
+                    opacity: 1;
+                    transform: translateX(100%);                                                          
+                }  
+
+                
+                &:nth-child(4n-1),
+                &:nth-child(4n) {
+                    .datawrap {
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+        }
+
+    }
+}

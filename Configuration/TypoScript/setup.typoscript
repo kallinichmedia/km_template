@@ -1,0 +1,442 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript">
+
+lib.contentElement {
+   templateRootPaths {
+      200 = EXT:km_template/Resources/Private/Templates/ContentElements/
+   }
+   partialRootPaths {
+      200 = EXT:km_template/Resources/Private/Partials/ContentElements/
+   }
+   layoutRootPaths {
+      200 = EXT:km_template/Resources/Private/Layouts/ContentElements/
+   }
+}
+
+lib.contentBlock {
+    partialRootPaths.0 < lib.contentElement.partialRootPaths.0
+    partialRootPaths.200 < lib.contentElement.partialRootPaths.200
+    layoutRootPaths.0 < lib.contentElement.layoutRootPaths.0
+    layoutRootPaths.200 < lib.contentElement.layoutRootPaths.200
+
+    settings < lib.contentElement.settings
+}
+
+################
+#### HELPER ####
+################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:km_template/Configuration/TypoScript/Helper/lib.socialmenu.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:km_template/Configuration/TypoScript/Helper/DynamicContent.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:km_template/Configuration/TypoScript/Helper/HeaderMetaData.typoscript">
+# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:km_template/Configuration/TypoScript/Helper/ExtContainer.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:km_template/Configuration/TypoScript/Helper/PageTitles.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:km_template/Configuration/TypoScript/Helper/CbPages.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:km_template/Configuration/TypoScript/Helper/GetJobsEndpoint.typoscript">
+
+config.contentObjectExceptionHandler = 0
+config_no_cache = 1
+
+
+##############
+#### MASK ####
+##############
+
+lib.maskContentElement {
+    #partialRootPaths.0 < lib.contentElement.partialRootPaths.10
+    #layoutRootPaths.0 < lib.contentElement.layoutRootPaths.10
+
+    #settings < lib.contentElement.settings
+}
+
+
+
+
+##############
+#### PAGE ####
+##############
+page = PAGE
+page {
+    typeNum = 0
+    // shortcutIcon = EXT:km_template/Resources/Public/Icons/favicon.ico
+
+    10 = FLUIDTEMPLATE
+    10 {
+        # Template names will be generated automatically by converting the applied
+        # backend_layout, there is no explicit mapping necessary anymore.
+        #
+        # BackendLayout Key
+        # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        #
+        # Backend Record
+        # uid: 1 -> 1.html
+        #
+        # Database Entry
+        # value: -1 -> None.html
+        # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                case = uppercamelcase
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
+            }
+            ifEmpty = Default
+        }
+        templateRootPaths {
+            0 = EXT:km_template/Resources/Private/Templates/Page/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:km_template/Resources/Private/Partials/Page/
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:km_template/Resources/Private/Layouts/Page/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+
+
+        # Variables
+
+        variables {		
+            contactarea = < styles.content.get
+            contactarea.select.where = colPos = 20
+            contactarea.slide =  -1    
+             
+            footerSeoText = COA
+            footerSeoText {
+                10 = RECORDS
+                10 {
+                    tables = tt_content
+                    source = 659   
+                }
+            }  
+
+            headerEmail = TEXT
+            headerEmail {
+                value = {$page.settings.header.email}
+                insertData = 1
+            }
+
+            headerPhone = TEXT
+            headerPhone {
+                value = {$page.settings.header.phone}
+                insertData = 1
+            }           
+
+        }
+
+
+        # MENU PROCESSORS
+
+        dataProcessing {
+
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = media
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                special = directory
+                expandAll = 1
+                special.value = 1
+                levels = 3
+                includeSpacer = 1
+                as = mainmenu
+            }           
+            30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            30 {
+                special = directory
+                expandAll = 1
+                special.value = 7
+                levels = 3
+                includeSpacer = 1
+                as = footernav
+            }
+
+            35 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            35 {
+                special = directory
+                expandAll = 1
+                special.value = 66
+                includeSpacer = 1
+                as = metanav
+            }
+
+            40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            40 {
+                special = rootline
+                special.range = 0|-2
+                special.target = _top                
+                as = breadcrumb
+                includeSpacer = 1
+            }    
+
+            50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            50 {
+                special = directory
+                expandAll = 1
+                special.value = 22
+                levels = 1
+                includeSpacer = 0
+                as = sidebar
+            }  
+
+            60 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+            60 {
+                languages = auto
+                addQueryString = 1
+                addQueryString.exclude = L
+                as = languageMenu
+            }
+
+            
+        }
+    }
+
+    meta {
+        viewport = {$page.meta.viewport}
+        robots = {$page.meta.robots}
+        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+        description = {$page.meta.description}
+        description {
+            override.field = description
+        }
+        author = {$page.meta.author}
+        author {
+            override.field = author
+        }
+        keywords = {$page.meta.keywords}
+        keywords {
+            override.field = keywords
+        }
+        X-UA-Compatible = {$page.meta.compatible}
+        X-UA-Compatible {
+            attribute = http-equiv
+        }
+
+        # OpenGraph Tags
+        og:title {
+            attribute = property
+            field = title
+        }
+        og:site_name {
+            attribute = property
+            data = siteLanguage:websiteTitle
+        }
+        og:description = {$page.meta.description}
+        og:description {
+            attribute = property
+            field = description
+        }
+        og:image {
+            attribute = property
+            stdWrap.cObject = FILES
+            stdWrap.cObject {
+                references {
+                    data = levelfield:-1, media, slide
+                }
+                maxItems = 1
+                renderObj = COA
+                renderObj {
+                    10 = IMG_RESOURCE
+                    10 {
+                        file {
+                            import.data = file:current:uid
+                            treatIdAsReference = 1
+                            width = 1280c
+                            height = 720c
+                        }
+                        stdWrap {
+                            typolink {
+                                # FIXED: Use current file's public URL instead of deprecated TSFE property
+                                parameter.data = file:current:publicUrl
+                                returnLast = url
+                                forceAbsoluteUrl = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    includeCSSLibs {
+
+    }
+
+    includeCSS {
+        # km_adobefont = https://use.typekit.net/xxxx.css
+        # km_adobefont.forceOnTop = 1
+        # km_adobefont.external = 1
+
+        km_template_bs_grids = EXT:km_template/Resources/Public/Vendor/bootstrap-5.1.3/css/bootstrap-grid.min.css
+        km_template_aos = EXT:km_template/Resources/Public/Vendor/aos/aos.css
+        #km_template_layout = EXT:km_template/Resources/Public/Css/layout.min.css
+        km_template_swiper = EXT:km_template/Resources/Public/Vendor/swiper11/swiper-bundle.min.css
+        km_template_layout = EXT:km_template/Resources/Public/Less/compile.php
+        km_template_layout.priority = 100
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {  
+        lib10 = EXT:km_template/Resources/Public/Vendor/gsap/gsap.min.js
+        lib10.external = 1
+        lib20 = EXT:km_template/Resources/Public/Vendor/gsap/ScrollTrigger.min.js
+        lib20.external = 1
+        lib30 = EXT:km_template/Resources/Public/Vendor/gsap/ScrollToPlugin.min.js
+        lib30.external = 1
+        lib40 = EXT:km_template/Resources/Public/Vendor/gsap/TextPlugin.min.js
+        lib40.external = 1
+        lib45 = EXT:km_template/Resources/Public/Vendor/gsap/Flip.min.js
+        lib45.external = 1
+        lib50 = EXT:km_template/Resources/Public/Vendor/lenis/lenis.min.js
+        lib50.external = 1
+        lib60 = EXT:km_template/Resources/Public/Vendor/swiper11/swiper-bundle.min.js   
+        lib60.external = 1
+
+        libAOS = EXT:km_template/Resources/Public/Vendor/aos/aos.js                
+
+        #themeJStools = EXT:km_template/Resources/Public/JavaScript/Dist/tools.js
+        themeJSvars = EXT:km_template/Resources/Public/JavaScript/Dist/vars.js
+        themeJSmain = EXT:km_template/Resources/Public/JavaScript/Dist/main.js
+        themeJSmain.type = module
+       
+       
+    }
+}
+
+[4 in tree.rootLineIds]
+    page.10.variables.headerEmail.value = {$page.settings.header.emailKarriere}
+    page.10.variables.headerPhone.value = {$page.settings.header.phoneKarriere}
+[end]
+
+
+################
+#### CONFIG ####
+################
+config {
+    absRefPrefix = auto
+    no_cache = {$config.no_cache}
+    uniqueLinkVars = 1
+    pageTitleFirst = 1
+    linkVars = L
+    prefixLocalAnchors = {$config.prefixLocalAnchors}
+    renderCharset = utf-8
+    metaCharset = utf-8
+    doctype = html5
+    removeDefaultJS = {$config.removeDefaultJS}
+    inlineStyle2TempFile = 1
+    admPanel = {$config.admPanel}
+    debug = 0
+    cache_period = 86400
+    sendCacheHeaders = {$config.sendCacheHeaders}
+    intTarget =
+    extTarget =
+    disablePrefixComment = 1
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 1
+    headerComment = {$config.headerComment}
+
+    // Disable Image Upscaling
+    noScaleUp = 1
+
+    // Compression and Concatenation of CSS and JS Files
+    compressJs = 0
+    compressCss = 0
+    concatenateJs = 0
+    concatenateCss = 0
+}
+
+
+lib.slideout = RECORDS
+lib.slideout {
+  source = 65
+  tables = tt_content
+  dontCheckPid = 1
+}
+
+
+
+
+# Body tag
+
+
+page.bodyTag >
+page.bodyTagCObject = COA
+page.bodyTagCObject {
+	wrap = <body id="page-top" class="|">
+
+	10 = TEXT
+	10.data = field:uid
+	10.noTrimWrap = |seite_| |
+
+    15 = TEXT
+	15.data = field:layout
+	15.noTrimWrap = |datalayout_| |
+
+	20 = TEXT
+	20.data = level:1
+	20.noTrimWrap = |level_| |
+
+    30 < page.10.templateName
+    30.case = lower
+	30.noTrimWrap = |layout_| |
+
+    35 = TEXT
+    35.data = field:km_template_background_color
+	35.noTrimWrap = |bgcolor_| |
+    
+    45 = TEXT
+    45.data = field:km_template_no_structure
+	45.noTrimWrap = |solidbg_| |
+
+	#40 = TEXT
+	#40.value = {$page.settings.header.theme}
+	#40.noTrimWrap = |theme_| |
+
+	50 = TEXT
+	50.data = site:identifier
+	50.noTrimWrap = |site_| |
+}
+
+
+
+config {
+  pageTitleProviders {
+    kmtemplate {
+      provider = KallinichMedia\KmTemplate\PageTitle\WebsiteTitleProvider
+      before = seo
+      #after = seo
+    }
+  }
+}
+
+
+plugin.tx_eventnews {
+  view {
+    templateRootPaths {
+        10 = EXT:km_template/Resources/Private/Extensions/eventnews/Templates/
+    }
+  }
+}

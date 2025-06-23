@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="labels.xlf" source-language="en" date="2025-04-01T13:08:48+00:00" product-name="km/breadcrumb">
+		<header/>
+		<body>
+			<trans-unit id="title">
+				<source>Brotkrumenpfad</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>Frei setztbare Linkkette. agiert dabei als dezente H1 ganz oben in der Seite</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

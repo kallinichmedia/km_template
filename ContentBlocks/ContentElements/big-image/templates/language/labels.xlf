@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-09-16T12:29:19+00:00" product-name="km/big-image">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+				<source>Großes Bild</source>
+			</trans-unit>
+			<trans-unit id="description" resname="description">
+				<source>Description for Content Element km/big-image</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,67 @@
+name: km/iconcloud
+typeName: km_iconcloud
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    label: Überschrift
+    useExistingField: true
+
+  -
+    identifier: image
+    label: 'Hintergrund'
+    useExistingField: true
+    extendedPalette: true
+    max-items: 1
+    allowed: common-image-types
+    cropVariants:
+      common:
+        title: allgemein
+        allowedAspectRatios:
+          square:
+            title: Square
+            value: 1/ 1
+          free:
+            title: Frei
+            value: 0.0
+      phone:
+        disabled: true
+      tablet:
+        disabled: true
+      desktop:
+        disabled: true
+
+
+  -
+    identifier: items
+    label: 'Element'
+    type: Collection
+    fields:
+      
+      -
+        identifier: Icon
+        description: "Bitte SVG-Quellcode, weiß auf transparent"
+        lable: "Volltext"
+        type: Textarea
+
+      -
+        identifier: title
+        label: "Icon-Text"
+        type: Text
+
+  -
+    identifier: header_link
+    label: Buttonlink
+    useExistingField: true
+  
+  -
+    identifier: subheader
+    label: Buttontext
+    useExistingField: true
+
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

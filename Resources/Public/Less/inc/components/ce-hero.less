@@ -1,0 +1,43 @@
+.ce-hero {
+    height: ~"max(60svw, 100svh)";
+    container-type: size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .overlay-block {
+        max-width: 800px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        svg {
+            width: 80%;
+        }
+
+        .textpos {
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            .text {
+                display: inline-block;
+                .fz-headline;
+                line-height: 1;
+                text-align: left;
+            }
+        }
+    }
+
+    .accents {
+        position: absolute;
+    }
+}
+
+
+.intro-option1 {
+    .big-k-title {
+        .fz-huge;
+        font-weight: 900;
+    }
+}

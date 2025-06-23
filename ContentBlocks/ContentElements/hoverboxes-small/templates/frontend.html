@@ -1,0 +1,41 @@
+<f:layout/>
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+    
+<f:section name="Main">
+    <f:asset.css identifier="km-hoverboxessmall-fe-css" href="{cb:assetPath()}/frontend.css"/>
+    <f:asset.script identifier="km-hoverboxessmall-fe-js" src="{cb:assetPath()}/frontend.js"/>
+
+
+    <div class="hoverboxsm-set">
+        
+        <f:for each="{data.items}" as="box" iteration="itty">
+            <div class="hoverboxsm">
+                <div class="front {f:if(condition: '{box.logo}', then: 'has-logo', else: '')}">
+                    <f:if condition="{box.logo}">
+                        <span class="logo">
+                            <f:image image="{box.logo.0}" cropVariant="common" />
+                        </span>
+                    </f:if>                    
+                    <span class="title">{box.title->f:format.raw()}</span>
+                </div>
+                <div class="back">
+                    <div class="textblock">
+                        <div class="inner">
+                            {box.textblock->f:format.html()}
+                        </div>
+                    </div>
+                </div>
+              
+    
+                <svg class="plus" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 67.914 68.108">                               
+                    <rect id="bar2" x=".097" y="22.67" width="67.719" height="22.768"></rect>
+                    <rect id="bar1" x=".097" y="22.67" width="67.719" height="22.768" transform="translate(68.011 .097) rotate(90)"></rect>
+                </svg>
+            </div>
+        </f:for>
+    </div>
+
+       
+</f:section>

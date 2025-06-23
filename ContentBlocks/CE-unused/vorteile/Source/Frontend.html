@@ -1,0 +1,25 @@
+
+<f:layout/>  
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+
+    <cb:asset.css identifier="content-block-css-km-km/vorteile" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/vorteile" file="Frontend.js"/>    
+
+
+    <div class="ce-vorteile">
+        <f:for each="{data.image}" as="icon" iteration="i">
+            <div class="icon">
+                <div class="iconwrap">
+                    <f:image image="{icon}" treatIdAsReference="1" />
+                </div>
+                <span class="label">{icon.title->f:format.raw()}</span>
+            </div>
+            
+        </f:for>
+    </div>
+
+    <!-- Main Content -->
+</f:section>

@@ -1,0 +1,34 @@
+<div class="mask_kontaktperson">
+    <div class="container-fluid">
+        <div class="inner">
+
+            <f:if condition="{data.image}">
+                <div class="imagerow">
+
+                    <div class="imagewrap">
+                        <div class="imgmask">
+                            <f:image image="{data.image.0}" width="500" />    
+                            <f:if condition="{data.image.0.title}">
+                                <span class="title">{data.image.0.title->f:format.raw()}</span>
+                            </f:if>                            
+                        </div> 
+                        <f:if condition="{data.image.0.title}">
+                                <span class="bubble">{data.image.0.description->f:format.raw()}</span>
+                        </f:if>
+                    </div>
+                </div>
+            </f:if>
+            
+            <div class="textrow"> 
+                <f:if condition="{data.header}">
+                    <span class="title">{data.header}</span>
+                </f:if>
+                <f:if condition="{data.bodytext}">
+                    <span class="text">{data.bodytext -> f:format.nl2br()}</span>
+                </f:if>
+            </div>
+        </div>
+    </div>      
+
+
+</div>

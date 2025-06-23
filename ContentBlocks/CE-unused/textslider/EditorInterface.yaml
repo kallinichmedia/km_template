@@ -1,0 +1,42 @@
+name: km/textslider
+typeName: km_textslider
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic  
+  
+  -
+    identifier: subheader
+    useExistingField: true
+
+
+  -
+    identifier: items
+    label: 'Items'
+    type: Collection
+    fields:
+      -
+        identifier: smallaccenttext
+        label: 'kleiner Akzent-Text über Titel'
+        type: Text
+        config:
+          max: 255
+      -
+        identifier: title
+        label: 'Title'
+        type: Text
+        config:
+          max: 255
+      -
+        identifier: paragraphtext
+        label: 'Mengentext'
+        type: Textarea
+     
+
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

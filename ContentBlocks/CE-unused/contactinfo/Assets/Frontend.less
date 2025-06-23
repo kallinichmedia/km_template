@@ -1,0 +1,52 @@
+.ce-contactinfo {
+    container-type: inline-size;
+
+    .ce-contactinfo-row {
+        display: flex;
+        flex-direction: column;
+       
+        h4 {
+            margin-top: 0;
+        }
+
+        img {
+            width: auto;
+            height: auto;
+        }
+
+        .pers-container {
+           a {
+            color: white;
+
+            &:hover {
+                color: @1stcolor;
+            }
+           }
+        }
+
+        @media screen and (min-width: 1024px) {
+            /* margin-top: 23cqw; */
+            flex-direction: row;
+            justify-self: space-between;
+
+            & > div {
+                flex: 0 0 50%;
+            }
+
+            .imgpos {
+                img {                
+                    margin: -22cqw 0 0 -16cqw;
+                }
+
+            }
+
+
+        }
+
+        &.no-img {
+
+            flex-direction: column;
+            width: 16rem;
+        }
+    }
+}

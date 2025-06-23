@@ -1,0 +1,33 @@
+<div class="mask_quickcheck_intro">
+
+    <div class="content-layout">
+
+        <div class="content">
+            <f:if condition="{data.tx_mask_toptext}">
+                <p class="smallclaim">{data.tx_mask_toptext}</p>
+            </f:if>
+            
+            <f:if condition="{data.tx_mask_title}">
+                <h2 class="title1">{data.tx_mask_title}</h2>
+            </f:if>
+            <f:if condition="{data.tx_mask_subtitle}">
+                <span class="subtitle">{data.tx_mask_subtitle}</span>
+            </f:if>
+        </div>               
+        
+        <f:if condition="{data.tx_mask_form}">
+        </f:if>
+        
+        <div class="formbox">
+            
+            <f:for each="{data.tx_mask_form}" as="data_item">
+                <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item.uid}</f:cObject>
+            </f:for>
+        </div>
+        
+    </div>
+    
+  
+      
+
+</div>

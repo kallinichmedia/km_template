@@ -1,0 +1,53 @@
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    <f:asset.css identifier="my-backend-accordion-styles" href="{cb:assetPath()}/preview.css"/>
+
+    <p>Icon: {f:if(condition: '{data.hideicon}', then: 'Nein', else: 'Ja')}</p>
+    <hr/>
+    <div class="ce-iconaccordion {f:if(condition: '{data.hideicon}', then: 'no-icon', else: '')}" id="ce-iconaccordion-{data.uid}">        
+
+        
+
+        <f:for each="{data.items}" as="item" iteration="i">
+            <div class="collapsingItem" id="item-{i.cycle}">
+                <span class="iconwrap">{item.Icon->f:format.raw()}</span>
+                <div class="heading">
+                    <div class="title">
+                        <b>{item.boldtext->f:format.raw()}</b>
+                        <span>{item.thintext->f:format.raw()}</span>
+                    </div>
+                    
+                </div>
+                <div class="content">                    
+                    <div class="collapsing-off">
+                        <div class="textblock">
+                            {item.textblock->f:format.raw()}
+                        </div>
+                    </div>
+                </div>
+
+                <hr/>
+            </div>
+        </f:for>
+    </div>
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>
+
+
+

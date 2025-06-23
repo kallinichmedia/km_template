@@ -1,0 +1,80 @@
+lib.socialmenu = COA
+lib.socialmenu {
+	# wrap = <ul id="socialmenu" class="list-inline">|</ul>
+	#10 = TEXT
+	#10 {
+	#	value = &nbsp;
+	#	wrap = <p>|</p>
+	#}
+	#10.value = Folge uns auf
+	#10.wrap = <li class="social-static">|</li>
+
+	20 = HMENU
+	20 {
+		#special = list
+		#special.value = 2,8,9
+		special = directory
+		special.value = 28
+		#wrap = <ul id="socialmenu" class="list-inline">|</ul>
+		
+		1 = TMENU
+		1 {
+			noBlur = 1
+			expAll = 0
+
+			NO {
+				wrapItemAndSub.insertData = 1
+				wrapItemAndSub = |
+				
+				#wrapItemAndSub.override = <li class="top-{field:uid} top-news">|</li>
+				#wrapItemAndSub.override.if {
+				#	value.field = uid
+				#	equals = 13
+				#}
+
+				# Remove link text
+				stdWrap.cObject = TEXT
+				stdWrap.cObject.value = 
+
+				stdWrap.wrap = |
+
+				# Menü-Icons anpassen
+				stdWrap.wrap.override.cObject = CASE
+				stdWrap.wrap.override.cObject {
+					# UID als Kriterium
+					key.field = uid					
+					# linkedin
+					29 = TEXT
+					29.value = <span class="icon icon-linkedin"></span>|
+					# Instagram
+					32 = TEXT
+					32.value = <span class="icon icon-instagram"></span>|
+					# kununu
+					31 = TEXT
+					31.value = <span class="icon icon-kununu"></span>|
+					# xing
+					30 = TEXT
+					30.value = <span class="icon icon-xing"></span>|
+				}
+
+				
+				#stdWrap.wrap.override = <span class="icon icon-xing-square"></span>|
+				#stdWrap.wrap.override.if {
+				#	value.field = uid
+				#	equals = 166
+				#}
+
+				#ATagTitle.field = abstract // description // subtitle // title
+				ATagTitle.stdWrap.cObject = TEXT
+				ATagTitle.stdWrap.cObject { 
+					field = title
+					noTrimWrap = |NT.AG @ ||					
+				}
+				ATagParams = class="svg" target="_blank"
+			}
+		}
+	}
+}
+
+lib.socialmenuFooter < lib.socialmenu
+lib.socialmenuFooter.wrap = <ul id="socialmenuFooter" class="list-unstyled">|</ul>

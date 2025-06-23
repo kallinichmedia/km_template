@@ -1,0 +1,72 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "youtube_lightbox": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "subheader",
+                        "image"
+                    ],
+                    "columnsOverride": {
+                        "image": {
+                            "config": {
+                                "appearance": {
+                                    "elementBrowserEnabled": 1,
+                                    "enabledControls": {
+                                        "delete": 1,
+                                        "dragdrop": 1,
+                                        "hide": 1,
+                                        "info": 1,
+                                        "localize": 1,
+                                        "sort": 0
+                                    },
+                                    "fileUploadAllowed": 1,
+                                    "useSortable": 1
+                                },
+                                "minitems": ""
+                            },
+                            "fullKey": "image",
+                            "imageoverlayPalette": 1,
+                            "key": "image",
+                            "type": "file"
+                        }
+                    },
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "youtube_lightbox",
+                    "label": "Youtube Lightbox",
+                    "labels": [
+                        "Youtube-ID",
+                        "Poster"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "tca": {
+                "image": {
+                    "coreField": 1,
+                    "fullKey": "image",
+                    "imageoverlayPalette": 1,
+                    "key": "image",
+                    "type": "file"
+                },
+                "subheader": {
+                    "coreField": 1,
+                    "fullKey": "subheader",
+                    "key": "subheader",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

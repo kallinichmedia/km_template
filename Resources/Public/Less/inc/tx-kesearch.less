@@ -1,0 +1,439 @@
+.tx-kesearch-pi1{
+	.navbar-form{
+		width: auto;
+		//height: 70px;
+		padding: 0;
+		margin: 0;
+		z-index: 1010;
+		border: 0;
+
+		.input-group{
+			background-color: white;
+			height: 32px;
+
+			button, #ke_search_sword {
+				// padding: 4px 9px;
+				border: 0;
+				margin: 0 !important;
+				//color: inherit !important;
+				background-color: transparent !important;
+
+				&:focus, &:active, &:focus-visible {					
+					box-shadow: none !important;
+					outline: none !important;
+				}	
+
+			}
+			#ke_search_sword {
+				padding: 0 0 0 .75rem;
+				opacity: 0;
+				color: white !important;
+				display: none;
+				position: relative;
+				top: unset;
+				font-size: 0.7rem;
+				width: 80%;
+				float: left;	
+				height: 32px; // Due to rendering bug in firefox (does not except height 100%)
+				z-index:0;
+			}
+
+			.input-group-btn{
+				width: auto;
+				display: block;
+				position: absolute;
+				right:0;
+
+				button[type="submit"] {
+					display: table;
+					color:white;
+					.icon, span {
+						display: table-cell;
+						vertical-align: middle;
+					}
+					.icon {
+						font-size: 24px;
+						font-weight: bold;
+					}
+					span {
+						display: none;
+					}
+				}
+				button[type="reset"] {
+					display: none;
+					visibility: hidden;
+					position: absolute;
+					right: 0;
+					z-index:1;
+				}
+			}
+		}
+
+		&.active {
+			width: 250px;
+			right: 0;
+			top: 0;
+
+			button, #ke_search_sword {
+				display: table-cell;
+				opacity: 1;
+				color: @1stcolor !important;
+			}
+			#ke_search_sword {
+				width: 80%;
+				color: inherit !important;
+			}
+			.input-group { 
+				background-color: white;
+
+				button[type="submit"] {
+					display: none;
+					visibility: hidden;
+				}
+
+				button[type="reset"] {
+					display: block;
+					visibility: visible;
+					color:inherit;
+				}
+			}
+		}
+		@media (min-width: @tabletViewportWidth) {
+			//height: 90px;
+			#ke_search_sword {
+				height: 90px; // Due to rendering bug in firefox (does not except height 100%)
+			}
+			&.active {
+				width: 280px;			
+			}
+			&.active {
+				
+			}
+		}
+		/*@media (min-width: @screen-lg) {
+			right: 100px;
+			&.active {
+				right: @grid-padding-2x;
+			}
+		}*/
+		@media (min-width: @desktopViewportWidth) {
+			//height: 110px;
+			#ke_search_sword {
+				height: 100px; // Due to rendering bug in firefox (does not except height 100%)
+			}
+			&.active {
+				width: 370px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 170px;
+				height: 40px;
+			}
+		}
+	}
+}
+
+
+// override bootstrap standard
+.navbar-form .input-group .input-group-addon,
+.navbar-form .input-group .input-group-btn {
+	width: 1%;
+}
+
+.f3-widget-paginator{
+	li{
+		a{
+			color: @1stcolor;
+		inherit-decoration: none;
+		}
+
+		&.previous,
+		&.next{
+			a{
+				color: @1stcolor;
+			inherit-decoration: none;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+/**
+ * Search Form (ke_search)
+ */
+ .navbar form[role="search"] {
+
+	width: 40px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	z-index: 1010;
+	border: 0;
+
+
+	.input-group {
+		height: 100%;
+	}
+
+	button,
+	#ke_search_sword {
+		padding: 0 9px;
+		border: 0;
+		margin: 0 !important;
+		color: white  !important; //@2ndcolor
+		background-color: transparent !important;
+		box-shadow: none !important;
+		outline: none !important;
+		font-size: 1rem;
+	}
+
+	
+
+	button[type="submit"] {
+		font-size: 24px;
+		//padding-top: 6px;
+		display: table;
+
+		.icon,
+		span {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.icon {
+			font-size: 24px;
+		}
+
+		span {
+			display: none;
+		}
+	}
+
+	button[type="reset"] {
+		display: none;
+	}
+
+	&.active {
+		width: 100%;
+		right: 0;
+
+		button,
+		#ke_search_sword {
+			display: table-cell;
+			opacity: 1;
+			color: @1stcolor  !important;
+		}
+
+		#ke_search_sword {
+			width: 100%
+		}
+
+		.input-group {
+			background-color: @1stcolor;
+		}
+
+		button[type="submit"] {
+			padding-right: 2rem;
+		}
+	}
+
+	/*
+    @media (min-width: @screen-lg) {
+		//height: 70px;
+        right: @grid-padding;
+        top: auto;
+        bottom: 0; //2px;
+		
+		/*#ke_search_sword {
+			height: 70px; // Due to rendering bug in firefox (does not except height 100%)
+			padding-top: 28px;
+		}*
+		&.active {
+			width: 760px;
+			right: @grid-padding;
+		}
+		.input-group-btn {
+			vertical-align: bottom;
+			padding-bottom: 8px;
+		}
+	}
+	@media (min-width: @screen-xl) {
+		&.active {
+			width: 915px;
+		}
+    }
+    @media (min-width: @screen-xxl) {
+        //bottom: 4px;
+        &.active {
+			width: 1160px;
+		}
+    }
+    */
+}
+
+
+
+// override bootstrap standard
+.navbar-form .input-group .input-group-addon,
+.navbar-form .input-group .input-group-btn {
+	width: 1%;
+}
+
+// Search result page
+body .tx-kesearch-pi1 {
+
+	.kesearch_searchbox {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+		margin-bottom:  2rem;
+
+		.kesearchbox {
+			margin-bottom: 0;
+			height: auto;
+			position: relative;
+			flex: 0 0 100%;
+
+			@media screen and (min-width: 640px) {
+				flex: 1 1 auto;
+			}
+			#ke_search_sword {
+				position: relative;
+				border-radius: 100px;
+                font-size: 1rem;
+			}
+		}
+
+		.resetbutt, .submitbutt {
+			color: #ffffff;
+			margin: 0;
+		}
+
+
+
+
+
+		a.kesGreyButt, 
+		span.resetbutt a, 
+		span.submitbutt input, 
+		input.kesGreyButt, 
+		span.kesGreyButt {
+			margin: 0;
+			border: none;
+			border-radius: 100px;
+			color: #fff;
+			background: inherit;
+		}
+
+		span.resetbutt a {
+			background: #cccccc;
+			border-color: #cccccc;
+		}
+	}
+
+	#kesearch_results {
+		.teaser_icon img {
+			margin-right: 1.5rem;
+			margin-bottom: 1rem;
+			width: auto;
+		}
+		.result-list-item {
+			.add-info {
+				display: block;
+				margin-bottom:  1rem;;
+			}
+
+			
+		
+			&:not(:last-child) {
+				border-bottom: 1px solid #cccccc;
+				padding-bottom: 2rem !important;
+
+			}
+		}
+	}
+
+	.kesearch_pagebrowser ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		li {
+            &:before {
+                display: none;
+            }
+            padding-left: 0;
+			font-size:  0.8rem;
+			flex: 0 0 1.5rem;
+			height: 1.5rem;
+			width: 1.5rem;
+			display: flex;
+			justify-content: center;	
+			align-items: center;
+			background: #cccccc;
+			
+
+			a {
+				color: inherit;
+			inherit-decoration: none;
+				&:hover {
+					color: @1stcolor;
+				}
+			}
+
+			&.current {
+				background-color: @1stcolor;
+				a.current {
+					color: white !important;
+				}
+			}
+		}
+	}
+
+	form {
+		margin-bottom: 0;
+	}
+
+	#ke_search_sword {
+		position: relative;
+		top: 0;
+		width: 100%;
+		padding: 0.25rem 1rem;
+		display: block;
+		color: @1stcolor;
+		border-color: @2ndcolor;
+		.bdrs(100px);
+		&:focus, &:active, &:focus-visible {					
+			box-shadow: inset 0px 0px 0px 3px fade(black, 25%) !important;
+			outline: none !important;
+		}
+	}
+
+	button[type="submit"] {
+		padding: 9px 2rem;
+		font-size: 18px;
+	}
+
+	.resetbutt {
+		margin-top: 10px;
+		display: none;
+	}
+
+	#kesearch_results {
+		margin-top: 2rem;
+	}
+
+	.result-list-item .hit {
+		color: @2ndcolor  !important;
+		font-weight: 700  !important;
+	}
+}

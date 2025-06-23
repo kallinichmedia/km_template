@@ -1,0 +1,25 @@
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    <f:asset.css identifier="my-backend-ticker-styles" href="{cb:assetPath()}/preview.css"/>
+    <div class="ce-ticker" data-speed="200" data-direction="left" data-stopponhover="0">
+       {data.subheader->f:format.raw()}
+    </div>
+    
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>

@@ -1,0 +1,43 @@
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    <f:asset.css identifier="my-backend-textlogoitem-styles" href="{cb:assetPath()}/preview.css"/>
+    <div class="ce-textlogo">
+    
+        <div class="inner d-flex">
+            <div class="imagewrap">
+                <f:if condition="{data.image.0}">
+                    <f:image image="{data.image.0}" cropVariant="common" alt="{data.image.0.alternative}" treatIdAsReference="1" />
+                </f:if>
+            </div>
+
+            <div class="textwrap">
+                <f:if condition="{data.header}">
+                    <span class="header">{data.header->f:format.raw()}</span>
+                </f:if>
+                <f:if condition="{data.bodytext}">
+                    <div class="text">
+                        {data.bodytext->f:transform.html()}
+                    </div>
+                </f:if>
+            </div>            
+           
+        </div>
+    </div>
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>

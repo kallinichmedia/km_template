@@ -1,0 +1,26 @@
+
+<f:layout/>  
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+
+<f:section name="Main">
+    <f:asset.css identifier="km-breadcrumb-fe-css" href="{cb:assetPath()}/frontend.css"/>
+    <f:asset.script identifier="km-breadcrumb-fe-js" href="{cb:assetPath()}/frontend.js"/>
+    
+    
+    
+    <div class="ce-breadcrumb">
+        <f:for each="{data.items}" as="item" iteration="i">
+            <f:if condition="{i.isLast}">
+                <f:then>
+                    <h1><f:link.typolink parameter="{item.url}">{item.title}</f:link.typolink></h1>
+                </f:then>
+                <f:else>
+                    <f:link.typolink parameter="{item.url}"><span>{item.title}</span></f:link.typolink>&nbsp;&raquo;&nbsp;
+                </f:else>
+            </f:if>
+        </f:for>
+    </div>
+
+</f:section>

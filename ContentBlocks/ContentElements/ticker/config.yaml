@@ -1,0 +1,19 @@
+name: km/ticker
+typeName: km_ticker
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true 
+    label: Titel(intern)
+  -
+    identifier: subheader
+    useExistingField: true
+    label: Tickerinhalt
+    type: Textarea
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

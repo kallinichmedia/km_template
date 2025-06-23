@@ -1,0 +1,40 @@
+name: km/kmcontact
+table: tx_km_kmcontact
+prefixFields: false
+labelField: name
+security:
+  ignorePageTypeRestriction: true
+fields:
+  - 
+    identifier: name
+    label: voller Name
+    type: Text
+    required: true
+  -
+    identifier: position
+    label: Position
+    type: Text
+    required: true
+  -
+    identifier: email
+    label: E-Mail-Adresse
+    type: Email
+    required: false
+  -
+    identifier: telephone
+    label: Telefonnummer
+    type: Text
+  -
+    identifier: pic
+    label: Portrait
+    type: File
+  -
+    identifier: shortdescription
+    label: Kurzbeschreibung
+    type: Textarea
+    enableRichtext: false
+  -
+    identifier: description
+    label: Beschreibung
+    type: Textarea
+    enableRichtext: true

@@ -1,0 +1,462 @@
+/* Space */
+body .frame-space-before-extra-small { margin-top: 2em; }
+body .frame-space-before-small { margin-top: 4em; }
+body .frame-space-before-medium { margin-top: 8em; }
+body .frame-space-before-large { margin-top: 16em; }
+body .frame-space-before-extra-large { margin-top: 32em; }
+
+body .frame-space-after-extra-small { margin-bottom: 2em; }
+body .frame-space-after-small { margin-bottom: 4em; }
+body .frame-space-after-medium { margin-bottom: 8em; }
+body .frame-space-after-large { margin-bottom: 16em; }
+body .frame-space-after-extra-large { margin-bottom: 32em; }
+
+
+
+.ce-uploads {
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+    li {
+        padding: 0.5rem 0;
+        flex: 0 0 100%;
+        width: 100%;
+        margin-top: 0;
+        .innerlink {            
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+            text-align: center;
+            flex-direction: column;
+            text-transform: uppercase;
+            .specialfont;
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1em;
+            
+            &:hover {
+                background-color: fade(@1stcolor, 50%);
+            }
+            
+
+            .ce-uploads-filesize {
+                font-size: 0.6rem;
+                font-family: "Roboto";
+                line-height: 1em;
+            }
+
+            svg {
+                width: 3rem;
+                height: auto;
+
+                * { fill: @1stcolor }
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 3rem -0.5rem;
+        
+        li {
+            flex: 0 0 33.333%;
+            padding: 0.5rem;
+            .linktext {
+                min-height: 3.2rem
+            }
+        }
+    }
+}
+
+
+
+.tx-images-logowall {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    figure {
+        margin: 1rem;
+        img {
+            height: 2rem;
+            width: auto;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2) {
+            img {
+                height: 0.7rem;
+            }
+        }    
+
+        @media screen and (min-width: 768px) {
+            img {
+                height: 3.5rem;                
+            }
+            &:nth-child(1),
+            &:nth-child(2) {
+                img {
+                    height: 1rem;
+                }
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            img {
+                height: 3.5rem;                
+            }
+            &:nth-child(1),
+            &:nth-child(2) {
+                img {
+                    height: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+.tx-images-process {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    figure {
+        flex: 1 1 auto;
+        text-align: center;
+        align-items: center;
+        font-size: 1rem;
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .arrow {       
+        flex: 1 1 auto;
+        padding: 2em 2em;
+        .polygon {
+            height: 100%;
+            min-height: 2rem;
+            display: block;
+            background: #818181;
+            width: 1.2em;
+            clip-path: polygon( 
+                calc(~"50% - 3px") 0%, 
+                calc(~"50% - 3px") calc(~"100% - 1em"), 
+                0% calc(~"100% - 1em"), 
+                50% 100%,            
+                100% calc(~"100% - 1em") ,  
+                 calc(~"50% + 3px") calc(~"100% - 1em"),
+                calc(~"50% + 3px") 0%,
+                
+                )  
+        }
+      
+    }
+
+    @media screen and (min-width: 1024px) {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;    
+        display: flex;
+        figure {
+
+            img {
+                margin-bottom: 2rem;
+                margin: 0 auto;
+            }
+
+            figcaption {
+                width: 100%;
+                display: block;
+                margin-top: 1rem;
+                text-align: center;
+            }
+        }
+
+        .arrow {
+            padding: 0.5em 2em;
+            .polygon {
+                width: 100%;
+                min-height: unset;
+                min-width: 2rem;
+                height: 1.2em;
+                clip-path: polygon( 
+                    0% calc(~"50% - 3px"), 
+                    calc(~"100% - 1em") calc(~"50% - 3px"), 
+                    calc(~"100% - 1em") 0%, 
+                    100% 50%,            
+                    calc(~"100% - 1em") 100%,  
+                    calc(~"100% - 1em") calc(~"50% + 3px"),
+                    0% calc(~"50% + 3px"),
+                    
+                    );
+            }
+        }
+    }
+}
+ 
+
+
+
+.tx-images-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    & > * {
+        padding: 2em 1em;
+        flex: 0 0 50%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        justify-content: center;
+        flex-direction: column;
+        font-weight: 700;
+        font-size: 1rem;
+        img {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        @media screen and (min-width: 768px) {
+                       
+            flex: 0 0 33.33%;
+        
+        }
+        
+    }
+
+    &[data-cols="5"] > * {
+        flex: 0 0 50%;
+
+        @media screen and (min-width: 640px) {
+            flex: 0 0 33.33%
+        }
+
+        @media screen and (min-width: 992px) {
+            flex: 0 0 20%;
+        }
+    }
+}
+
+/* Layout Variante von [textpic] */
+
+.tx-icontextres,
+.tx-fiftyfifty {
+    .tx-row {
+        display: flex;
+        flex-direction: column;
+        
+        
+        .tx-col-icon {
+            max-width: 150px;
+            img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .tx-col-text {
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media screen and (min-width: 640px) {
+            flex-direction: row;
+            gap: 3rem;
+            .tx-col-icon { 
+                flex: 0 0 150px; 
+                max-width: unset;
+                
+            }
+        }
+    }
+}
+
+
+.tx-fiftyfifty {
+    .tx-row {        
+        .tx-col-icon {
+            flex: 0 0 100%;
+            max-width: unset;
+        }
+
+        @media screen and (min-width: 640px) {            
+            .tx-col-icon { 
+                flex: 0 0 50%;
+            }
+        } 
+    }
+}
+
+
+
+
+
+
+/* <div class="moretext-toggle">
+        <span class="text">Mehr anzeigen</span>
+        <span class="theline"></span>
+        <span class="icon">
+            <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16.6 9.8" style="enable-background:new 0 0 16.6 9.8;" xml:space="preserve">
+                <g id="Gruppe_1033" transform="translate(0.005 -0.226)">
+                    
+                    <g id="Gruppe_116" transform="translate(21.58 5.261) rotate(90)">
+                        <path d="M4.8,13.3c0,0.4-0.2,0.8-0.4,1.1l-6.8,6.8c-0.6,0.6-1.5,0.6-2.1,0c-0.6-0.6-0.6-1.5,0-2.1l5.7-5.7l-5.7-5.7
+                            C-5.2,7-5.2,6-4.6,5.4c0.6-0.6,1.5-0.6,2.1,0l6.8,6.8C4.6,12.5,4.8,12.9,4.8,13.3z"></path>
+                    </g>
+                </g>
+            </svg>
+
+        </span>
+</div> */
+
+
+.frame-layout-3 {
+    
+    .cutText {
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        transform: all 0.3s ease-in-out;
+        overflow: hidden;
+
+        p {
+            margin-bottom:  0;
+        }
+        
+        .reveal-text {
+            display: none;
+            opacity: 0;
+            .transition(opacity 250ms ease-in-out);
+        }       
+        
+        .moretext-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            
+        
+            .text {
+                font-size: 0.8rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: @1stcolor;
+                flex: 0 0 auto;
+                &:before {
+                    content:"Mehr anzeigen";
+                }
+            }
+        
+            .theline {
+                width: 100%;
+                height: 1px;
+                background-color: @1stcolor;
+                margin: 0 1rem;
+            }
+            
+            .icon {
+                width: 1rem;
+                height: 1rem;
+                flex: 0 0 auto;
+                .transition(transform 250ms ease-in-out);
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    fill: @1stcolor;
+                }
+            }
+        }
+
+        &.open {
+            .reveal-text {
+                display: inline;
+                opacity: 1;
+            }
+            .moretext-toggle {
+                .text {
+                    &:before {
+                        content:"Weniger anzeigen";
+                    }
+                }
+                .icon {
+                    transform: scale(-1);
+                }
+            }
+
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .container-fluid.is-blueintro > .inner > .introcontent {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        color: @page-textcolor;
+
+        .reveal-text {
+            display: inline;
+            opacity: 1;
+        }
+
+        .moretext-toggle {
+            display: none;
+        }	
+
+    }
+}
+
+
+
+.contactlinks {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+
+    @media screen and (min-width: 992px) {
+        justify-content: flex-start;
+    };
+    a {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        background: @1stcolor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        svg {
+            width: 55%;
+            height: auto;
+            fill: #ffffff;
+        }
+
+    }
+}

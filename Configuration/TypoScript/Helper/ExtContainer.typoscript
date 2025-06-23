@@ -1,0 +1,71 @@
+tt_content.referencematrix < lib.contentElement
+tt_content.referencematrix {
+    templateName = referencematrix
+    templateRootPaths {
+        10 = EXT:km_template/Resources/Private/Extensions/container/Templates/
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+
+
+tt_content.teammatrix < lib.contentElement
+tt_content.teammatrix {
+    templateName = teammatrix
+    templateRootPaths {
+        10 = EXT:km_template/Resources/Private/Extensions/container/Templates/
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+tt_content.accordion < lib.contentElement
+tt_content.accordion {
+    templateName = accordion
+    templateRootPaths {
+        10 = EXT:km_template/Resources/Private/Extensions/container/Templates/
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+
+tt_content.twocolumns < lib.contentElement
+tt_content.twocolumns {
+    templateName = twocolumns
+    templateRootPaths {
+        10 = EXT:km_template/Resources/Private/Extensions/container/Templates/
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+tt_content.threecolumns < lib.contentElement
+tt_content.threecolumns {
+    templateName = threecolumns
+    templateRootPaths {
+        10 = EXT:km_template/Resources/Private/Extensions/container/Templates/
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+
+tt_content.fourcolumns < lib.contentElement
+tt_content.fourcolumns {
+    templateName = fourcolumns
+    templateRootPaths {
+        10 = EXT:km_template/Resources/Private/Extensions/container/Templates/
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+

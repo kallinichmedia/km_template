@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="labels.xlf" source-language="en" date="2025-04-23T14:21:50+00:00" product-name="km/hoverboxes-small">
+		<header/>
+		<body>
+			<trans-unit id="title">
+				<source>Hoverboxen-Set klein</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>kleine Quadrat in Dreierreihe, Text bei Hover.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

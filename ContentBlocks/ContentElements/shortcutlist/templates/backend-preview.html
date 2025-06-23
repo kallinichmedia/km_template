@@ -1,0 +1,35 @@
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    
+    <f:asset.css identifier="my-backend-shortcutlist-styles" href="{cb:assetPath()}/preview.css"/>
+    <div class="ce-shortcutlist">
+
+    
+        <f:for each="{data.row}" as="row" iteration="i">           
+            <dl>
+                <dt>{row.title->f:format.raw()}</dt>
+                <dd>
+                    {row.bodytext->f:transform.html()}
+                </dd>
+            </dl>
+        </f:for>  
+            
+    </div>
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>

@@ -1,0 +1,81 @@
+.ce-quote {
+    padding-block: 0rem;
+    .inner {
+        position: relative;        
+        
+
+        .watermark {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            object-fit: contain;
+            z-index: 0;
+            height: 100%;
+            width: 100%;
+
+            * {
+                fill: #f2f1ef;
+            }
+        }
+
+        .ce-quote__quote {
+            z-index: 10;
+            position: relative;
+            padding-left: 1.5rem ;
+            padding-block: 0;
+                      
+
+            .ce-quote__quote__text {
+                position: relative;
+                margin-bottom: 1rem;
+                .qmark {
+                    position: absolute;
+                    width: 1.5rem;
+                    z-index: 20;                    
+                   
+                    
+                    * {
+                        // fill: @1stcolor;
+                        fill: @page-textcolor
+                    }
+
+                    &.qmark-in {
+                        top: 0;
+                        right: calc(~"100% + 0.5rem");
+                        
+                     
+                    }
+
+                    &.qmark-out {
+                        top: 100%;
+                        left: 100%;
+                        display: none;
+                    }
+                }
+
+                .ce-quote-text {
+                    text-align: left;
+                    position: relative;
+                    z-index: 10;                    
+                }
+            }
+
+            @media screen and (min-width: 768px) {
+                padding-inline: 2rem;
+                .ce-quote__quote__text {
+
+                    .qmark {
+                        width: 2.5rem;
+                        &.qmark-in {
+                            right: calc(~"100% + 1rem");
+                        }
+
+                        
+                    }
+                }
+            }
+
+           
+           
+        }
+    }
+}

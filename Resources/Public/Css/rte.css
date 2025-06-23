@@ -1,0 +1,72 @@
+/**
+ * Created from sitepackagebuilder.com
+ */
+
+.btn {
+    padding: 0.5rem 1rem;
+    color: #000000;
+    background-color: #fff;
+    box-shadow: 0 0 10px #000;
+}
+
+ .btn.btn-primary {
+    background: #c11722;
+    color: #ffffff;
+ }
+
+ span.span-color1{
+    color: #fcaa20;
+ }
+
+ span.reveal-text {
+   opacity: 0.3;
+ }
+
+ p.lead {
+   font-size: 1.5rem;
+ }
+
+ p.nomargin {
+   margin: 0;
+ }
+ 
+.punshline1 {
+  margin-bottom: 0;
+  width: fit-content;
+  color: darkslategray;
+  background-color: white;
+}
+.punshline2 {
+  margin-bottom: 0;
+  width: fit-content;
+  color: white;
+  background-color: darkslategray;
+}
+.punshline3 {
+  margin-bottom: 0;
+  width: fit-content;
+  color: darkslategray;
+  background-color: orange;
+}
+
+
+.small-font-size {
+  font-size: 0.6666rem;
+  line-height: 1.5em;
+}
+.big-font-size {
+  font-size: 1.25rem;
+  line-height: 1.5em;
+}
+.bigger-font-size {
+  font-size: 1.5rem;
+  line-height: 1.5em;
+}
+.large-font-size {
+  font-size: 2rem;
+  line-height: 1.5em;
+}
+.huge-font-size {
+  font-size: 4.25rem;
+  line-height: 1.5em;
+}

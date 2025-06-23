@@ -1,0 +1,22 @@
+name: km/tabbed-pages
+typeName: km_tabbedpages
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic
+
+  - identifier: page_select
+    type: Relation
+    allowed: 'pages'
+    maxitems: 10
+    suggestOptions:
+      default:
+        additionalSearchFields: 'nav_title, url'
+        addWhere: 'AND pages.doktype = 1'
+
+basics:
+    - TYPO3/Appearance
+    - TYPO3/Links

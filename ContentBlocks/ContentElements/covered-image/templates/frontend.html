@@ -1,0 +1,36 @@
+<f:layout/>
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+    
+
+<f:section name="Main">
+    <f:comment>
+
+        <f:asset.css identifier="km-coveredimg-fe-css" href="{cb:assetPath()}/frontend.css"/>
+        <f:asset.script identifier="km-coveredimg-fe-js" src="{cb:assetPath()}/frontend.js"/>
+    </f:comment>
+
+        <!-- Your content -->    
+   
+        <div class="ce-covered-image">
+            <picture>
+                <source media="(max-width: 799px)" srcset="{f:uri.image(image: '{data.image.0}', cropVariant: 'phone', treatIdAsReference: 1)}" />
+                <source media="(min-width: 800px)" srcset="{f:uri.image(image: '{data.image.0}',  cropVariant: 'tablet', treatIdAsReference: 1)}" />
+                <f:image image="{data.image.0}" cropVariant="phone" class="" title="" alt="" />
+            </picture>
+    
+            <f:if condition="{data.image.1}">
+                <f:image src="{cb:assetPath()}/gradientOverlay.png" treatIdAsReference="1" class="gradientOverlay" />
+            </f:if>
+            
+            <div class="overlay">
+                {data.bodytext->f:format.raw()}       
+            </div>
+            <f:link.typolink class="btn btn-secondary" parameter="{data.url}">{data.text->f:format.raw()}</f:link.typolink>
+        </div>
+        
+    
+ 
+</f:section>
+

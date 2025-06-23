@@ -1,0 +1,116 @@
+
+
+
+// Font path
+@font-path: "../../Fonts/";
+
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@{font-path}montserrat-v29-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('@{font-path}montserrat-v29-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: url('@{font-path}montserrat-v29-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+html {
+  font-size: @base-font-size;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  //font-family: 'neulis-neue', sans-serif;
+  font-weight: 400;
+}
+
+input {
+  // font-family: 'neulis-neue', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+.specialfont {
+    font-family: 'Montserrat', sans-serif;    
+    font-style: normal;
+    font-weight: 900;
+}
+
+
+
+.fz-base {
+  font-size: 1rem !important;
+  line-height: 1.5em !important;
+}
+
+// .fz-smalltext, 
+.small-font-size {
+  font-size: 0.6666rem !important;
+  line-height: 1.5em !important;
+}
+
+// .fz-bigtext,
+.big-font-size {
+  font-size: 1.25rem !important;
+  line-height: 1.25em !important;
+}
+
+// .fz-largetext,
+.bigger-font-size{
+  font-size: 1.5rem !important;
+  line-height: 1em !important;
+}
+
+// .fz-headline,
+.large-font-size{
+  font-size: 2rem !important;
+  line-height: 1.2em !important;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem !important;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 1.5rem !important;
+  }
+}
+
+// .fz-huge,
+.huge-font-size {
+  font-size: 4.25rem !important;
+  line-height: 1.2em !important;
+
+  @media (max-width: 768px) {
+    font-size: 3.25rem !important;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 2.25rem !important;
+  }
+}
+
+#bewerbung-146 {
+  > h2 {
+    display: none;
+  }
+}

@@ -1,0 +1,108 @@
+
+
+
+<f:layout/>  
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+
+<f:section name="Main">
+
+    <cb:asset.css identifier="content-block-css-km-km/topiccloud" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/topiccloud" file="Frontend.js"/>
+
+    
+    <section id="theTopicCloud" class="ce-topiccloud">
+
+        <div class="overlay">
+            <h3 class="title"><svg class="inlinekay" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 59.8 76.6"><polygon points="35.2 27.3 14 48.4 42.2 76.6 59.8 76.6 31.7 48.4 52.8 27.3 35.2 27.3"/><polygon points="0 14 14 0 14 48.4 0 62.5 0 14" /><polygon points="14 62.5 0 76.6 0 76.6 14 76.6 14 62.5" /></svg> für dein<br/>Business</h3>
+        </div>
+              
+
+        <div class="topics">
+
+            <f:for each="{data.items}" as="item" iteration="i">            
+                <div class="topic topic-{i.cycle}">            
+                    <f:link.typolink parameter="{item.url}">
+                        <f:if condition="{item.image}">
+                            <f:then>
+                                <f:image image="{item.image.0}" treatIdAsReference="1" />
+                            </f:then>
+                            <f:else>
+                                <img src="/fileadmin/user_upload/Themen/raute-franzi.png" alt="" />
+                            </f:else>
+                        </f:if>
+                        <span class="topicname">{item.title->f:format.raw()}</span>
+                    </f:link.typolink>
+                </div>            
+            </f:for>
+
+            <f:comment>
+
+            
+                <div class="topic">
+                    <a href="/content">
+                        <img src="/fileadmin/user_upload/Leistungen/raute-franzi.png" alt="">
+                        <span class="topicname">Creation & Content</span>
+                    </a>
+                </div>
+
+                <div class="topic">
+                    <a href="/websites">
+                        <img src="/fileadmin/user_upload/Leistungen/raute-alex.png" alt="">
+                        <span class="topicname">Websites</span>
+                    </a>
+                </div>
+
+                <div class="topic">
+                    <a href="/kontakt">
+                        <img src="/fileadmin/user_upload/Leistungen/raute-franzi.png" alt="">
+                        <span class="topicname">Kontakt</span>
+                    </a>
+                </div>
+
+                <div class="topic">
+                    <a href="/corporate_design">
+                        <img src="/fileadmin/user_upload/Leistungen/raute-alex.png" alt="">
+                        <span class="topicname">Corporate Design</span>
+                    </a>
+                </div>
+
+                <div class="topic">
+                    <a href="/ecommerce">
+                        <img src="/fileadmin/user_upload/Leistungen/raute-franzi.png" alt="">
+                        <span class="topicname">E-Commerce</span>
+                    </a>
+                </div>
+
+                <div class="topic">
+                    <a href="/seoseasem">
+                        <img src="/fileadmin/user_upload/Leistungen/raute-alex.png" alt="">
+                        <span class="topicname">SEO|SEA|SEM</span>
+                    </a>
+                </div>
+
+                <div class="topic">
+                    <a href="/workshop">
+                        <img src="/fileadmin/user_upload/Leistungen/raute-franzi.png" alt="">
+                        <span class="topicname">Workshop</span>
+                    </a>
+                </div>
+
+                <div class="topic">
+                    <a href="/socialmedia">
+                        <img src="/fileadmin/user_upload/Leistungen/raute-alex.png" alt="">
+                        <span class="topicname">Social Media</span> 
+                    </a>
+                </div>
+
+            </f:comment>
+
+        </div>
+
+   
+    </section>
+
+   
+</f:section>
+

@@ -1,0 +1,33 @@
+.ce-textlogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.ce-textlogo .inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+}
+.ce-textlogo .inner .imagewrap {
+  flex: 0 0 200px;
+}
+.ce-textlogo .inner .imagewrap img {
+  max-width: 100%;
+  height: auto;
+}
+.ce-textlogo .inner .textwrap {
+  flex: 1 1 auto;
+}
+.ce-textlogo .inner .textwrap .header {
+  font-size: 1.5rem !important;
+  line-height: 1em !important;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.ce-textlogo .inner .textwrap .text {
+  font-size: 1em;
+  line-height: 1.5em;
+}

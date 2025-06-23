@@ -1,0 +1,48 @@
+<cb:asset.css identifier="content-block-css-km-km/team-member" file="Frontend.css"/>
+<cb:asset.script identifier="content-block-js-km-km/team-member" file="Frontend.js"/>
+
+
+
+
+<div class="team-member">
+    <div class="picblock">
+
+        <f:if condition="{data.image.1}">
+            <!-- video -->
+            <f:media file="{data.image.1}" additionalConfig="{controls: '0', loop: '1', autoplay: '1'}" class="video" width="400" height="375" />
+        </f:if>
+        
+        <f:if condition="{data.image.0}">            
+            <f:image image="{data.image.0}" class="still" treatIdAsReference="1" alt="{data.image.0.alternative}" width="600c" height="600c"/>
+        </f:if>
+        
+        
+        
+        <f:if condition="{data.image.1}">
+            <button class="clickcta">
+                <div class="inner">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16"><path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/></svg>
+                    <span>Play</span>
+                </div>
+            </button>
+            
+            <button class="pause">
+                <span class="inner">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>     
+                    <span>Pause</span>
+                </span>
+            </button>
+        </f:if>
+
+    </div>
+
+    <div class="pers">
+        <f:link.email email="{data.email}" title="{data.email}">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="340px" height="600px" viewBox="0 0 340 600" enable-background="new 0 0 340 600" xml:space="preserve"><defs></defs><path d="M295.949,0H44.05C19.77,0,0,19.771,0,44.05V555.94C0,580.23,19.77,600,44.05,600h251.89c24.29,0,44.061-19.77,44.061-44.05 V44.05C340,19.771,320.229,0,295.949,0z M20,80h300v380H20V80z M44.05,20h251.89C309.21,20,320,30.79,320,44.05V60H20V44.05 C20,30.79,30.79,20,44.05,20z M295.949,580H44.05C30.79,580,20,569.211,20,555.95V480h300v75.95C320,569.211,309.21,580,295.949,580 z"/><path d="M170,490c-22.061,0-40,17.94-40,40c0,22.061,17.939,40,40,40c22.06,0,40-17.939,40-40C210,507.94,192.06,490,170,490z M170,550c-11.03,0-20-8.97-20-20c0-11.029,8.97-20,20-20c11.029,0,20,8.971,20,20C190,541.03,181.029,550,170,550z"/><path d="M130,50h40c5.529,0,10-4.47,10-10c0-5.529-4.471-10-10-10h-40c-5.53,0-10,4.471-10,10C120,45.53,124.47,50,130,50z"/><path d="M200,50h10c5.529,0,10-4.47,10-10c0-5.529-4.471-10-10-10h-10c-5.53,0-10,4.471-10,10C190,45.53,194.47,50,200,50z"/></svg>
+        </f:link.email>
+        <p>
+            <b>{data.header}</b><br/>
+            {data.subheader}
+        </p>
+    </div>
+</div>

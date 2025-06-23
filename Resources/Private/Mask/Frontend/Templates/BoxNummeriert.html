@@ -1,0 +1,33 @@
+<div class="mask_box_nummeriert layout-{data.layout} ">
+      
+    <div class="inner">
+        <f:if condition="{data.subheader}">
+            <span class="number">
+                <span class="char">{data.subheader->f:format.raw()}</span>
+            </span>
+        </f:if>
+        
+        <div class="contentbox">
+            <f:if condition="{data.layout} != 50">
+                <div class="imgbox">
+                    <f:if condition="{data.assets.0}">
+                        <f:image image="{data.assets.0}" width="500" />
+                    </f:if>
+                </div>
+            </f:if>
+
+            <div class="content-text">
+
+                <f:if condition="{data.header}">
+                    <h2 class="title">{data.header->f:format.raw()}</h2>
+                </f:if>
+                <f:if condition="{data.bodytext}">
+                    {data.bodytext->f:format.html()}
+                </f:if>
+            </div>
+            <f:if condition="{data.layout} == 50 && {data.tx_mask_subtitle}">
+                <a class="btn" data-target="{data.tx_mask_subtitle}">Auswählen</a>
+            </f:if>
+        </div>
+    </div>              
+</div>

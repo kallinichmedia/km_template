@@ -1,0 +1,41 @@
+  
+<cb:asset.css identifier="content-block-css-km-km/reference" file="Frontend.css"/>
+<cb:asset.script identifier="content-block-js-km-km/reference" file="Frontend.js"/>
+
+<div class="km-reference" data-cats="<f:for each="{data.categories}" as="category">cat-{category.uid} </f:for>">
+    <f:if condition="{data.image}">
+        
+        <f:if condition="{data.image->f:count()} > 1">
+            <f:then>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <f:for each="{data.image}" as="pic" iteration="i">
+                            <div class="swiper-slide">
+                                <f:image image="{pic}" width="600c" height="600c" treatIdAsReference="1" />         
+                            </div>
+                        </f:for>
+                    </div>
+                    <div class="swiper-pagination"></div>                  
+                </div>
+            </f:then>
+            <f:else>
+                <div class="stillwrap">
+                    <f:image image="{data.image.0}" width="600c" height="600c" treatIdAsReference="1" />  
+                </div>
+            </f:else>
+        </f:if>
+
+    </f:if>
+    <span class="title">{data.header}</span>
+
+    <!-- Kategorien -->
+    <f:if condition="{data.categories}">
+        <div class="categories">
+            <f:for each="{data.categories}" as="category">
+                <span class="cat-item">{category.title}</span>
+            </f:for>           
+        </div>
+    </f:if>
+</div>
+
+

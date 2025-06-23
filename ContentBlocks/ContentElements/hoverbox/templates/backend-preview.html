@@ -1,0 +1,47 @@
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+
+    <f:asset.css identifier="be-hoverbox-preview" href="{cb:assetPath()}/preview.css"/>
+    <div class="ce-hoverbox">
+   
+        <div class="inner" data-color="{data.color}">
+            <div class="front">
+                <f:if condition="{data.usesvg} == 1">
+                    <f:then>
+                        {data.svgsource->f:format.raw()}
+                    </f:then>
+                    <f:else>
+                        <div class="position">
+                            <span class="boldtext">{data.boldtext->f:format.raw()}</span>
+                            <span class="thintext">{data.thintext->f:format.raw()}</span>
+                        </div>
+                    </f:else>
+                </f:if>
+            </div>
+            <div class="back">
+                <div class="position">
+                    {data.bodytext->f:sanitize.html()}
+                </div>
+            </div>
+        </div>     
+       
+    </div>
+</f:section>
+
+<f:comment>
+<!-- Uncomment to override preview footer -->
+<f:section name="Footer">
+    My custom Footer
+</f:section>
+</f:comment>
+

@@ -1,0 +1,48 @@
+<f:layout/>
+
+<f:section name="Header"/>
+
+
+<f:section name="Main">    
+    <div class="ce-accordion">
+        <div class="panels" data-columns="1">            
+            <f:for each="{children_201}" as="record" iteration="itty">
+                <div class="panel">
+                    <div class="panel-header">
+
+                        <f:switch expression="{record.header_layout}">
+                            <f:case value="100">
+                                <span class="title">Content-{itty.cycle}</span>
+                            </f:case>
+                            <f:case value="span">
+                                <span class="title">{record.header}</span>
+                            </f:case>
+
+
+                            <f:defaultCase> 
+                                <h{record.header_layout} class="title">{record.header}</h{record.header_layout}>
+                            </f:defaultCase>
+                        </f:switch>
+                        
+                        
+                        <span class="icon">
+                            <svg id="plus" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 67.914 68.108">                               
+                                <rect id="bar2" x=".097" y="22.67" width="67.719" height="22.768"></rect>
+                                <rect id="bar1" x=".097" y="22.67" width="67.719" height="22.768" transform="translate(68.011 .097) rotate(90)"></rect>
+                              </svg>
+                        </span>
+                    </div>
+                    <div class="panel-content">
+                        <div class="inner">
+                            <div class="content-padding">
+                                {record.bodytext->f:format.html()}    
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </f:for>              
+        </div>
+    </div>
+
+</f:section>
+

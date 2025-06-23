@@ -1,0 +1,31 @@
+<cb:asset.css identifier="content-block-css-km-km/refslide" file="Frontend.css"/>
+<cb:asset.script identifier="content-block-js-km-km/refslide" file="Frontend.js"/>
+
+
+
+<div class="ce-refslider">
+    <!-- Swiper -->
+    <f:if condition="{data.image}">
+        <f:then>
+            <div class="swiper">
+                <div class="swiper-wrapper">     
+                    <f:for each="{data.image}" as="item" iteration="i">                        
+                        <div class="swiper-slide">
+                            <div class="imgwrap">
+                                <f:image image="{item}" alt="{item.alternative}" title="{item.title}" />
+                            </div>
+                            <div class="titlebox">
+                                <span class="title">{item.title}</span>
+                                <f:link.typolink class="redfatlink" parameter="{item.link}">Referenz ansehen »</f:link.typolink>
+                            </div>
+                        </div>
+                    </f:for>               
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </f:then>
+        <f:else>
+            <p>Kein Bild zugewiesen.</p>
+        </f:else>
+    </f:if>
+</div>

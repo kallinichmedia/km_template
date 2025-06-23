@@ -1,0 +1,47 @@
+<f:layout/>
+
+<!-- This removes the <header> partial of FSC -->
+<f:section name="Header"/>
+
+
+
+<f:section name="Main">
+    <cb:asset.css identifier="content-block-css-km-km/staffprofiles" file="Frontend.css"/>
+    <cb:asset.script identifier="content-block-js-km-km/staffprofiles" file="Frontend.js"/>
+
+    <div class="ce-staffmatrix">
+        <div class="inner" data-cols="{data.columncount}">
+            <f:for each="{data.staff}" as="person" iteration="i">
+                <div class="person">
+                    <f:if condition="{person.pic}">
+                        <div class="pic">
+                            <f:image image="{person.pic.0}" alt="{person.name}" />
+                        </div>
+                    </f:if>
+
+                    <div class="infoblock">
+                        <div class="name">
+                            {person.name->f:format.raw()}
+                        </div>
+    
+                        <div class="position">
+                            {person.position->f:format.raw()}
+                        </div>
+    
+                        <div class="email">
+                            <f:link.email email="{person.email->f:format.raw()}">
+                                {person.email->f:format.raw()}
+                            </f:link.email>
+                        </div>
+                        
+                        <div class="phone">                        
+                            <f:link.external uri="tel:{person.telephone->f:format.raw()}">
+                                {person.telephone->f:format.raw()}
+                            </f:link.external>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:section>

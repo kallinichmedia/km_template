@@ -1,0 +1,17 @@
+####################################
+########### PAGE-TITLES ############
+####################################
+config.noPageTitle = 2
+page.headerData.5 = COA
+page.headerData.5.1 = TEXT
+page.headerData.5.1.field = seo_title // title
+# Page title for all pages
+# page.headerData.5.wrap = <title>|&nbsp; &#124; Kallinich Media</title>
+page.headerData.5.wrap = <title>|</title>
+
+# Different page title for homepage
+[globalVar = TSFE:id = 1]
+page.headerData.5 >
+page.headerData.5 = TEXT
+page.headerData.5.value = <title>Werbeagentur Erfurt &raquo; Kallinich Media Digital</title>
+[GLOBAL]

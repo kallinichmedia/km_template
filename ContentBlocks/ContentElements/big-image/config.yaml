@@ -1,0 +1,69 @@
+name: km/big-image
+typeName: km_bigimage
+description: Vollflächiges Bild für Header und mehr
+group: km_special
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+
+fields:
+  -
+    identifier: header
+    useExistingField: true
+  -
+    identifier: image
+    useExistingField: true
+    type: File
+    label: Grosses Bild
+    extendedPalette: true
+    minitems: 1
+    maxitems: 10
+    allowed: common-image-types
+
+  -
+    identifier: overlays
+    type: Palette
+    label: Overlay
+    fields:
+    -
+      identifier: showlogo
+      label: Logo zeigen
+      type: Checkbox
+      default: 0
+      renderType: checkboxToggle
+
+    -
+      identifier: darken
+      label: abdunkeln
+      type: Checkbox
+      default: 0
+      renderType: checkboxToggle
+
+    - 
+      identifier: overlay_position
+      label: Ausrichtung Overlay    
+      renderType: selectSingle
+      type: Select
+      items:
+        - 
+          label: 'oben'
+          value: top
+        -
+          label: 'mitte'
+          value: middle
+        -
+          label: 'unten'
+          value: bottom
+
+    -
+      type: Linebreak
+    
+    -
+      identifier: bodytext
+      useExistingField: true
+      type: Textarea
+      enableRichtext: true
+      richtextConfiguration: km_template
+     
+

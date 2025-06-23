@@ -1,0 +1,39 @@
+name: km/covered-image
+typeName: km_coveredimage
+group: km_special
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic 
+
+  - 
+    identifier: image
+    description: Erstes Bild, Hintergrund, zweites Bild Verlaufsüberlagerung
+    useExistingField: true
+    type: File
+    allowed: common-media-types
+
+  - 
+    identifier: bodytext
+    useExistingField: true
+    type: Textarea
+    label: Zentraler Inhalt
+
+  - 
+    identifier: text
+    type: Text
+    label: Link-Text
+
+  - 
+    identifier: url
+    type: Link
+    label: Link
+
+
+
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links

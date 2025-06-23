@@ -1,0 +1,74 @@
+.ce-contactform {
+    .frow {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        
+
+        h3 {
+            .fz-headline; 
+            font-weight: 200;   
+            line-height: 1;        
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: @1stcolor;
+        }
+           
+
+       
+
+        .pers {
+            display: flex;
+            gap: 1rem;
+
+            svg {
+                height: 2.5em;
+                width: auto;
+                * { fill: @1stcolor; }
+            }
+        }
+
+        .imgwrap {
+            position: relative;
+            padding-block: 30%;
+            svg {
+                width: 100%;
+                height: auto;
+            }
+
+            img {
+                width: auto;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 35%;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            flex-direction: row;
+
+            col {
+                flex: 0 0 50%;
+                flex: 0 0 calc(50% - 1rem);
+            }
+
+
+        }
+    }
+}

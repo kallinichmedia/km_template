@@ -1,0 +1,175 @@
+.ce-hoverbox {
+
+
+    --color-blue: @blau;
+    --color-darkblue: @1stcolor-dark;
+    --color-berry: @magenta;
+    --color-cyan: #2afffc;
+    --color-aquamarin: @3rdcolor;
+    --transition-speed: 0.3s;
+
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .inner {
+        container-type: inline-size;
+        container-name: hoverbox;
+        flex: 1 1 100%;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        @media screen and (min-width: 768px) {
+            flex: 1 1 50%;
+            width: 50%;
+        }
+
+        &[data-color="blue"] {
+            background-color: var(--color-blue);
+            svg * { fill: #ffffff; }            
+            .back { 
+                .btn {
+                    color: @1stcolor !important;   
+                    background-color: white;
+                }
+            }
+        }
+
+        &[data-color="darkblue"] {
+            background-color: var(--color-darkblue);
+        }
+
+        &[data-color="berry"] {
+            background-color: var(--color-berry);
+        }
+
+        &[data-color="cyan"] {
+            background-color: var(--color-cyan);
+            .back { 
+                color: @page-textcolor !important;   
+            }
+        }
+
+        // cyanonwhite
+        &[data-color="aquamarinonwhite"] {
+            &:after {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                border: 1.5cqw solid var(--color-aquamarin);
+            }
+            background-color: white;
+            color: var(--color-aquamarin);
+            svg * { fill: var(--color-aquamarin); }
+            .back { 
+                color: var(--color-aquamarin) !important;   
+            }
+        }
+    }
+
+    .front {
+        position: relative;
+        z-index: 1;
+        transition: opacity var(--transition-speed);
+        line-height: 0;
+        padding: 0.5rem;
+
+        @media screen and (min-width: 768px) {
+            padding: 0;
+        }
+    }
+
+    .back {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        opacity: 0;
+        transition: opacity var(--transition-speed);
+
+        .position {
+            padding: 2rem;
+        }
+
+        p { margin-bottom:  0.5em; }
+        p:last-child { margin-bottom: 0; }
+    }
+
+    svg.plus {
+        position: absolute;
+        height: 1rem;
+        width: 1rem;
+        top: 0.75rem;
+        right: 0.75rem;
+        transition: transform var(--transition-speed);
+
+        * {
+            fill: white;
+            transition: fill var(--transition-speed);
+        }
+    }
+
+    .inner:hover {
+        .back {
+            opacity: 1;
+            color: white;
+        }
+        .front {
+            opacity: 0;
+        }
+
+        svg.plus {
+            transform: rotate(90deg);
+            rect:nth-child(1) {
+                fill: transparent;
+            }
+        }
+
+
+    }
+ 
+
+}
+
+// overwrite .maincontent .frame in base.less
+body .maincontent .frame-type-hoverboxesset {
+    padding-inline: 0;
+}
+.ce-hoverboxesset {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+
+    > .item {
+        flex: 0 0 100%;
+        width: 100%;
+
+        @media screen and (min-width: 640px) {
+            flex: 0 0 50%;
+            width: 50%;
+        }
+    }
+}
+
+// set order for "Über uns"
+
+#c321 {
+    .ce-hoverboxesset {
+        .item {  
+            @media screen and (max-width: 640px) {                
+                &:nth-child(3) { order: 4; }
+                &:nth-child(4) { order: 3; }
+            }       
+        }
+    }
+}
+

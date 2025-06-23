@@ -1,0 +1,68 @@
+name: km/staffprofiles
+typeName: km_staffprofiles
+group: common
+title: Mitarbeiter-Profile
+prefixFields: true
+prefixType: full
+
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+
+fields:
+  -
+    identifier: header
+    label: Titel(intern)
+    useExistingField: true
+  -
+    identifier: columncount
+    label: Spalten-Anzahl
+    renderType: selectSingle
+    type: Select
+    items:
+      -
+        label: 3-splatig
+        value: 3
+      -
+        label: 4-spaltig
+        value: 4
+      -
+        label: 5-spaltig
+        value: 5
+  - identifier: staff
+    type: Collection
+    labelField: name
+    fields:
+      - 
+        identifier: name
+        label: voller Name
+        type: Text
+        required: true
+      -
+        identifier: position
+        label: Position
+        type: Text
+        required: true
+      -
+        identifier: email
+        label: E-Mail-Adresse
+        type: Email
+        required: false
+      -
+        identifier: telephone
+        label: Telefonnummer
+        type: Text
+      -
+        identifier: pic
+        label: Portrait
+        type: File
+      -
+        identifier: description
+        label: Beschreibung
+        type: Textarea
+        enableRichtext: true
+
+
+
+
+

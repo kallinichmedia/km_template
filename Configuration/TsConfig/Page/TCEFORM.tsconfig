@@ -1,0 +1,159 @@
+#
+# TCEFORM
+#
+TCEFORM {
+    pages {
+        layout {
+            addItems {
+                10 = Header fluffig
+            }
+            altLabels {
+                3 = ohne autom. <H1/>
+            }
+        }
+
+    }
+    tt_content {
+
+        space_before_class {
+            types {
+                km_bigimage {
+                    addItems {
+                        headerfont = negativer für Header                   
+                    }
+                }
+            }
+        }
+
+        frame_class {
+            addItems {
+                small = max. Breite 900px    
+                fullpadded = volle Breite mit Mindestabstand                     
+            }
+    
+            removeItems = ruler-before,ruler-after,indent,indent-left,indent-right
+        }
+        layout {
+            types {
+                image {
+                    #removeItems = 3
+                    altLabels {
+                        0 = Standard
+                        1 = Logo-Wall                  
+                        2 = Prozess                        
+                        3 = Vorteils-Matrix                        
+                    }
+                }
+
+                text {
+                    #removeItems = 3
+                    altLabels {
+                        0 = Standard
+                        1 = Introtext für Headerbild   
+                        3 = Introtext für Headerbild mit Reduktion  
+                        2 = Teaser in Gelb       
+                    }
+                }
+
+                header {
+                    removeItems = 2,3
+                    altLabels {
+                        1 = unterstrichen
+                        
+                    }
+                }
+
+                textpic {                    
+                    altLabels {
+                        0 = Standard
+                        1 = Icon mit Text - responsive                  
+                        2 = 50% - 50% Aufteilung 
+                        3 = Lexikon-Eintrag                                            
+                    }
+                }
+
+                list {
+                    removeItems = 1,2,3,4
+                    addItems {
+                        40 = Rueckruf-Formular
+                        41 = Kontakt-Formular
+                        42 = Zinsrechner
+                        52 = Zinsrechner 2.0
+                        43 = Budgetrechner
+                        61 = Modal - Beratung
+                        62 = Modal - Vergleich
+                    }
+                    
+                }
+
+                mask_box_nummeriert {
+                    removeItems = 1,2,3,4
+                    addItems {
+                        50 = ohne Bilder, gelbe Titel                        
+                    }                    
+                }
+
+                twocolumns {
+                    removeItems = 1,2,3,4
+                    addItems {
+                        50 = 60% - 40% Aufteilung 
+                        60 = Weiche Aufteilung                      
+                    }                    
+                }
+
+                menu_pages {
+                    removeItems = 1,2,3,4
+                    addItems {
+                        50 = Jobs mit Filter
+                        60 = Referenzprojekte
+                        61 = Referenzprojekte mit Filter
+                    }
+                }
+
+
+            }
+        }
+
+        header_layout {
+            altLabels {
+                0 = Standard
+                1 = <H1>
+                2 = <H2>
+                3 = <H3>
+                4 = <H4>
+                5 = <H5>
+            }
+            addItems {
+                span = <span>                
+            }
+        }
+    }
+}
+
+
+# add tx-news layouts
+tx_news.templateLayouts{
+    10 = Termin-Matrix
+}
+
+
+
+TCEFORM.tx_powermail_domain_model_field{
+    css {
+        addItems {
+                calcbutton = Berechnungsbutton
+                chevronbutton = Button mit Pfeil                
+            }
+        }
+    }
+}
+
+TCEFORM.tx_powermail_domain_model_page{
+    css {
+        addItems {
+                zweispaltig = zweispaltig                
+            }
+        }
+    }
+}
+

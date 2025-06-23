@@ -1,0 +1,125 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+      xmlns:km="http://typo3.org/ns/KallinichMedia/KmTemplate/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:if condition="{menu}">
+
+        <f:switch expression="{data.layout}">
+            <f:case value="50">
+                <div class="tx-filteredjobs" data-fn="filteredlist">
+                    <div class="frame-small">
+                        <div class="jobsfilter" data-fn=""filteredlist-filter">
+                            <f:for each="{km:catlist(pageId: '28')}" as="category">
+                                <a href="#" data-filter="{category.uid}" class="btn">für {category.title}</a>
+                            </f:for>
+                        </div>
+                    </div>
+    
+    
+                    <div class="jobslist" data-fn="filteredlist-filter">
+                    <f:for each="{menu}" as="page">
+                          
+                            <a data-categories="{km:categoryAssignments(pageUid: page.data.uid, asString: true)}" href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')}{f:if(condition: page.current, then: ' aria-current="page"')} title="{page.title}">
+                                <span class="jobtitle">{page.title->f:format.raw()}</span>
+                                <f:if condition="{page.subtitle}">
+                                    <span class="subtitle">{page.subtitle->f:format.raw()}</span>
+                                </f:if>
+                                <span class="btnaccent small-font-size">Jetzt bewerben</span>
+                            </a>
+                        </f:for>
+                    </div>
+                </div>
+            </f:case>
+
+
+            <f:case value="60">
+                <div class="tx-references">
+              
+                    <div class="reflist" data-masonry='{"gap": 20, "breakpoints": {"1": 0, "2": 768, "3": 1024}}'>
+                    <f:for each="{menu}" as="page">
+
+                            <a data-categories="{km:categoryAssignments(pageUid: page.data.uid, asString: true)}" href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')}{f:if(condition: page.current, then: ' aria-current="page"')} title="{page.title}">
+                                <span class="title">{page.title->f:format.raw()}</span>
+                            
+                                <f:if condition="{page.data.subtitle}">
+                                    <span class="subtitle">{page.data.subtitle->f:format.raw()}</span>
+                                </f:if>
+
+                                <f:if condition="{page.files}">
+                                    <f:image image="{page.files.0}" treatIdAsReference="1" />
+                                </f:if>
+
+                                <span class="btnaccent small-font-size">mehr Details</span>
+
+
+                                <svg class="plus" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 67.914 68.108">                               
+                                    <rect id="bar2" x=".097" y="22.67" width="67.719" height="22.768"></rect>
+                                    <rect id="bar1" x=".097" y="22.67" width="67.719" height="22.768" transform="translate(68.011 .097) rotate(90)"></rect>
+                                </svg>
+                            </a>
+
+                        </f:for>
+                    </div>
+                </div>
+            </f:case>
+
+             <f:case value="61">
+                <div class="tx-filteredreferences" data-fn="filteredlist">
+                    <div class="frame-small">
+                        <div class="reffilter" data-fn="filteredlist-filter">
+                            <f:for each="{km:catlist(pageId: '78')}" as="category">
+                                <a href="#" data-filter="{category.uid}" class="btn">{category.title}</a>
+                            </f:for>
+                        </div>
+                    </div>
+    
+                    
+                    <div class="reflist" data-fn="filteredlist-list" data-masonry='{"gap": 20, "breakpoints": {"1": 0, "2": 768, "3": 1024}}'>
+                        <f:for each="{menu}" as="page">
+                     
+                            <a data-categories="{km:categoryAssignments(pageUid: page.data.uid, asString: true)}" href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')}{f:if(condition: page.current, then: ' aria-current="page"')} title="{page.title}">
+                                <span class="title">{page.title->f:format.raw()}</span>
+                            
+                                <f:if condition="{page.data.subtitle}">
+                                    <span class="subtitle">{page.data.subtitle->f:format.raw()}</span>
+                                </f:if>
+                                
+                                <f:if condition="{page.files}">
+                                    <f:image image="{page.files.0}" cropVariant="phone" treatIdAsReference="1" />
+                                </f:if>
+                                <span class="btnaccent small-font-size">mehr Details</span>
+                                
+                                
+                                <svg class="plus" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 67.914 68.108">                               
+                                    <rect id="bar2" x=".097" y="22.67" width="67.719" height="22.768"></rect>
+                                    <rect id="bar1" x=".097" y="22.67" width="67.719" height="22.768" transform="translate(68.011 .097) rotate(90)"></rect>
+                                </svg>
+                            </a>
+
+                        </f:for>
+                    </div>
+                </div>
+            </f:case>
+
+
+
+            <f:defaultCase>
+                <ul>
+                    <f:for each="{menu}" as="page">
+                        <li>
+                            <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')}{f:if(condition: page.current, then: ' aria-current="page"')} title="{page.title}">
+                                <span>{page.title}</span>
+                            </a>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:defaultCase>
+        </f:switch>
+
+    </f:if>
+
+</f:section>
+</html>
+

@@ -1,0 +1,171 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "historie": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "assets",
+                        "header",
+                        "tx_mask_history_events"
+                    ],
+                    "columnsOverride": {
+                        "assets": {
+                            "config": {
+                                "appearance": {
+                                    "elementBrowserEnabled": 1,
+                                    "enabledControls": {
+                                        "delete": 1,
+                                        "dragdrop": 1,
+                                        "hide": 1,
+                                        "info": 1,
+                                        "localize": 1,
+                                        "sort": 0
+                                    },
+                                    "fileByUrlAllowed": 1,
+                                    "fileUploadAllowed": 1,
+                                    "useSortable": 1
+                                },
+                                "minitems": ""
+                            },
+                            "fullKey": "assets",
+                            "key": "assets",
+                            "onlineMedia": [
+                                "youtube",
+                                "vimeo"
+                            ],
+                            "type": "media"
+                        }
+                    },
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "historie",
+                    "label": "Historie",
+                    "labels": [
+                        "Hintergrundbild",
+                        "\u00dcberschrift",
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "sql": {
+                "tx_mask_history_events": {
+                    "tt_content": {
+                        "tx_mask_history_events": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "assets": {
+                    "coreField": 1,
+                    "fullKey": "assets",
+                    "key": "assets",
+                    "type": "media"
+                },
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_history_events": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_history_events",
+                    "key": "history_events",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_history_events": {
+            "sql": {
+                "tx_mask_history_event_data": {
+                    "tx_mask_history_events": {
+                        "tx_mask_history_event_data": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_history_event_text": {
+                    "tx_mask_history_events": {
+                        "tx_mask_history_event_text": "mediumtext"
+                    }
+                },
+                "tx_mask_history_event_title": {
+                    "tx_mask_history_events": {
+                        "tx_mask_history_event_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_history_event_data": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_history_event_data",
+                    "inlineParent": "tx_mask_history_events",
+                    "key": "history_event_data",
+                    "label": "Datum",
+                    "order": 1,
+                    "type": "string"
+                },
+                "tx_mask_history_event_text": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_history_event_text",
+                    "inlineParent": "tx_mask_history_events",
+                    "key": "history_event_text",
+                    "label": "Text",
+                    "order": 3,
+                    "type": "text"
+                },
+                "tx_mask_history_event_title": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_history_event_title",
+                    "inlineParent": "tx_mask_history_events",
+                    "key": "history_event_title",
+                    "label": "Titel",
+                    "order": 2,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
